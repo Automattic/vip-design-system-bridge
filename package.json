@@ -11,9 +11,9 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Automattic/wp-theme-token-transformer.git"
-	  },
-	  "bugs": {
+	},
+	"bugs": {
 		"url": "https://github.com/Automattic/wp-theme-token-transformer/issues"
-	  },
-	  "homepage": "https://github.com/Automattic/wp-theme-token-transformer#readme"
+	},
+	"homepage": "https://github.com/Automattic/wp-theme-token-transformer#readme"
 }
