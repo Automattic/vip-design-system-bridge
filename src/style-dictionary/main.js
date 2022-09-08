@@ -11,7 +11,7 @@ async function getProcessedTokens( tokenPath ) {
 		platforms: {
 			'wordpress-theme-json': {
 				transformGroup: 'wpvip/transform-group/theme-json',
-				buildPath: 'build/',
+				buildPath: 'src/build/',
 				files: [ {
 					filter: 'wpvip/filter/other',
 					format: 'wpvip/format/theme-json',
@@ -47,7 +47,7 @@ async function getProcessedTokens( tokenPath ) {
 	styleDictionary.buildAllPlatforms();
 
 	// If successful, buildAllPlatforms() creates a built tokens file at the configured location
-	const builtTokensPath = './build/tokens.json';
+	const builtTokensPath = './src/build/tokens.json';
 
 	if ( ! await utility.fileExists( builtTokensPath ) ) {
 		utility.throwError( 'Style dictionary failed to build tokens' );

@@ -8,7 +8,7 @@ const chalk = require( 'chalk' );
 const styleDictionary = require( './style-dictionary/main' );
 const utility = require( './utility' );
 
-const transformerFilePath = 'build/transformed-tokens.json';
+const transformerFilePath = 'src/build/transformed-tokens.json';
 const generatedThemeFileName = 'theme.generated.json';
 const themeFileName = 'theme.json';
 
