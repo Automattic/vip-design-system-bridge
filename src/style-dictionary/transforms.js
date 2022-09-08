@@ -47,72 +47,37 @@ module.exports = {
 		type: 'value',
 		matcher: token => {
 			const isSizing = token.type === 'sizing';
-
-			return isSizing;
-		},
-		transformer: token => token.original.value.toString() + 'px',
-	},
-
-	/*
-	 * Add 'rem' suffix to exported tokens that assume a 'rem' unit
-	 */
-	'wpvip/size/rem': {
-		name: 'wpvip/size/rem',
-		type: 'value',
-		matcher: function( token ) {
 			const isTokenBorderRadius = token.type === 'borderRadius';
 			const isTokenSpace = token.type === 'spacing';
 			const isTokenParagraphSpacing = token.type === 'paragraphSpacing';
-
-			// To avoid adding suffixes to dynamic values like `clamp(...)`,
-			// only add suffix to plain number values.
-			const isNumber = isPlainNumber( token.value );
-
-			return isNumber && (
-				isTokenBorderRadius ||
-				isTokenSpace ||
-				isTokenParagraphSpacing
-			);
-		},
-		transformer: token => token.original.value.toString() + 'rem',
-	},
-
-	/*
-	 * Add 'rem' suffix - special case for font sizing. Convert from bare
-	 * px value to rem and add unit.
-	 */
-	'wpvip/type/rem': {
-		name: 'wpvip/type/rem',
-		type: 'value',
-		matcher: token => {
 			const isFontSize = token.type === 'fontSize' || token.type === 'fontSizes';
 
 			// To avoid adding suffixes to dynamic values like `clamp(...)`,
 			// only add suffix to plain number values.
 			const isNumber = isPlainNumber( token.value );
 
-			return isNumber && isFontSize;
+			return isNumber && (
+				isSizing ||
+				isTokenBorderRadius ||
+				isTokenSpace ||
+				isTokenParagraphSpacing ||
+				isFontSize
+			);
 		},
-		transformer: token => {
-			const pxValue = parseInt( token.original.value, 10 );
-			const remValue = pxValue / 16;
-			const remValueRounded = Math.round( remValue * 100 ) / 100;
-
-			return remValueRounded + 'rem';
-		},
+		transformer: token => token.original.value.toString() + 'px',
 	},
 
 	/*
-	 * Transform Regular/Medium/Bold font weights to the corresponding integer value
+	 * Transform light/medium/bold-type font weights to the corresponding integer value
 	 */
 	'wpvip/type/weight': {
 		name: 'wpvip/type/weight',
 		type: 'value',
 		matcher: token => {
-			const isValidFontWeight = ( token.type === 'fontWeight' || token.type === 'fontWeights' ) && fontWeightMap.has( token.value.toLowerCase() );
+			const isValidFontWeight = ( token.type === 'fontWeight' || token.type === 'fontWeights' ) && fontWeightMap.has( token.value.toString().toLowerCase() );
 			return isValidFontWeight;
 		},
-		transformer: token => fontWeightMap.get( token.value.toLowerCase() ),
+		transformer: token => fontWeightMap.get( token.value.toString().toLowerCase() ),
 	},
 
 	/*
