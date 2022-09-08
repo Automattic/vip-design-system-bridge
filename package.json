@@ -1,0 +1,19 @@
+{
+	"name": "wp-theme-token-transformer",
+	"description": "Tool to ingest tokens from a design system into the theme.json of a WP Site",
+	"version": "1.0.0",
+	"dependencies": {
+		"chalk": "^4.1.2",
+		"commander": "^9.1.0",
+		"style-dictionary": "^3.7.1",
+		"token-transformer": "^0.0.25"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Automattic/wp-theme-token-transformer.git"
+	  },
+	  "bugs": {
+		"url": "https://github.com/Automattic/wp-theme-token-transformer/issues"
+	  },
+	  "homepage": "https://github.com/Automattic/wp-theme-token-transformer#readme"
+}
