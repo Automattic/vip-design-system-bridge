@@ -37,8 +37,6 @@ async function getProcessedTokens( tokenPath ) {
 			// See ./transforms.js for documentation of wpvip/ transforms
 			'wpvip/name',
 			'wpvip/size/px',
-			'wpvip/size/rem',
-			'wpvip/type/rem',
 			'wpvip/type/weight',
 			'wpvip/box-shadow',
 		],
