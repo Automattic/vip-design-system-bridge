@@ -5,8 +5,8 @@ const fs = require( 'fs' ).promises;
 const path = require( 'path' );
 const cp = require( 'child_process' );
 const chalk = require( 'chalk' );
-const styleDictionary = require( './style-dictionary/main' );
-const utility = require( './utility' );
+const styleDictionary = require( './src/style-dictionary/main' );
+const utility = require( './src/utility' );
 
 const transformerFilePath = 'src/build/transformed-tokens.json';
 const generatedThemeFileName = 'theme.generated.json';
