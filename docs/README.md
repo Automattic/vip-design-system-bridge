@@ -17,3 +17,7 @@ At the moment we support only Figma, so this is what this section focuses on.
 ## Using the Script
 
 This section is devoted to understanding how you can ingest the exported data using the script, so it's inserted into your `theme.json`.
+
+## Using the Data from the Script
+
+This section is devoted to understanding how the data that was inserted into the `theme.json` can be used in the editor.
