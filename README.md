@@ -2,34 +2,36 @@
 
 This is a script designed to take an export of a design system, and insert the tokens into the `theme.json` of a WordPress site. At the moment it only supports exports from Figma, using [this](https://www.figma.com/community/plugin/843461159747178978) plugin.
 
-## Files needed
+## Using the Script
 
-- Figma Tokens export made using [this](https://www.figma.com/community/plugin/843461159747178978) plugin
-- Existing `theme.json` file
+This section is devoted to understanding how you can ingest the exported data using the script, so it's inserted into your `theme.json`.
 
-## Technical
+### Assumptions
 
+* The export from your design system has been completed. At the moment, this would be from Figma and would include either a single token JSON file or a folder of token JSON files. The export should have been done using using [this](https://www.figma.com/community/plugin/843461159747178978) plugin. The format's documentation is a WIP currently.
+* Knowledge of what exact theme name set you want to pick out from the token JSON export from Figma. An example would be if your main set was `valet` then valet is your theme name set that you want to use.
+* An existing [`theme.json`](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/) file, in where the tokens from your export would be inserted. Note that by default, the script does not overwrite the `theme.json`. Instead, it writes to a new file called `theme.generated.json`. This can be overriden using the `--overwrite` flag.
 * Based on the theme that is selected from the Figma export, the tokens are inserted directly under `settings->custom`. If a section prefix is desired, use the `--themeJsonSection` option.
-* By default, the new `theme.json` is named as `theme.generated.json` to avoid accidental destruction of your `theme.json`. It is possible to override this, and therefore have the tokens be inserted into your existing `theme.json` with the `--overwrite` option.
 
-### Instructions
+### Steps
+
+* In order to get started, you will need to ensure that repo has been cloned locally.
+* After that, run the following to install all necessary dependencies for this script:
 
 ```bash
 npm install
-node ingest-tokens.js --tokenPath='<path to token JSON>' --themePath='<path to theme directory>' --theme='<theme name set in token JSON>'
-
-# Example:
-# node ingest-tokens.js --tokenPath=~/tokens/valet-core.json --themePath=~/vip-go-skeleton/themes/valet/ --theme=wpvip
 ```
-
-This will create a `theme.generated.json` file in the theme directory specified. In order to directly apply tokens to an existing `theme.json` file, add the `--overwrite` option:
+* The script is now ready to run. Please note that by default the script does not overwrite the `theme.json`. Instead, it will write to a file called `theme.generated.json` for safety. Using the `---overwrite` flag will override that and overwrite the `theme.json` instead. The following is how the script would be run:
 
 ```bash
-# Generate tokens and overwrite existing theme.json in one step:
-node ingest-tokens.js --overwrite --tokenPath='<path to token JSON>' --themePath='<path to theme directory>' --theme='<theme name set in token JSON>'
-```
+node ingest-tokens.js --tokenPath='<path to token JSON file or directory>' --themePath='<path to theme directory>' --theme='<theme name set in token JSON>'
 
-### Command-line options
+# Example:
+# node ingest-tokens.js --tokenPath=~/tokens/valet-core.json --themePath=~/vip-go-skeleton/themes/valet/ --theme=twentytwentyone
+```
+* With that, the `theme.json` now has the tokens from your design system export and is ready for usage in your WordPress site.
+
+THe following is a good summary of available command-line options within the script:
 
 ```bash
   -v, --version                output the version number
@@ -43,4 +45,4 @@ node ingest-tokens.js --overwrite --tokenPath='<path to token JSON>' --themePath
 
 ## Documentation
 
-The documentation is currently a WIP. Please refer to the `docs` folder for future documentation.
+The documentation is currently a WIP. Please refer to the `docs` folder for understanding how the data can be setup for the script, as well as how the updated `theme.json` could be used in the editor.
