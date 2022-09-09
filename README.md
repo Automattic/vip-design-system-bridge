@@ -2,6 +2,10 @@
 
 This is a script designed to take an export of a design system, and insert the tokens into the `theme.json` of a WordPress site. At the moment it only supports exports from Figma, using [this](https://www.figma.com/community/plugin/843461159747178978) plugin.
 
+## Exporting Data from your Design System
+
+This section is a WIP. It will be devoted to understanding how you can export your design system data, for the script to understand it. Note that at the moment we only support Figma.
+
 ## Using the Script
 
 This section is devoted to understanding how you can ingest the exported data using the script, so it's inserted into your `theme.json`.
@@ -43,6 +47,6 @@ THe following is a good summary of available command-line options within the scr
   --overwrite                  overwrite existing theme.json (default: false)
 ```
 
-## Documentation
+## Using the New `theme.json`
 
-The documentation is currently a WIP. Please refer to the `docs` folder for understanding how the data can be setup for the script, as well as how the updated `theme.json` could be used in the editor.
+This section is a WIP. This section will be devoted to understanding how the data that was inserted into the `theme.json` can be used in the editor.
