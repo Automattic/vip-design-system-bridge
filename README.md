@@ -2,34 +2,41 @@
 
 This is a script designed to take an export of a design system, and insert the tokens into the `theme.json` of a WordPress site. At the moment it only supports exports from Figma, using [this](https://www.figma.com/community/plugin/843461159747178978) plugin.
 
-## Files needed
+## Exporting Data from your Design System
 
-- Figma Tokens export made using [this](https://www.figma.com/community/plugin/843461159747178978) plugin
-- Existing `theme.json` file
+This section is a WIP. 
 
-## Technical
+It will be devoted to understanding how you can export your design system data, for the script to understand it. Note that at the moment we only support Figma. The export should have been done using using [this](https://www.figma.com/community/plugin/843461159747178978) plugin. The format's documentation is a WIP currently.
 
+## Using the Script
+
+Once data has been exported from your design system, into either a folder or a single token JSON file the script is almost ready to be run.
+
+There are few more assumptions assumed for the script:
+
+* Knowledge of what exact theme name set you want to pick out from the token JSON export from Figma. An example would be if your main set was `valet` then valet is your theme name set that you want to use.
+* An existing [`theme.json`](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/) file, in where the tokens from your export would be inserted. Note that by default, the script does not overwrite the `theme.json`. Instead, it writes to a new file called `theme.generated.json`. This can be overriden using the `--overwrite` flag.
 * Based on the theme that is selected from the Figma export, the tokens are inserted directly under `settings->custom`. If a section prefix is desired, use the `--themeJsonSection` option.
-* By default, the new `theme.json` is named as `theme.generated.json` to avoid accidental destruction of your `theme.json`. It is possible to override this, and therefore have the tokens be inserted into your existing `theme.json` with the `--overwrite` option.
 
-### Instructions
+### Steps
+
+* In order to get started, you will need to ensure that repo has been cloned locally.
+* After that, run the following to install all necessary dependencies for this script:
 
 ```bash
 npm install
-node ingest-tokens.js --tokenPath='<path to token JSON>' --themePath='<path to theme directory>' --theme='<theme name set in token JSON>'
-
-# Example:
-# node ingest-tokens.js --tokenPath=~/tokens/valet-core.json --themePath=~/vip-go-skeleton/themes/valet/ --theme=wpvip
 ```
-
-This will create a `theme.generated.json` file in the theme directory specified. In order to directly apply tokens to an existing `theme.json` file, add the `--overwrite` option:
+* The script is now ready to run. Please note that by default the script does not overwrite the `theme.json`. Instead, it will write to a file called `theme.generated.json` for safety. Using the `---overwrite` flag will override that and overwrite the `theme.json` instead. The following is how the script would be run:
 
 ```bash
-# Generate tokens and overwrite existing theme.json in one step:
-node ingest-tokens.js --overwrite --tokenPath='<path to token JSON>' --themePath='<path to theme directory>' --theme='<theme name set in token JSON>'
-```
+node ingest-tokens.js --tokenPath='<path to token JSON file or directory>' --themePath='<path to theme directory>' --theme='<theme name set in token JSON>'
 
-### Command-line options
+# Example:
+# node ingest-tokens.js --tokenPath=~/tokens/valet-core.json --themePath=~/vip-go-skeleton/themes/valet/ --theme=twentytwentyone
+```
+* With that, the `theme.json` now has the tokens from your design system export and is ready for usage in your WordPress site.
+
+THe following is a good summary of available command-line options within the script:
 
 ```bash
   -v, --version                output the version number
@@ -41,6 +48,6 @@ node ingest-tokens.js --overwrite --tokenPath='<path to token JSON>' --themePath
   --overwrite                  overwrite existing theme.json (default: false)
 ```
 
-## Documentation
+## Using the New `theme.json` in the Editor
 
-The documentation is currently a WIP. Please refer to the `docs` folder for future documentation.
+This section is a WIP. This section will be devoted to understanding how the data that was inserted into the `theme.json` can be used in the editor.
