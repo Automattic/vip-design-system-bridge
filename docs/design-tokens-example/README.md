@@ -77,10 +77,10 @@ WIP: Use `wp-env` to quickly spin up the theme, and see the resulting design cha
 [example-tokens-raw]: https://gist.githubusercontent.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454/raw/223b6559f1bd4574bb76115d67996ea1612fe1db/tokens.json
 [example-tokens]: https://gist.github.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454
 [figma-tokens-plugin]: https://www.figma.com/community/plugin/843461159747178978
-[gif-duplicate-to-drafts]: /docs/design-tokens-example/assets/duplicate-to-drafts.gif
-[gif-figma-token-sets]: /docs/design-tokens-example/assets/figma-token-sets.gif
-[image-figma-tokens-empty]: /docs/design-tokens-example/assets/figma-tokens-empty.png
-[image-figma-tokens-settings-url]: /docs/design-tokens-example/assets/figma-tokens-settings-url.png
-[image-open-duplicate]: /docs/design-tokens-example/assets/duplicated-document-open.png
-[image-open-figma-tokens]: /docs/design-tokens-example/assets/open-figma-tokens.png
-[image-figma-url-credentials]: /docs/design-tokens-example/assets/figma-url-credentials.png
+[gif-duplicate-to-drafts]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/duplicate-to-drafts.gif
+[gif-figma-token-sets]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-token-sets.gif
+[image-figma-tokens-empty]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-tokens-empty.png
+[image-figma-tokens-settings-url]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-tokens-settings-url.png
+[image-open-duplicate]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/duplicated-document-open.png
+[image-open-figma-tokens]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/open-figma-tokens.png
+[image-figma-url-credentials]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-url-credentials.png
