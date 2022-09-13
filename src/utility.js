@@ -76,46 +76,55 @@ function throwError( message ) {
 	process.exit( 1 );
 }
 
-function getThemeSets( tokenJson, themeName ) {
-	const themes = tokenJson?.$themes;
-
-	if ( ! themes ) {
-		throwError( `Required key $themes not found in token JSON, cannot use theme ${ themeName }` );
-	}
-
-	const selectedThemes = themes.filter( theme => theme.name === themeName );
-
-	if ( selectedThemes.length === 0 ) {
-		const allThemes = themes.map( theme => theme.name );
-
-		throwError( `Theme '${ themeName }' not found in tokens, theme must be one of ${ allThemes.join( ', ' ) }` );
-	}
-
-	const allTokenSets = selectedThemes[ 0 ].selectedTokenSets;
-
-	// Get names of token sets with type 'source'
-	const sourceSets = Object.entries( allTokenSets ).filter(
-		( [ tokenSetName, tokenSetType ] ) => tokenSetType === 'source'
+function getSetNamesUsingType( tokenSet, typeToFilterOn ) {
+	return Object.entries( tokenSet ).filter(
+		( [ tokenSetName, tokenSetType ] ) => tokenSetType === typeToFilterOn
 	).map(
 		( [ tokenSetName, tokenSetType ] ) => tokenSetName
 	);
+}
 
-	// Get names of token sets with type 'enabled'
-	const enabledSets = Object.entries( allTokenSets ).filter(
-		( [ tokenSetName, tokenSetType ] ) => tokenSetType === 'enabled'
-	).map(
-		( [ tokenSetName, tokenSetType ] ) => tokenSetName
-	);
+function getThemeSets( tokenJson, tokenSourceSet, tokenLayerSets, themeName ) {
+	let sourceSets;
+	let enabledSets;
 
-	const selectedSets = [
-		// Order any token sets marked 'source' first for use with token-transformer
-		...sourceSets,
-		...enabledSets,
-	];
+	if ( themeName ) {
+		const themes = tokenJson?.$themes;
 
+		if ( ! themes ) {
+			throwError( `Required key $themes not found in token JSON, cannot use theme ${ themeName }` );
+		}
+	
+		const selectedThemes = themes.filter( theme => theme.name === themeName );
+	
+		if ( selectedThemes.length === 0 ) {
+			const allThemes = themes.map( theme => theme.name );
+	
+			throwError( `Theme '${ themeName }' not found in tokens, theme must be one of ${ allThemes.join( ', ' ) }` );
+		}
+	
+		const allTokenSets = selectedThemes[ 0 ].selectedTokenSets;
+	
+		// Get names of token sets with type 'source'
+		sourceSets = getSetNamesUsingType( allTokenSets, 'source' );
+	
+		// Get names of token sets with type 'enabled'
+		enabledSets = getSetNamesUsingType( allTokenSets, 'source' );
+	} else if ( tokenSourceSet ) {
+		sourceSets = tokenSourceSet.split(',');
+		enabledSets = tokenLayerSets ? tokenLayerSets.split(',') : [];
+	} else {
+		sourceSets = Object.entries( tokenJson ).filter(
+			( [ setName, setValue ] ) => setName !== '$themes' && setName !== '$metadata'
+		).map(
+			( [ setName, setValue ] ) => setName
+		);
+		enabledSets = [];
+	}
+	
 	return {
 		sourceSets,
-		selectedSets,
+		enabledSets,
 	};
 }
 
