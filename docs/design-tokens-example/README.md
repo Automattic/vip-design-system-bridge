@@ -43,7 +43,7 @@ We've created a set of design tokens that are ready to be imported into the desi
 
     ![Figma URL Token Storage settings section][image-figma-tokens-settings-url]
 
-4. Click the "Add new credentials" button. In the "Name" field, enter any name (e.g. `example-tokens`). In the URL box, enter this URL:
+4. Click the "Add new credentials" button. In the "Name" field, enter any name (e.g. `Example Tokens`). In the URL box, enter this URL:
 
     ```
     https://gist.githubusercontent.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454/raw/223b6559f1bd4574bb76115d67996ea1612fe1db/tokens.json
@@ -53,7 +53,7 @@ We've created a set of design tokens that are ready to be imported into the desi
 
     ![Figma URL Token Storage settings filled][image-figma-url-credentials]
 
-    Click "Save".
+    Click the "Save" button.
 
 5. In the top bar, click the "Tokens" tab to return to all tokens. Using the checkboxes on the right, select the "global", "material-3-color", and "material-3-text" token sets. You should be able to see type and color design tokens within Figma Tokens:
 
