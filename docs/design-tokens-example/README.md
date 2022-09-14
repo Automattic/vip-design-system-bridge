@@ -2,16 +2,24 @@
 
 This tutorial will use an [example design system in Figma][example-figma-document] and document the steps to:
 
-1. Setup the [Figma Tokens plugin][figma-tokens-plugin] to manage design tokens.
+1. Setup tools.
 2. Get a copy of the [example design system document][example-figma-document].
 3. Connect Figma Tokens to an [example set of design tokens][example-tokens].
 4. Change a design token to a new value and export using Figma Tokens.
 5. Run the `ingest-tokens` script to generate WordPress `theme.json` custom styles.
 6. View the result of `theme.json` changes.
 
-### 1. Install Figma Tokens
+### 1. Setup tools
 
-While logged in to Figma, go to open the [Figma Tokens plugin page][figma-tokens-plugin] and click "Try it out" on the top right corner. Once installed, the plugin will be available to use for the next steps.
+1. While logged in to Figma, go to open the [Figma Tokens plugin page][figma-tokens-plugin] and click "Try it out" on the top right corner. Once installed, the plugin will be available to use for the next steps.
+
+2. Download or clone a copy of the [`wp-theme-token-transformer` repository][repository-link].
+
+3. Install the [`wp-env` tool][wp-env-documentation]:
+
+    ```bash
+    $ npm -g install @wordpress/env
+    ```
 
 ### 2. Get a copy of the design system
 
@@ -92,6 +100,19 @@ Note: When using [versioned token storage system like "GitHub"][figma-tokens-doc
 
 ### 5. Generate a new `theme.json` from tokens using `wp-theme-token-transformer`
 
+1. Ensure [`wp-env` is installed][wp-env-documentation] and a copy of the [`wp-theme-token-transformer` repository][repository-link] is downloaded locally.
+2. Navigate to the `wp-theme-token-transformer` repository in a terminal and install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. Next,
+
+```
+wp-env start && wp-env run cli "wp theme activate token-theme"
+```
+
 WIP: Give instructions to use `wp-theme-token-transformer` and necessary command-line options to generate a theme.json. A nearly-empty example theme should be provided for testing.
 
 ### 6. View the result of the `theme.json` changes
@@ -100,8 +121,13 @@ WIP: Use `wp-env` to quickly spin up the theme, and see the resulting design cha
 
 ## Updates to make to this document
 
-1. When PR is ready, update image links in this PR to point at the base branch.
-1. Once repository is public, in "Connect Figma Tokens to design tokens", change gist URL to use raw URL from tokens in repository.
+- When PR is ready, update image links in this PR to point at the base branch.
+- Once `--theme` is no longer a required option, add `node ingest-token` command-line parameters.
+- Once repository is public:
+    - In "Connect Figma Tokens to design tokens", change gist URL to use raw URL from tokens in repository.
+    - Update name references to `wp-theme-token-transformer` if name changes.
+
+---
 
 [example-figma-document]: https://www.figma.com/file/5NZf8UfaZCPhcZRTjpRfmX/Material-3-Design-Kit---Figma-Tokens-Example?node-id=49823%3A12142
 [example-tokens-raw]: https://gist.githubusercontent.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454/raw/5cbe4d2796341b6c29acdf7a135f571fc6674cda/tokens.json
@@ -118,3 +144,5 @@ WIP: Use `wp-env` to quickly spin up the theme, and see the resulting design cha
 [image-figma-url-credentials]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-url-credentials.png
 [image-open-duplicate]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/duplicated-document-open.png
 [image-open-figma-tokens]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/open-figma-tokens.png
+[repository-link]: https://github.com/Automattic/wp-theme-token-transformer
+[wp-env-documentation]: https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/
