@@ -89,6 +89,8 @@ function getThemeSets( tokenJson, tokenSourceSet, tokenLayerSets, themeName ) {
 	let enabledSets;
 
 	if ( themeName ) {
+		console.log( 'Using themes for getting the tokens');
+
 		const themes = tokenJson?.$themes;
 
 		if ( ! themes ) {
@@ -109,11 +111,15 @@ function getThemeSets( tokenJson, tokenSourceSet, tokenLayerSets, themeName ) {
 		sourceSets = getSetNamesUsingType( allTokenSets, 'source' );
 	
 		// Get names of token sets with type 'enabled'
-		enabledSets = getSetNamesUsingType( allTokenSets, 'source' );
-	} else if ( tokenSourceSet ) {
+		enabledSets = getSetNamesUsingType( allTokenSets, 'enabled' );
+	} else if ( tokenSourceSet && tokenLayerSets ) {
+		console.log( 'Using the source and layer sets for getting the tokens');
+		
 		sourceSets = tokenSourceSet.split(',');
-		enabledSets = tokenLayerSets ? tokenLayerSets.split(',') : [];
+		enabledSets = tokenLayerSets.split(',');
 	} else {
+		console.log( 'Getting all the tokens');
+
 		sourceSets = Object.entries( tokenJson ).filter(
 			( [ setName, setValue ] ) => setName !== '$themes' && setName !== '$metadata'
 		).map(
