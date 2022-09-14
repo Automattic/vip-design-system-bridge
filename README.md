@@ -16,11 +16,11 @@ There are few more assumptions assumed for the script:
 
 * For PRO Plugin users: Knowing what exact theme name set you want to pick out from the token JSON export from Figma. An example would be if your main set was `valet` then valet is your theme name set that you want to use.
 
-![Screenshot of a non-pro plugin user in Figma][png-pro-plugin-usage]
+![Screenshot of a pro plugin user in Figma][png-pro-plugin-usage]
 
 * For NON-PRO Plugin users: Knowing what exactly is the source set, and what is the layer sets that take advantage of the source set from the token JSON export from Figma. It's possible to skip this entirely, and just use all the sets from the export.
 
-![Screenshot of a pro plugin user in Figma][png-pro-plugin-usage]
+![Screenshot of a non-pro plugin user in Figma][png-non-pro-plugin-usage]
 
 * An existing [`theme.json`](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/) file, in where the tokens from your export would be inserted. Note that by default, the script does not overwrite the `theme.json`. Instead, it writes to a new file called `theme.generated.json`. This can be overriden using the `--overwrite` flag.
 * Based on the theme that is selected from the Figma export, the tokens are inserted directly under `settings->custom`. If a section prefix is desired, use the `--themeJsonSection` option.
