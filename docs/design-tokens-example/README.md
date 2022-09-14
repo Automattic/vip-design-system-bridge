@@ -70,7 +70,25 @@ Note: A URL token storage was used for simplicity in this tutorial. In a real de
 
 ### 4. Update a design token and export
 
-WIP: Change a background color token to a new color, see it update in Figma, and then save the new set of tokens locally.
+In this step, change the default background color to a new red tone, and export the changed tokens.
+
+1. In Figma Tokens, select the "material-3-color" color set. Next, under "Light Theme" in the Figma document, select "Background" and see that the matching design token is selected in Figma Tokens:
+
+    ![Select background color in Figma][gif-select-background-token]
+
+2. In Figma Tokens, right click on the background color token and select "Edit Token". Change the color value to `{color.error.70}` or another tonal palette color and click "Update".
+
+    ![Change background color design token in Figma][gif-change-background-token]
+
+    As seen above, the Light Theme -> Background color should change to match the new color token.
+
+3. In the lower left of the Figma Tokens plugin, click the "Export" button. Check "All token sets", then go to the bottom of the dialog and click the "Export" button.
+
+    ![Figma Tokens export options][image-figma-tokens-export]
+
+    This should download a file named `tokens.json`.
+
+Note: When using [versioned token storage system like "GitHub"][figma-tokens-docs-github], token changes can be directly pushed to a repository branch instead of downloading locally.
 
 ### 5. Generate a new `theme.json` from tokens using `wp-theme-token-transformer`
 
@@ -80,15 +98,23 @@ WIP: Give instructions to use `wp-theme-token-transformer` and necessary command
 
 WIP: Use `wp-env` to quickly spin up the theme, and see the resulting design change.
 
+## Updates to make to this document
+
+1. When PR is ready, update image links in this PR to point at the base branch.
+1. Once repository is public, in "Connect Figma Tokens to design tokens", change gist URL to use raw URL from tokens in repository.
+
 [example-figma-document]: https://www.figma.com/file/5NZf8UfaZCPhcZRTjpRfmX/Material-3-Design-Kit---Figma-Tokens-Example?node-id=49823%3A12142
 [example-tokens-raw]: https://gist.githubusercontent.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454/raw/5cbe4d2796341b6c29acdf7a135f571fc6674cda/tokens.json
 [example-tokens]: https://gist.github.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454
 [figma-tokens-docs-github]: https://docs.figmatokens.com/sync/github
 [figma-tokens-plugin]: https://www.figma.com/community/plugin/843461159747178978
+[gif-change-background-token]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/change-background-token.gif
 [gif-duplicate-to-drafts]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/duplicate-to-drafts.gif
 [gif-figma-token-sets]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-token-sets.gif
+[gif-select-background-token]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/select-background-token.gif
 [image-figma-tokens-empty]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-tokens-empty.png
+[image-figma-tokens-export]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-tokens-export.png
 [image-figma-tokens-settings-url]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-tokens-settings-url.png
+[image-figma-url-credentials]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-url-credentials.png
 [image-open-duplicate]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/duplicated-document-open.png
 [image-open-figma-tokens]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/open-figma-tokens.png
-[image-figma-url-credentials]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-url-credentials.png
