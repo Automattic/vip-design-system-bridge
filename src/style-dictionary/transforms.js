@@ -40,28 +40,23 @@ module.exports = {
 	},
 
 	/*
-	 * Add 'px' suffix to exported tokens that assume a 'px' unit
+	 * Add 'px' suffix to all number values by default, skipping properties
+	 * that are allowed to be bare numbers.
 	 */
 	'wpvip/size/px': {
 		name: 'wpvip/size/px',
 		type: 'value',
 		matcher: token => {
-			const isSizing = token.type === 'sizing';
-			const isTokenBorderRadius = token.type === 'borderRadius';
-			const isTokenSpace = token.type === 'spacing';
-			const isTokenParagraphSpacing = token.type === 'paragraphSpacing';
-			const isFontSize = token.type === 'fontSize' || token.type === 'fontSizes';
+			const isFontWeight = ( token.type === 'fontWeight' || token.type === 'fontWeights' );
+			const isLetterSpacing = token.type === 'letterSpacing';
 
 			// To avoid adding suffixes to dynamic values like `clamp(...)`,
 			// only add suffix to plain number values.
 			const isNumber = isPlainNumber( token.value );
 
-			return isNumber && (
-				isSizing ||
-				isTokenBorderRadius ||
-				isTokenSpace ||
-				isTokenParagraphSpacing ||
-				isFontSize
+			return isNumber && !(
+				isFontWeight ||
+				isLetterSpacing
 			);
 		},
 		transformer: token => token.original.value.toString() + 'px',
