@@ -5,10 +5,10 @@ const fs = require( 'fs' ).promises;
 const path = require( 'path' );
 const cp = require( 'child_process' );
 const chalk = require( 'chalk' );
-const styleDictionary = require( './style-dictionary/main' );
-const utility = require( './utility' );
+const styleDictionary = require( './src/style-dictionary/main' );
+const utility = require( './src/utility' );
 
-const transformerFilePath = 'build/transformed-tokens.json';
+const transformerFilePath = 'src/build/transformed-tokens.json';
 const generatedThemeFileName = 'theme.generated.json';
 const themeFileName = 'theme.json';
 
@@ -17,8 +17,10 @@ commander
 	.description( 'Inject the tokens from the provided Figma export into theme.json' )
 	.usage( '[OPTIONS]...' )
 	.requiredOption( '--tokenPath <path>', 'path to token JSON file or directory' )
-	.requiredOption( '--theme <theme-name>', 'selected $themes set in token JSON' )
 	.requiredOption( '--themePath <path>', 'path to a WordPress theme' )
+	.option( '--sourceSet <theme-name>', 'NON-PRO PLUGIN OPTION: source set in the token JSON' )
+	.option( '--layerSets <theme-name>', 'NON-PRO PLUGIN OPTION: layers built using the source set in token JSON' )
+	.option( '--theme <theme-name>', 'PRO PLUGIN OPTION: selected $themes set in token JSON' )
 	.option( '--themeJsonSection <prefix>', 'section to insert tokens into theme.json->settings->custom', '' )
 	.option( '--overwrite', 'overwrite existing theme.json', false )
 	.parse( process.argv );
@@ -30,7 +32,7 @@ async function ingestTokens( options ) {
 	utility.throwErrorForFileNotExisting( tokenPath, 'No core tokens found for path:' );
 
 	const tokenJson = await utility.getTokensFromPath( tokenPath );
-	const { selectedSets, sourceSets } = utility.getThemeSets( tokenJson, options.theme );
+	const { enabledSets, sourceSets } = utility.getThemeSets( tokenJson, options.sourceSet, options.layerSets, options.theme );
 
 	const themeDirectory = utility.resolvePath( options.themePath );
 	const themeJsonPath = path.join( themeDirectory, themeFileName );
@@ -40,7 +42,20 @@ async function ingestTokens( options ) {
 	const themeJsonBuffer = await fs.readFile( themeJsonPath );
 	const themeJson = JSON.parse( themeJsonBuffer.toString() );
 
-	const tokenTransformerArgs = [ 'token-transformer', `${ tokenPath }`, `${ transformerFilePath }`, '--throwErrorWhenNotResolved', '--expandTypography=true', selectedSets, sourceSets ];
+	const tokenTransformerArgs = [ 'token-transformer', `${ tokenPath }`, `${ transformerFilePath }`, '--throwErrorWhenNotResolved', '--expandTypography=true' ];
+
+	// Just the source sets are present
+	if ( enabledSets && enabledSets.length === 0 ) {
+		tokenTransformerArgs.push( sourceSets );
+	} else {
+		const selectedSets = [
+			// Order the source token sets first for use with token-transformer
+			...sourceSets,
+			...enabledSets,
+		];
+
+		tokenTransformerArgs.push( selectedSets, sourceSets );
+	}
 
 	const transformResult = cp.spawnSync( 'npx', tokenTransformerArgs );
 
