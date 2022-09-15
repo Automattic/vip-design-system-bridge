@@ -48,15 +48,13 @@ module.exports = {
 		type: 'value',
 		matcher: token => {
 			const isFontWeight = ( token.type === 'fontWeight' || token.type === 'fontWeights' );
-			const isLetterSpacing = token.type === 'letterSpacing';
 
 			// To avoid adding suffixes to dynamic values like `clamp(...)`,
 			// only add suffix to plain number values.
 			const isNumber = isPlainNumber( token.value );
 
 			return isNumber && !(
-				isFontWeight ||
-				isLetterSpacing
+				isFontWeight
 			);
 		},
 		transformer: token => token.original.value.toString() + 'px',
