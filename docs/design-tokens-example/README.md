@@ -3,11 +3,10 @@
 This tutorial will use an [example design system in Figma][example-figma-document] and document the steps to:
 
 1. Setup tools.
-2. Get a copy of the [example design system document][example-figma-document].
+2. Get a copy of the [example design system in Figma][example-figma-document].
 3. Connect Figma Tokens to an [example set of design tokens][example-tokens].
 4. Change a design token to a new value and export using Figma Tokens.
-5. Run the `ingest-tokens` script to generate WordPress `theme.json` custom styles.
-6. View the result of `theme.json` changes.
+5. Use the `ingest-tokens` script to generate update a WordPress theme and view the results.
 
 ### 1. Setup tools
 
@@ -76,7 +75,7 @@ We've created a set of design tokens that are ready to be imported into the desi
 
 Note: A URL token storage was used for simplicity in this tutorial. In a real design system document, steps 3-6 can be skipped and a [versioned token storage system like "GitHub"][figma-tokens-docs-github] or "GitLab" should be used instead.
 
-### 4. Update a design token and export
+### 4. Change a design token and export
 
 In this step, change the default background color to a new red tone, and export the changed tokens.
 
@@ -98,26 +97,54 @@ In this step, change the default background color to a new red tone, and export 
 
 Note: When using [versioned token storage system like "GitHub"][figma-tokens-docs-github], token changes can be directly pushed to a repository branch instead of downloading locally.
 
-### 5. Generate a new `theme.json` from tokens using `wp-theme-token-transformer`
+### 5. Update a WordPress theme with new tokens and see the result
 
 1. Ensure [`wp-env` is installed][wp-env-documentation] and a copy of the [`wp-theme-token-transformer` repository][repository-link] is downloaded locally.
-2. Navigate to the `wp-theme-token-transformer` repository in a terminal and install dependencies:
+2. In the `wp-theme-token-transformer` repository folder, run these commands to spin up a local WordPress website:
+
+    ```bask
+    cd docs/design-tokens-example
+    wp-env start && wp-env run cli "wp theme activate token-theme"
+    ```
+
+    These commands should show a result like this:
+
+    ```bash
+    #
+    ```
+
+3. Visit http://localhost:8888. You should see a basic WordPress theme using the Material UI theme:
+
+    ![][image-wordpress-theme-default]
+
+4. In the following steps we'll update the theme to use the tokens that were exported from Figma. Navigate to the `wp-theme-token-transformer` repository in a terminal and install dependencies for the token processing script:
 
     ```bash
     npm install
     ```
 
-3. Next,
+5. Next, run the following command. Update `--tokenPath` to match the locally downloaded path of `tokens.json` and `--themePath` to match the example theme in this repository:
 
-```
-wp-env start && wp-env run cli "wp theme activate token-theme"
-```
+    ```bash
+    node ingest-tokens.js --tokenPath=~/Downloads/tokens.json --themePath=~/wp-theme-token-transformer/docs/design-tokens-example/token-theme --sourceSet=global --layerSets=material-3-color,material-3-text --overwrite
+    ```
 
-WIP: Give instructions to use `wp-theme-token-transformer` and necessary command-line options to generate a theme.json. A nearly-empty example theme should be provided for testing.
+    When the command above is run, it should produce output like this:
 
-### 6. View the result of the `theme.json` changes
+    ```bash
+    Using source and layer sets for tokens (source: global, layers: material-3-color, material-3-text)
+    ✔︎ Processed with token-transformer
 
-WIP: Use `wp-env` to quickly spin up the theme, and see the resulting design change.
+    wordpress-theme-json
+    ✔︎ src/build/tokens.json
+
+    ✔︎ Processed with Style Dictionary
+    ✔︎ Wrote theme file: ~/wp-theme-token-transformer/docs/design-tokens-example/token-theme/theme.json
+    ```
+
+6. For the final step, visit http://localhost:8888 again and refresh the page. You should be able to see that the background token was successfully updated and inserted into the theme:
+
+    ![][image-wordpress-theme-modified]
 
 ## Updates to make to this document
 
