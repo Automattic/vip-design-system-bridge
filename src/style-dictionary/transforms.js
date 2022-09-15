@@ -48,15 +48,13 @@ module.exports = {
 		type: 'value',
 		matcher: token => {
 			const isFontWeight = ( token.type === 'fontWeight' || token.type === 'fontWeights' );
-			const isLetterSpacing = token.type === 'letterSpacing';
 
 			// To avoid adding suffixes to dynamic values like `clamp(...)`,
 			// only add suffix to plain number values.
 			const isNumber = isPlainNumber( token.value );
 
 			return isNumber && !(
-				isFontWeight ||
-				isLetterSpacing
+				isFontWeight
 			);
 		},
 		transformer: token => token.original.value.toString() + 'px',
@@ -113,6 +111,16 @@ module.exports = {
 		type: 'value',
 		matcher: () => true,
 		transformer: function( token ) {
+			const isLetterSpacing = token.type === 'letterSpacing';
+
+			if(isLetterSpacing) {
+				const isNumber = isPlainNumber( token.value );
+
+				if(isNumber) {
+					console.log('Got number letterSpacing: ', token);
+					console.log('Transformed:', token.original.value.toString() + 'px');
+				}
+			}
 			// Add logging for incoming tokens here if desired
 			return token.value;
 		},
