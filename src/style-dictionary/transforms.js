@@ -111,16 +111,6 @@ module.exports = {
 		type: 'value',
 		matcher: () => true,
 		transformer: function( token ) {
-			const isLetterSpacing = token.type === 'letterSpacing';
-
-			if(isLetterSpacing) {
-				const isNumber = isPlainNumber( token.value );
-
-				if(isNumber) {
-					console.log('Got number letterSpacing: ', token);
-					console.log('Transformed:', token.original.value.toString() + 'px');
-				}
-			}
 			// Add logging for incoming tokens here if desired
 			return token.value;
 		},
