@@ -1,15 +1,20 @@
 ## Token Walkthrough
 
-This tutorial will use an [example design system in Figma][example-figma-document] and document the steps to:
+This tutorial will use an example design system in Figma and walk through the steps to:
 
-1. Setup tools.
-2. Get a copy of the [example design system in Figma][example-figma-document].
-3. Connect Figma Tokens to an [example set of design tokens][example-tokens].
-4. Change a design token to a new value and export using Figma Tokens.
-5. Run a local copy of WordPress [with `wp-env`][wp-env-documentation].
-6. Use the `ingest-tokens` script to update a WordPress theme and view the results.
+1. Make a copy of the [example design system][example-figma-document].
+2. Use the [Figma Tokens plugin][figma-tokens-plugin] to link design tokens.
+3. Change a background color token to a new value and export new tokens.
+4. Run a local copy of WordPress [with `wp-env`][wp-env-documentation] to view an example WordPress theme.
+5. Use the script [in this repository][repository-link] to update the running WordPress theme with new design tokens.
 
-### 1. Setup tools
+These resources are included:
+
+- A simplified [design document system in Figma][example-figma-document] based on the [Material 3 Design Kit][figma-material-3-design-kit] template.
+- [Premade design tokens][example-tokens] used by Figma Tokens
+- A [WordPress theme][repository-example-theme] designed to use the colors and fonts provided by the design system
+
+### Setup tools
 
 1. While logged in to Figma, go to open the [Figma Tokens plugin page][figma-tokens-plugin] and click "Try it out" on the top right corner. Once installed, the plugin will be available to use for the next steps.
 
@@ -161,6 +166,7 @@ Note: When using [versioned token storage system like "GitHub"][figma-tokens-doc
 [example-figma-document]: https://www.figma.com/file/5NZf8UfaZCPhcZRTjpRfmX/Material-3-Design-Kit---Figma-Tokens-Example?node-id=49823%3A12142
 [example-tokens-raw]: https://gist.githubusercontent.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454/raw/5cbe4d2796341b6c29acdf7a135f571fc6674cda/tokens.json
 [example-tokens]: https://gist.github.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454
+[figma-material-3-design-kit]: https://www.figma.com/community/file/1035203688168086460
 [figma-tokens-docs-github]: https://docs.figmatokens.com/sync/github
 [figma-tokens-plugin]: https://www.figma.com/community/plugin/843461159747178978
 [gif-change-background-token]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/change-background-token.gif
@@ -176,5 +182,6 @@ Note: When using [versioned token storage system like "GitHub"][figma-tokens-doc
 [image-open-figma-tokens]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/open-figma-tokens.png
 [image-wordpress-theme-default]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/wordpress-theme-default.png
 [image-wordpress-theme-modified]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/wordpress-theme-modified.png
+[repository-example-theme]: https://github.com/Automattic/wp-theme-token-transformer/tree/trunk/docs/design-tokens-example/token-theme
 [repository-link]: https://github.com/Automattic/wp-theme-token-transformer
 [wp-env-documentation]: https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/
