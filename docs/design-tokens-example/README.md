@@ -6,15 +6,16 @@ This tutorial will use an [example design system in Figma][example-figma-documen
 2. Get a copy of the [example design system in Figma][example-figma-document].
 3. Connect Figma Tokens to an [example set of design tokens][example-tokens].
 4. Change a design token to a new value and export using Figma Tokens.
-5. Use the `ingest-tokens` script to generate update a WordPress theme and view the results.
+5. Run a local copy of WordPress [with `wp-env`][wp-env-documentation].
+6. Use the `ingest-tokens` script to update a WordPress theme and view the results.
 
 ### 1. Setup tools
 
 1. While logged in to Figma, go to open the [Figma Tokens plugin page][figma-tokens-plugin] and click "Try it out" on the top right corner. Once installed, the plugin will be available to use for the next steps.
 
-2. Download or clone a copy of the [`wp-theme-token-transformer` repository][repository-link].
+2. Download or clone a copy of the [`wp-theme-token-transformer` repository][repository-link] on your computer.
 
-3. Install the [`wp-env` tool][wp-env-documentation]:
+3. Install the [`wp-env` terminal tool][wp-env-documentation]:
 
     ```bash
     $ npm -g install @wordpress/env
@@ -97,7 +98,7 @@ In this step, change the default background color to a new red tone, and export 
 
 Note: When using [versioned token storage system like "GitHub"][figma-tokens-docs-github], token changes can be directly pushed to a repository branch instead of downloading locally.
 
-### 5. Update a WordPress theme with new tokens and see the result
+### 5. Run a local copy of WordPress
 
 1. Ensure [`wp-env` is installed][wp-env-documentation] and a copy of the [`wp-theme-token-transformer` repository][repository-link] is downloaded locally.
 2. In the `wp-theme-token-transformer` repository folder, run these commands to spin up a local WordPress website:
@@ -107,26 +108,26 @@ Note: When using [versioned token storage system like "GitHub"][figma-tokens-doc
     wp-env start && wp-env run cli "wp theme activate token-theme"
     ```
 
-    These commands should show a result like this:
+    You should see a result like this:
 
-    ```bash
-    #
-    ```
+    ![Starting wp-env in terminal][gif-start-theme-terminal]
 
 3. Visit http://localhost:8888. You should see a basic WordPress theme using the Material UI theme:
 
-    ![][image-wordpress-theme-default]
+    ![WordPress with default Material UI 3 theme][image-wordpress-theme-default]
 
-4. In the following steps we'll update the theme to use the tokens that were exported from Figma. Navigate to the `wp-theme-token-transformer` repository in a terminal and install dependencies for the token processing script:
+### Use exported tokens to update a WordPress theme
+
+1. In the following steps we'll update the theme to use the tokens that were exported from Figma. Navigate to the `wp-theme-token-transformer` repository in a terminal and install dependencies for the token processing script:
 
     ```bash
     npm install
     ```
 
-5. Next, run the following command. Update `--tokenPath` to match the locally downloaded path of `tokens.json` and `--themePath` to match the example theme in this repository:
+2. Next, run the following command. Update `--tokenPath` to match the locally downloaded path of `tokens.json` and ensure `--themePath` uses the example theme in this repository:
 
     ```bash
-    node ingest-tokens.js --tokenPath=~/Downloads/tokens.json --themePath=~/wp-theme-token-transformer/docs/design-tokens-example/token-theme --sourceSet=global --layerSets=material-3-color,material-3-text --overwrite
+    node ingest-tokens.js --tokenPath=~/Downloads/tokens.json --themePath=./docs/design-tokens-example/token-theme --sourceSet=global --layerSets=material-3-color,material-3-text --overwrite
     ```
 
     When the command above is run, it should produce output like this:
@@ -142,9 +143,9 @@ Note: When using [versioned token storage system like "GitHub"][figma-tokens-doc
     ✔︎ Wrote theme file: ~/wp-theme-token-transformer/docs/design-tokens-example/token-theme/theme.json
     ```
 
-6. For the final step, visit http://localhost:8888 again and refresh the page. You should be able to see that the background token was successfully updated and inserted into the theme:
+3. For the final step, visit http://localhost:8888 again and refresh the page. You should be able to see that the background token was successfully updated and inserted into the theme:
 
-    ![][image-wordpress-theme-modified]
+    ![WordPress with red background from tokens][image-wordpress-theme-modified]
 
 ## Updates to make to this document
 
@@ -153,6 +154,7 @@ Note: When using [versioned token storage system like "GitHub"][figma-tokens-doc
 - Once repository is public:
     - In "Connect Figma Tokens to design tokens", change gist URL to use raw URL from tokens in repository.
     - Update name references to `wp-theme-token-transformer` if name changes.
+- Once Figma releases v120 which [fixes this issue](https://github.com/six7/figma-tokens/issues/1164), simplify `ingest-tokens.js` command to use a theme?
 
 ---
 
@@ -165,11 +167,14 @@ Note: When using [versioned token storage system like "GitHub"][figma-tokens-doc
 [gif-duplicate-to-drafts]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/duplicate-to-drafts.gif
 [gif-figma-token-sets]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-token-sets.gif
 [gif-select-background-token]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/select-background-token.gif
+[gif-start-theme-terminal]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/start-theme-terminal.gif
 [image-figma-tokens-empty]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-tokens-empty.png
 [image-figma-tokens-export]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-tokens-export.png
 [image-figma-tokens-settings-url]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-tokens-settings-url.png
 [image-figma-url-credentials]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-url-credentials.png
 [image-open-duplicate]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/duplicated-document-open.png
 [image-open-figma-tokens]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/open-figma-tokens.png
+[image-wordpress-theme-default]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/wordpress-theme-default.png
+[image-wordpress-theme-modified]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/wordpress-theme-modified.png
 [repository-link]: https://github.com/Automattic/wp-theme-token-transformer
 [wp-env-documentation]: https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/
