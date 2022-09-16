@@ -1,4 +1,4 @@
-## Token Walkthrough
+# Token Walkthrough
 
 This tutorial will use an example design system in Figma and walk through the steps to:
 
@@ -14,23 +14,25 @@ These resources are included:
 - [Premade design tokens][example-tokens] used by Figma Tokens
 - A [WordPress theme][repository-example-theme] designed to use the colors and fonts provided by the design system
 
-### Setup tools
+## Setup tools
 
-1. While logged in to Figma, go to open the [Figma Tokens plugin page][figma-tokens-plugin] and click "Try it out" on the top right corner. Once installed, the plugin will be available to use for the next steps.
+1. While logged in to Figma, go to open the [Figma Tokens plugin page][figma-tokens-plugin]. In the top right corner, click the "Try it out" button. Once installed, the plugin will be available to use for the next steps.
 
 2. Download or clone a copy of the [`wp-theme-token-transformer` repository][repository-link] on your computer.
 
-3. Install the [`wp-env` terminal tool][wp-env-documentation]:
+3. To run the example WordPress theme and view token changes, install the [`wp-env` terminal tool][wp-env-documentation]:
 
     ```bash
     $ npm -g install @wordpress/env
     ```
 
-### 2. Get a copy of the design system
+    Note you may also need to install [npm][install-npm] and [Docker][install-docker] as prerequisites.
 
-1. Open the [example design system document][example-figma-document]. You'll need to make a local copy of this document to use Figma Tokens.
+## 1. Get a copy of the design system
 
-2. Click the down arrow on the right side of the document title and select "Duplicate to your drafts":
+1. Open the [example Figma design system][example-figma-document]. We'll need make a local duplicate of this document to use Figma Tokens.
+
+2. On the right side of the document title, click the down arrow and select "Duplicate to your drafts":
 
     ![Duplicate to your drafts menu option][gif-duplicate-to-drafts]
 
@@ -38,21 +40,23 @@ These resources are included:
 
     ![File duplicated to your Drafts pop-up][image-open-duplicate]
 
-    The example design system file will also be available in your Figma drafts.
+    The duplicated design system document can also be found in your Figma drafts.
 
-### 3. Connect Figma Tokens to design tokens
+## 2. Connect Figma Tokens to design tokens
 
 We've created a set of design tokens that are ready to be imported into the design system document using Figma Tokens.
 
-1. With the example draft Figma document from the previous steps open, click the Main Menu button in the top left and select Plugins -> Figma Tokens.
+1. Open the example Figma document from the previous step. On the top left of the page, click the main menu button and select Plugins -> Figma Tokens.
 
     ![Figma Tokens plugin launch via menu][image-open-figma-tokens]
+
+    If the plugin is not available, install via the [Figma Tokens plugin page][figma-tokens-plugin].
 
 2. After Figma Tokens launches, select the "Get Started" button. You should see an empty set of tokens on the next page:
 
     ![Empty Figma Tokens plugin page][image-figma-tokens-empty]
 
-3. On the top of the plugin box, click the "Settings" button, and then click the "URL" button under "Token Storage":
+3. At the top of the plugin, click the "Settings" tab. Under the "Token Storage" section, click the "URL" button:
 
     ![Figma URL Token Storage settings section][image-figma-tokens-settings-url]
 
@@ -68,42 +72,53 @@ We've created a set of design tokens that are ready to be imported into the desi
 
     Click the "Save" button.
 
-5. Temporary workaround for URL sync values (https://github.com/six7/figma-tokens/issues/1279):
+5. Temporary workaround to allow local edits to tokens from URL (https://github.com/six7/figma-tokens/issues/1279):
 
     1. Under "Token Storage" click the "Local document" button.
-    2. In the confirmation pop-up, click "Yes, set to local."
+    2. In the confirmation pop-up, click "Yes, set to local".
     3. Refresh the page.
-    4. Re-open Figma Tokens.
+    4. Re-open Figma Tokens via the plugin menu.
 
-6. In Figma Tokens, click the "Tokens" tab to return to all tokens. Using the checkboxes on the right, select the "global", "material-3-color", and "material-3-text" token sets. You should be able to see type and color design tokens within Figma Tokens:
+6. In Figma Tokens, click the "Tokens" tab to return to all tokens. Using the checkboxes on the right, select the "global", "material-3-color", and "material-3-text" token sets. You should now be able to view type and color design tokens in the main panel:
 
     ![Select token set checkboxes][gif-figma-token-sets]
 
-Note: A URL token storage was used for simplicity in this tutorial. In a real design system document, steps 3-6 can be skipped and a [versioned token storage system like "GitHub"][figma-tokens-docs-github] or "GitLab" should be used instead.
+> **Note**
+> This tutorial uses URL token storage for easier setup.
+> In a real design system document, a [versioned token storage system like "GitHub"][figma-tokens-docs-github] or "GitLab" should be used instead. These allow tokens to be directly pulled and published to a repository from Figma.
 
-### 4. Change a design token and export
+## 3. Change a design token and export
 
-In this step, change the default background color to a new red tone, and export the changed tokens.
+This section will cover changing the design system token for the background to a new color, and exporting the updated tokens.
 
-1. In Figma Tokens, select the "material-3-color" color set. Next, under "Light Theme" in the Figma document, select "Background" and see that the matching design token is selected in Figma Tokens:
+1. In Figma Tokens, select the "material-3-color" color set. Next, in the Figma document under the "Light Theme" section, click the "Background" block and see that the matching design token is selected in Figma Tokens:
 
     ![Select background color in Figma][gif-select-background-token]
 
-2. In Figma Tokens, right click on the background color token and select "Edit Token". Change the color value to `{color.error.70}` or another tonal palette color and click "Update".
+2. In Figma Tokens, right click on the background color token and select "Edit Token". Change the value to this reference (or another tonal color token):
+
+    ```
+    {color.error.70}
+    ```
+
+    and click "Update":
 
     ![Change background color design token in Figma][gif-change-background-token]
 
-    As seen above, the Light Theme -> Background color should change to match the new color token.
+    As shown above, the light theme background color block should change to match the new color token.
 
 3. In the lower left of the Figma Tokens plugin, click the "Export" button. Check "All token sets", then go to the bottom of the dialog and click the "Export" button.
 
     ![Figma Tokens export options][image-figma-tokens-export]
 
-    This should download a file named `tokens.json`.
+    This will download a file named `tokens.json`.
 
-Note: When using [versioned token storage system like "GitHub"][figma-tokens-docs-github], token changes can be directly pushed to a repository branch instead of downloading locally.
+> **Note**
+> When using [versioned token storage system like "GitHub"][figma-tokens-docs-github], token changes can be directly pushed to a repository branch instead of downloading via the browser.
 
-### 5. Run a local copy of WordPress
+## 4. Run a local copy of WordPress
+
+To see the design tokens applied, we'll start by running WordPress locally:
 
 1. Ensure [`wp-env` is installed][wp-env-documentation] and a copy of the [`wp-theme-token-transformer` repository][repository-link] is downloaded locally.
 2. In the `wp-theme-token-transformer` repository folder, run these commands to spin up a local WordPress website:
@@ -117,19 +132,22 @@ Note: When using [versioned token storage system like "GitHub"][figma-tokens-doc
 
     ![Starting wp-env in terminal][gif-start-theme-terminal]
 
-3. Visit http://localhost:8888. You should see a basic WordPress theme using the Material UI theme:
+3. Visit the WordPress instance http://localhost:8888. You should see a basic WordPress theme using the Material 3 UI theme:
 
     ![WordPress with default Material UI 3 theme][image-wordpress-theme-default]
 
-### Use exported tokens to update a WordPress theme
+## 5. Use tokens to update a WordPress theme
 
-1. In the following steps we'll update the theme to use the tokens that were exported from Figma. Navigate to the `wp-theme-token-transformer` repository in a terminal and install dependencies for the token processing script:
+In the following steps we'll update the theme to use the tokens that were exported from Figma:
+
+1. Navigate to the `wp-theme-token-transformer` repository in a terminal and install dependencies for the token processing script:
 
     ```bash
+    cd wp-theme-token-transformer/
     npm install
     ```
 
-2. Next, run the following command. Update `--tokenPath` to match the locally downloaded path of `tokens.json` and ensure `--themePath` uses the example theme in this repository:
+2. Next, run the following command. Update `--tokenPath` to match the locally downloaded path of `tokens.json`:
 
     ```bash
     node ingest-tokens.js --tokenPath=~/Downloads/tokens.json --themePath=./docs/design-tokens-example/token-theme --sourceSet=global --layerSets=material-3-color,material-3-text --overwrite
@@ -148,22 +166,21 @@ Note: When using [versioned token storage system like "GitHub"][figma-tokens-doc
     ✔︎ Wrote theme file: ~/wp-theme-token-transformer/docs/design-tokens-example/token-theme/theme.json
     ```
 
-3. For the final step, visit http://localhost:8888 again and refresh the page. You should be able to see that the background token was successfully updated and inserted into the theme:
+3. For the final step, visit http://localhost:8888 or refresh the page. You should see that the background color has changed to the new token value and was inserted into the theme:
 
     ![WordPress with red background from tokens][image-wordpress-theme-modified]
 
 ## Updates to make to this document
 
 - When PR is ready, update image links in this PR to point at the base branch.
-- Once `--theme` is no longer a required option, add `node ingest-token` command-line parameters.
 - Once repository is public:
     - In "Connect Figma Tokens to design tokens", change gist URL to use raw URL from tokens in repository.
     - Update name references to `wp-theme-token-transformer` if name changes.
-- Once Figma releases v120 which [fixes this issue](https://github.com/six7/figma-tokens/issues/1164), simplify `ingest-tokens.js` command to use a theme?
+- Once [Figma Tokens v120][https://github.com/six7/figma-tokens/pull/1208] is released which [fixes this issue](https://github.com/six7/figma-tokens/issues/1164), simplify `ingest-tokens.js` command to use a theme?
 
 ---
 
-[example-figma-document]: https://www.figma.com/file/5NZf8UfaZCPhcZRTjpRfmX/Material-3-Design-Kit---Figma-Tokens-Example?node-id=49823%3A12142
+[example-figma-document]: https://www.figma.com/file/5NZf8UfaZCPhcZRTjpRfmX/Material-3-Design-Kit---Figma-Tokens-Example
 [example-tokens-raw]: https://gist.githubusercontent.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454/raw/5cbe4d2796341b6c29acdf7a135f571fc6674cda/tokens.json
 [example-tokens]: https://gist.github.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454
 [figma-material-3-design-kit]: https://www.figma.com/community/file/1035203688168086460
@@ -182,6 +199,8 @@ Note: When using [versioned token storage system like "GitHub"][figma-tokens-doc
 [image-open-figma-tokens]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/open-figma-tokens.png
 [image-wordpress-theme-default]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/wordpress-theme-default.png
 [image-wordpress-theme-modified]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/wordpress-theme-modified.png
+[install-docker]: https://docs.docker.com/get-docker/
+[install-node]: https://nodejs.org/en/download/
 [repository-example-theme]: https://github.com/Automattic/wp-theme-token-transformer/tree/trunk/docs/design-tokens-example/token-theme
 [repository-link]: https://github.com/Automattic/wp-theme-token-transformer
 [wp-env-documentation]: https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/
