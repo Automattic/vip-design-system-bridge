@@ -39,6 +39,7 @@ async function getProcessedTokens( tokenPath ) {
 			'wpvip/size/px',
 			'wpvip/type/weight',
 			'wpvip/box-shadow',
+			'wpvip/debug-transform',
 		],
 	} );
 

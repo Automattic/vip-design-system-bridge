@@ -89,45 +89,45 @@ function getThemeSets( tokenJson, tokenSourceSet, tokenLayerSets, themeName ) {
 	let enabledSets;
 
 	if ( themeName ) {
-		console.log( 'Using themes for getting the tokens');
-
 		const themes = tokenJson?.$themes;
 
 		if ( ! themes ) {
 			throwError( `Required key $themes not found in token JSON, cannot use theme ${ themeName }` );
 		}
-	
+
 		const selectedThemes = themes.filter( theme => theme.name === themeName );
-	
+
 		if ( selectedThemes.length === 0 ) {
 			const allThemes = themes.map( theme => theme.name );
-	
+
 			throwError( `Theme '${ themeName }' not found in tokens, theme must be one of ${ allThemes.join( ', ' ) }` );
 		}
-	
+
 		const allTokenSets = selectedThemes[ 0 ].selectedTokenSets;
-	
+
 		// Get names of token sets with type 'source'
 		sourceSets = getSetNamesUsingType( allTokenSets, 'source' );
-	
+
 		// Get names of token sets with type 'enabled'
 		enabledSets = getSetNamesUsingType( allTokenSets, 'enabled' );
+
+		console.log( `Using theme ${chalk.gray(themeName)} for token sets (source: ${chalk.gray(sourceSets.join(', '))}, layers: ${chalk.gray(enabledSets.join(', '))})` );
 	} else if ( tokenSourceSet && tokenLayerSets ) {
-		console.log( 'Using the source and layer sets for getting the tokens');
-		
 		sourceSets = tokenSourceSet.split(',');
 		enabledSets = tokenLayerSets.split(',');
-	} else {
-		console.log( 'Getting all the tokens');
 
+		console.log( `Using source and layer sets for tokens (source: ${chalk.gray(sourceSets.join(', '))}, layers: ${chalk.gray(enabledSets.join(', '))})`);
+	} else {
 		sourceSets = Object.entries( tokenJson ).filter(
 			( [ setName, setValue ] ) => setName !== '$themes' && setName !== '$metadata'
 		).map(
 			( [ setName, setValue ] ) => setName
 		);
 		enabledSets = [];
+
+		console.log(`Using all token sets (${chalk.gray(sourceSets.join(', '))})`);
 	}
-	
+
 	return {
 		sourceSets,
 		enabledSets,
