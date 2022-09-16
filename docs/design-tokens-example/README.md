@@ -1,5 +1,7 @@
 # Token Walkthrough
 
+![Tutorial flow: Figma -> Figma Tokens -> WordPress][image-tutorial-flow]
+
 This tutorial will demonstrate how to connect a design system in Figma with WordPress, using the Figma Tokens plugin. We'll cover the steps to:
 
 1. Make a copy of an [example design system][example-figma-document].
@@ -190,6 +192,7 @@ In the following steps we'll update the theme to use the tokens exported from Fi
 [image-figma-tokens-settings-url]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-tokens-settings-url.png
 [image-figma-url-credentials]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/figma-url-credentials.png
 [image-open-duplicate]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/duplicated-document-open.png
+[image-tutorial-flow]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/tutorial-flow.png
 [image-open-figma-tokens]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/open-figma-tokens.png
 [image-wordpress-theme-default]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/wordpress-theme-default.png
 [image-wordpress-theme-modified]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/wordpress-theme-modified.png
