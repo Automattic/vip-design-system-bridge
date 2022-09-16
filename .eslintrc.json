@@ -2,10 +2,6 @@
 	"extends": [
 		"plugin:@automattic/wpvip/base"
 	],
-	"globals": {
-		"BigInt": true,
-		"jest": true
-	},
 	"parser": "@babel/eslint-parser",
 	"parserOptions": {
 		"requireConfigFile": false
