@@ -53,7 +53,7 @@ module.exports = {
 			// only add suffix to plain number values.
 			const isNumber = isPlainNumber( token.value );
 
-			return isNumber && !(
+			return isNumber && ! (
 				isFontWeight
 			);
 		},
@@ -110,7 +110,7 @@ module.exports = {
 		name: 'wpvip/debug-transform',
 		type: 'value',
 		matcher: () => true,
-		transformer: function( token ) {
+		transformer( token ) {
 			// Add logging for incoming tokens here if desired
 			return token.value;
 		},

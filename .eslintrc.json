@@ -1,0 +1,63 @@
+{
+	"extends": [
+		"plugin:@automattic/wpvip/base"
+	],
+	"globals": {
+		"BigInt": true,
+		"jest": true
+	},
+	"parser": "@babel/eslint-parser",
+	"parserOptions": {
+		"requireConfigFile": false
+	},
+	"rules": {
+		"no-bitwise": "off",
+
+		"@wordpress/no-unused-vars-before-return": "warn",
+
+		"import/no-extraneous-dependencies": "warn",
+
+		"jsdoc/check-alignment": "warn",
+		"jsdoc/check-line-alignment": "warn",
+		"jsdoc/check-param-names": "warn",
+		"jsdoc/check-tag-names": "warn",
+		"jsdoc/check-types": "warn",
+		"jsdoc/newline-after-description": "warn",
+		"jsdoc/no-undefined-types": "warn",
+		"jsdoc/require-param": "warn",
+		"jsdoc/valid-types": "warn",
+
+		"security/detect-object-injection": "off",
+		"security/detect-child-process": "off",
+		"security/detect-non-literal-fs-filename": "off",
+
+		"no-process-exit": "off",
+		"no-console": "off",
+		"array-callback-return": "warn",
+		"comma-dangle": "off",
+		"complexity": "warn",
+		"eqeqeq": "warn",
+		"indent": "warn",
+		"no-async-promise-executor": "warn",
+		"no-await-in-loop": "off",
+		"no-constant-condition": "warn",
+		"no-dupe-class-members": "warn",
+		"no-empty": "warn",
+		"no-fallthrough": "warn",
+		"no-duplicate-imports": "warn",
+		"no-extra-boolean-cast": "warn",
+		"no-mixed-operators": "warn",
+		"no-multiple-empty-lines": "warn",
+		"no-prototype-builtins": "off",
+		"no-sparse-arrays": "warn",
+		"no-trailing-spaces": "warn",
+		"no-unused-expressions": "warn",
+		"no-useless-catch": "warn",
+		"no-useless-constructor": "warn",
+		"no-useless-escape": "warn",
+		"no-whitespace-before-property": "warn",
+		"object-shorthand": "warn",
+		"one-var-declaration-per-line": "warn",
+		"semi": "warn"
+	}
+}

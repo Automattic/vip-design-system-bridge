@@ -51,7 +51,7 @@ async function fileExists( filePath ) {
 function resolvePath( filePath ) {
 	let resolvedPath = filePath;
 
-	if ( typeof ( filePath ) === 'string' && filePath.startsWith( '~/' ) || filePath === '~' ) {
+	if ( typeof ( filePath ) === 'string' && ( filePath.startsWith( '~/' ) || filePath === '~' ) ) {
 		resolvedPath = filePath.replace( '~', os.homedir() );
 	}
 
@@ -78,9 +78,9 @@ function throwError( message ) {
 
 function getSetNamesUsingType( tokenSet, typeToFilterOn ) {
 	return Object.entries( tokenSet ).filter(
-		( [ tokenSetName, tokenSetType ] ) => tokenSetType === typeToFilterOn
+		( [ , tokenSetType ] ) => tokenSetType === typeToFilterOn
 	).map(
-		( [ tokenSetName, tokenSetType ] ) => tokenSetName
+		( [ tokenSetName, ] ) => tokenSetName
 	);
 }
 
@@ -111,21 +111,21 @@ function getThemeSets( tokenJson, tokenSourceSet, tokenLayerSets, themeName ) {
 		// Get names of token sets with type 'enabled'
 		enabledSets = getSetNamesUsingType( allTokenSets, 'enabled' );
 
-		console.log( `Using theme ${chalk.gray(themeName)} for token sets (source: ${chalk.gray(sourceSets.join(', '))}, layers: ${chalk.gray(enabledSets.join(', '))})` );
+		console.log( `Using theme ${ chalk.gray( themeName ) } for token sets (source: ${ chalk.gray( sourceSets.join( ', ' ) ) }, layers: ${ chalk.gray( enabledSets.join( ', ' ) ) })` );
 	} else if ( tokenSourceSet && tokenLayerSets ) {
-		sourceSets = tokenSourceSet.split(',');
-		enabledSets = tokenLayerSets.split(',');
+		sourceSets = tokenSourceSet.split( ',' );
+		enabledSets = tokenLayerSets.split( ',' );
 
-		console.log( `Using source and layer sets for tokens (source: ${chalk.gray(sourceSets.join(', '))}, layers: ${chalk.gray(enabledSets.join(', '))})`);
+		console.log( `Using source and layer sets for tokens (source: ${ chalk.gray( sourceSets.join( ', ' ) ) }, layers: ${ chalk.gray( enabledSets.join( ', ' ) ) })` );
 	} else {
 		sourceSets = Object.entries( tokenJson ).filter(
-			( [ setName, setValue ] ) => setName !== '$themes' && setName !== '$metadata'
+			( [ setName, ] ) => setName !== '$themes' && setName !== '$metadata'
 		).map(
-			( [ setName, setValue ] ) => setName
+			( [ setName, ] ) => setName
 		);
 		enabledSets = [];
 
-		console.log(`Using all token sets (${chalk.gray(sourceSets.join(', '))})`);
+		console.log( `Using all token sets (${ chalk.gray( sourceSets.join( ', ' ) ) })` );
 	}
 
 	return {
