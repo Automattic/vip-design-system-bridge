@@ -16,7 +16,7 @@ These resources are included:
 
 ## Setup tools
 
-1. While logged in to Figma, go to open the [Figma Tokens plugin page][figma-tokens-plugin]. In the top right corner, click the "Try it out" button. Once installed, the plugin will be available to use for the next steps.
+1. While logged in to Figma, go to open the [Figma Tokens plugin page][figma-tokens-plugin]. In the top right corner, click the "Try it out" button. On the next page, click the "Run" button. Once installed, the plugin will be available to use for the next steps.
 
 2. Download or clone a copy of the [`wp-theme-token-transformer` repository][repository-link] on your computer.
 
@@ -63,7 +63,7 @@ We've created a set of design tokens that are ready to be imported into the desi
 4. Click the "Add new credentials" button. In the "Name" field, enter any name (e.g. `Example Tokens`). In the URL box, enter this URL:
 
     ```
-    https://gist.githubusercontent.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454/raw/223b6559f1bd4574bb76115d67996ea1612fe1db/tokens.json
+    https://gist.githubusercontent.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454/raw/5cbe4d2796341b6c29acdf7a135f571fc6674cda/tokens.json
     ```
 
     The result should look something like this:
@@ -76,10 +76,10 @@ We've created a set of design tokens that are ready to be imported into the desi
 
     1. Under "Token Storage" click the "Local document" button.
     2. In the confirmation pop-up, click "Yes, set to local".
-    3. Refresh the page.
+    3. Reload the page.
     4. Re-open Figma Tokens via the plugin menu.
 
-6. In Figma Tokens, click the "Tokens" tab to return to all tokens. Using the checkboxes on the right, select the "global", "material-3-color", and "material-3-text" token sets. You should now be able to view type and color design tokens in the main panel:
+6. In Figma Tokens, go to the "Tokens" tab to view all tokens. Using the checkboxes on the left, select the "global", "material-3-color", and "material-3-text" token sets. You should now be able to view type and color design tokens in the main panel:
 
     ![Select token set checkboxes][gif-figma-token-sets]
 
@@ -90,7 +90,7 @@ We've created a set of design tokens that are ready to be imported into the desi
 
 This section will cover changing the design system token for the background to a new color, and exporting the updated tokens.
 
-1. In Figma Tokens, select the "material-3-color" color set. Next, in the Figma document under the "Light Theme" section, click the "Background" block and see that the matching design token is selected in Figma Tokens:
+1. In Figma Tokens, click the "material-3-color" color set. Next, in the Figma document under the "Light Theme" section, select the "Background" block and see that the matching design token is selected in Figma Tokens:
 
     ![Select background color in Figma][gif-select-background-token]
 
@@ -100,7 +100,7 @@ This section will cover changing the design system token for the background to a
 
     As shown above, the light theme background color block should change to match the new color token.
 
-3. In the lower left of the Figma Tokens plugin, click the "Export" button. Check "All token sets", then go to the bottom of the dialog and click the "Export" button.
+3. In the lower right of the Figma Tokens plugin, click "Export". Check "All token sets", then go to the bottom of the dialog and click the "Export" button.
 
     ![Figma Tokens export options][image-figma-tokens-export]
 
@@ -117,7 +117,7 @@ To see the design tokens applied, start by running WordPress locally:
 2. In the `wp-theme-token-transformer` repository folder, run these commands to spin up a local WordPress website:
 
     ```bask
-    cd docs/design-tokens-example
+    cd wp-theme-token-transformer/docs/design-tokens-example
     wp-env start && wp-env run cli "wp theme activate token-theme"
     ```
 
@@ -125,13 +125,13 @@ To see the design tokens applied, start by running WordPress locally:
 
     ![Starting wp-env in terminal][gif-start-theme-terminal]
 
-3. Visit the WordPress instance http://localhost:8888. You should see a basic WordPress theme using the Material 3 UI theme:
+3. Visit the WordPress instance at http://localhost:8888. You should see a WordPress page using the Material 3 UI theme:
 
     ![WordPress with default Material UI 3 theme][image-wordpress-theme-default]
 
 ## 5. Use tokens to update WordPress theme
 
-In the following steps we'll update the theme to use the tokens that were exported from Figma:
+In the following steps we'll update the theme to use the tokens exported from Figma:
 
 1. Navigate to the `wp-theme-token-transformer` repository in a terminal and install dependencies for the token processing script:
 
