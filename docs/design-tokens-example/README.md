@@ -1,18 +1,18 @@
 # Token Walkthrough
 
-This tutorial will use an example design system in Figma and walk through the steps to:
+This tutorial will demonstrate how to connect a design system in Figma with WordPress, using the Figma Tokens plugin. We'll cover the steps to:
 
-1. Make a copy of the [example design system][example-figma-document].
-2. Use the [Figma Tokens plugin][figma-tokens-plugin] to link design tokens.
-3. Change a background color token to a new value and export new tokens.
+1. Make a copy of an [example design system][example-figma-document].
+2. Use the [Figma Tokens plugin][figma-tokens-plugin] to add design tokens.
+3. Change a background color token to a new value and export.
 4. Run a local copy of WordPress [with `wp-env`][wp-env-documentation] to view an example WordPress theme.
-5. Use the script [in this repository][repository-link] to update the running WordPress theme with new design tokens.
+5. Use a script to update the WordPress theme with new design tokens.
 
 These resources are included:
 
 - A simplified [design document system in Figma][example-figma-document] based on the [Material 3 Design Kit][figma-material-3-design-kit] template.
 - [Premade design tokens][example-tokens] used by Figma Tokens
-- A [WordPress theme][repository-example-theme] designed to use the colors and fonts provided by the design system
+- An [example WordPress theme][repository-example-theme] designed to use the colors and fonts provided by the design system
 
 ## Setup tools
 
@@ -26,7 +26,7 @@ These resources are included:
     $ npm -g install @wordpress/env
     ```
 
-    Note you may also need to install [npm][install-npm] and [Docker][install-docker] as prerequisites.
+    Note you may also need to install [Node.js][install-node] and [Docker][install-docker] as prerequisites for `wp-env`.
 
 ## 1. Get a copy of the design system
 
