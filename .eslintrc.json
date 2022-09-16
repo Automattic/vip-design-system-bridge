@@ -2,10 +2,6 @@
 	"extends": [
 		"plugin:@automattic/wpvip/base"
 	],
-	"parser": "@babel/eslint-parser",
-	"parserOptions": {
-		"requireConfigFile": false
-	},
 	"rules": {
 		"no-bitwise": "off",
 
