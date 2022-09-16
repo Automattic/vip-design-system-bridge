@@ -1,4 +1,4 @@
-# Token Walkthrough
+# Figma Tokens Tutorial
 
 ![Tutorial flow: Figma -> Figma Tokens -> WordPress][image-tutorial-flow]
 
