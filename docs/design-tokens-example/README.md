@@ -165,15 +165,6 @@ In the following steps we'll update the theme to use the tokens exported from Fi
 
     ![WordPress with red background from tokens][image-wordpress-theme-modified]
 
-## Updates to make to this document
-
-- When PR is ready, update image links in this PR to point at the base branch.
-- Once repository is public:
-    - In "Connect Figma Tokens to design tokens", change gist URL to use raw URL from tokens in repository.
-    - Update name references to `wp-theme-token-transformer` if name changes.
-- Once [Figma Tokens v120](https://github.com/six7/figma-tokens/pull/1208) is released which [fixes this issue](https://github.com/six7/figma-tokens/issues/1164), simplify `ingest-tokens.js` command to use a theme?
-- After [URL -> Local Storage bug](https://github.com/six7/figma-tokens/issues/1279) is fixed, change the "Temporary workaround" step.
-
 ---
 
 [example-figma-document]: https://www.figma.com/file/5NZf8UfaZCPhcZRTjpRfmX/Material-3-Design-Kit---Figma-Tokens-Example
