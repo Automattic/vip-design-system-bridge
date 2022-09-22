@@ -76,6 +76,6 @@ THe following is a good summary of available command-line options within the scr
 
 This section is a WIP. This section will be devoted to understanding how the data that was inserted into the `theme.json` can be used in the editor.
 
-[png-pro-plugin-usage]: /docs/assets/pro-plugin-usage.png
-[png-non-pro-plugin-usage]: /docs/assets/non-pro-plugin-usage.png
-[docs-figma-tokens-tutorial]: /docs/design-tokens-example
+[png-pro-plugin-usage]: https://github.com/Automattic/vip-design-system-bridge/blob/trunk/docs/assets/pro-plugin-usage.png
+[png-non-pro-plugin-usage]: https://github.com/Automattic/vip-design-system-bridge/blob/trunk/docs/assets/non-pro-plugin-usage.png
+[docs-figma-tokens-tutorial]: https://github.com/Automattic/vip-design-system-bridge/blob/trunk/docs/design-tokens-example/README.md
