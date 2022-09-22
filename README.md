@@ -4,7 +4,7 @@ This is a script designed to take an export of a design system, and insert the t
 
 ## Exporting Data from your Design System
 
-See **[Figma Tokens Tutorial](docs-figma-tokens-tutorial)**.
+See **[Figma Tokens Tutorial][docs-figma-tokens-tutorial]**.
 
 ## Using the Script
 
