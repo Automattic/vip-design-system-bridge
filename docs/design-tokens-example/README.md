@@ -20,7 +20,7 @@ These resources are included:
 
 1. While logged in to Figma, go to open the [Figma Tokens plugin page][figma-tokens-plugin]. In the top right corner, click the "Try it out" button. On the next page, click the "Run" button. Once installed, the plugin will be available to use for the next steps.
 
-2. Download or clone a copy of the [`wp-theme-token-transformer` repository][repository-link] on your computer.
+2. Download or clone a copy of the [`vip-design-system-bridge` repository][repository-link] on your computer.
 
 3. To run the example WordPress theme and view token changes, install the [`wp-env` terminal tool][wp-env-documentation]:
 
@@ -115,11 +115,11 @@ This section will cover changing the design system token for the background to a
 
 To see the design tokens applied, start by running WordPress locally:
 
-1. Ensure [`wp-env` is installed][wp-env-documentation] and a copy of the [`wp-theme-token-transformer` repository][repository-link] is downloaded locally.
-2. In the `wp-theme-token-transformer` repository folder, run these commands to spin up a local WordPress website:
+1. Ensure [`wp-env` is installed][wp-env-documentation] and a copy of the [`vip-design-system-bridge` repository][repository-link] is downloaded locally.
+2. In the `vip-design-system-bridge` repository folder, run these commands to spin up a local WordPress website:
 
     ```bask
-    cd wp-theme-token-transformer/docs/design-tokens-example
+    cd vip-design-system-bridge/docs/design-tokens-example
     wp-env start && wp-env run cli "wp theme activate token-theme"
     ```
 
@@ -135,10 +135,10 @@ To see the design tokens applied, start by running WordPress locally:
 
 In the following steps we'll update the theme to use the tokens exported from Figma:
 
-1. Navigate to the `wp-theme-token-transformer` repository in a terminal and install dependencies for the token processing script:
+1. Navigate to the `vip-design-system-bridge` repository in a terminal and install dependencies for the token processing script:
 
     ```bash
-    cd wp-theme-token-transformer/
+    cd vip-design-system-bridge/
     npm install
     ```
 
@@ -158,7 +158,7 @@ In the following steps we'll update the theme to use the tokens exported from Fi
     ✔︎ src/build/tokens.json
 
     ✔︎ Processed with Style Dictionary
-    ✔︎ Wrote theme file: ~/wp-theme-token-transformer/docs/design-tokens-example/token-theme/theme.json
+    ✔︎ Wrote theme file: ~/vip-design-system-bridge/docs/design-tokens-example/token-theme/theme.json
     ```
 
 3. For the final step, visit http://localhost:8888 or refresh the page. You should see that the background color has changed to the token value assigned in Figma:
@@ -189,6 +189,6 @@ In the following steps we'll update the theme to use the tokens exported from Fi
 [image-wordpress-theme-modified]: /../add/example-token-walkthrough/docs/design-tokens-example/assets/wordpress-theme-modified.png
 [install-docker]: https://docs.docker.com/get-docker/
 [install-node]: https://nodejs.org/en/download/
-[repository-example-theme]: https://github.com/Automattic/wp-theme-token-transformer/tree/trunk/docs/design-tokens-example/token-theme
-[repository-link]: https://github.com/Automattic/wp-theme-token-transformer
+[repository-example-theme]: https://github.com/Automattic/vip-design-system-bridge/tree/trunk/docs/design-tokens-example/token-theme
+[repository-link]: https://github.com/Automattic/vip-design-system-bridge
 [wp-env-documentation]: https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/
