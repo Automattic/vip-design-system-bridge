@@ -4,9 +4,7 @@ This is a script designed to take an export of a design system, and insert the t
 
 ## Exporting Data from your Design System
 
-This section is a WIP. 
-
-It will be devoted to understanding how you can export your design system data, for the script to understand it. Note that at the moment we only support Figma. The export should have been done using using [this](https://www.figma.com/community/plugin/843461159747178978) plugin. The format's documentation is a WIP currently.
+See **[Figma Tokens Tutorial](docs-figma-tokens-tutorial)**.
 
 ## Using the Script
 
@@ -80,3 +78,4 @@ This section is a WIP. This section will be devoted to understanding how the dat
 
 [png-pro-plugin-usage]: /docs/assets/pro-plugin-usage.png
 [png-non-pro-plugin-usage]: /docs/assets/non-pro-plugin-usage.png
+[docs-figma-tokens-tutorial]: /docs/design-tokens-example
