@@ -65,7 +65,7 @@ We've created a set of design tokens that are ready to be imported into the desi
 4. Click the "Add new credentials" button. In the "Name" field, enter any name (e.g. `Example Tokens`). In the URL box, enter this URL:
 
     ```
-    https://gist.githubusercontent.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454/raw/5cbe4d2796341b6c29acdf7a135f571fc6674cda/tokens.json
+    https://raw.githubusercontent.com/Automattic/vip-design-system-bridge/trunk/docs/design-tokens-example/tokens.json
     ```
 
     The result should look something like this:
@@ -168,8 +168,8 @@ In the following steps we'll update the theme to use the tokens exported from Fi
 ---
 
 [example-figma-document]: https://www.figma.com/file/5NZf8UfaZCPhcZRTjpRfmX/Material-3-Design-Kit---Figma-Tokens-Example
-[example-tokens-raw]: https://gist.githubusercontent.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454/raw/5cbe4d2796341b6c29acdf7a135f571fc6674cda/tokens.json
-[example-tokens]: https://gist.github.com/alecgeatches/d9831e259c06a132e7c7ab9cb52e9454
+[example-tokens-raw]: https://raw.githubusercontent.com/Automattic/vip-design-system-bridge/trunk/docs/design-tokens-example/tokens.json
+[example-tokens]: https://github.com/Automattic/vip-design-system-bridge/blob/trunk/docs/design-tokens-example/tokens.json
 [figma-material-3-design-kit]: https://www.figma.com/community/file/1035203688168086460
 [figma-tokens-docs-github]: https://docs.figmatokens.com/sync/github
 [figma-tokens-plugin]: https://www.figma.com/community/plugin/843461159747178978
