@@ -1,5 +1,5 @@
 {
-	"name": "wp-theme-token-transformer",
+	"name": "vip-design-system-bridge",
 	"description": "Tool to ingest tokens from a design system into the theme.json of a WP Site",
 	"version": "1.0.0",
 	"dependencies": {
@@ -17,10 +17,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Automattic/wp-theme-token-transformer.git"
+		"url": "git+https://github.com/Automattic/vip-design-system-bridge.git"
 	},
 	"bugs": {
-		"url": "https://github.com/Automattic/wp-theme-token-transformer/issues"
+		"url": "https://github.com/Automattic/vip-design-system-bridge/issues"
 	},
-	"homepage": "https://github.com/Automattic/wp-theme-token-transformer#readme"
+	"homepage": "https://github.com/Automattic/vip-design-system-bridge#readme"
 }

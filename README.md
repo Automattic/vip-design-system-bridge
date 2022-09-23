@@ -1,28 +1,26 @@
-# WP-THEME-TOKEN-TRANSFORMER
+# vip-design-system-bridge
 
 This is a script designed to take an export of a design system, and insert the tokens into the `theme.json` of a WordPress site. At the moment it only supports exports from Figma, using [this](https://www.figma.com/community/plugin/843461159747178978) plugin.
 
 ## Exporting Data from your Design System
 
-This section is a WIP. 
-
-It will be devoted to understanding how you can export your design system data, for the script to understand it. Note that at the moment we only support Figma. The export should have been done using using [this](https://www.figma.com/community/plugin/843461159747178978) plugin. The format's documentation is a WIP currently.
+See **[Figma Tokens Tutorial][docs-figma-tokens-tutorial]**.
 
 ## Using the Script
 
-Once data has been exported from your design system, into either a folder or a single token JSON file the script is almost ready to be run.
+Once data has been exported from your design system, into either a folder or a single JSON token file the script is almost ready to be run.
 
-There are few more assumptions assumed for the script:
+The script makes some assumptions by default, and its critical to ensure that these are correct for your design system:
 
-* For PRO Plugin users: Knowing what exact theme name set you want to pick out from the token JSON export from Figma. An example would be if your main set was `valet` then valet is your theme name set that you want to use.
+* For PRO Plugin users: Know what exact theme name set you want to pick out from the token JSON export from Figma. An example would be if your main set was `valet` then valet is your theme name set that you want to use.
 
 ![Screenshot of a pro plugin user in Figma][png-pro-plugin-usage]
 
-* For NON-PRO Plugin users: Knowing what exactly is the source set, and what is the layer sets that take advantage of the source set from the token JSON export from Figma. It's possible to skip this entirely, and just use all the sets from the export.
+* For NON-PRO Plugin users: Know what exactly is the source set, and the layer sets that take advantage of the source set from the token JSON export from Figma. It's also possible to skip this entirely, and just use all the sets from the export.
 
 ![Screenshot of a non-pro plugin user in Figma][png-non-pro-plugin-usage]
 
-* An existing [`theme.json`](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/) file, in where the tokens from your export would be inserted. Note that by default, the script does not overwrite the `theme.json`. Instead, it writes to a new file called `theme.generated.json`. This can be overriden using the `--overwrite` flag.
+* An existing [`theme.json`](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/) file where the tokens from your export would be inserted. Note that by default, the script does not overwrite the `theme.json`. Instead, it writes to a new file called `theme.generated.json`. This can be overriden using the `--overwrite` flag.
 * Based on the theme that is selected from the Figma export, the tokens are inserted directly under `settings->custom`. If a section prefix is desired, use the `--themeJsonSection` option.
 
 ### Steps
@@ -33,7 +31,7 @@ There are few more assumptions assumed for the script:
 ```bash
 npm install
 ```
-* The script is now ready to run. Please note that by default the script does not overwrite the `theme.json`. Instead, it will write to a file called `theme.generated.json` for safety. Using the `---overwrite` flag will override that and overwrite the `theme.json` instead. The following is how the script would be run:
+* The script is now ready to run. Please note that by default the script does not overwrite the `theme.json`. Instead, it will write to a file called `theme.generated.json` for safety. Using the `---overwrite` flag will overwrite the `theme.json` instead. The following is how the script would be run:
 
 OPTION 1 - FOR PRO PLUGIN USERS
 ```bash
@@ -74,9 +72,6 @@ THe following is a good summary of available command-line options within the scr
   --overwrite                  overwrite existing theme.json (default: false)
 ```
 
-## Using the New `theme.json` in the Editor
-
-This section is a WIP. This section will be devoted to understanding how the data that was inserted into the `theme.json` can be used in the editor.
-
-[png-pro-plugin-usage]: /docs/assets/pro-plugin-usage.png
-[png-non-pro-plugin-usage]: /docs/assets/non-pro-plugin-usage.png
+[png-pro-plugin-usage]: https://github.com/Automattic/vip-design-system-bridge/blob/trunk/docs/assets/pro-plugin-usage.png
+[png-non-pro-plugin-usage]: https://github.com/Automattic/vip-design-system-bridge/blob/trunk/docs/assets/non-pro-plugin-usage.png
+[docs-figma-tokens-tutorial]: https://github.com/Automattic/vip-design-system-bridge/blob/trunk/docs/design-tokens-example/README.md
