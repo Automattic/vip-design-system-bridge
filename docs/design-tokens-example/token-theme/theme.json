@@ -496,6 +496,16 @@
 					"fontWeight": "var(--wp--custom--headline--medium--font-weight)",
 					"letterSpacing": "var(--wp--custom--headline--medium--letter-spacing)"
 				}
+			},
+			"core/site-title": {
+				"color": {
+					"text": "var(--wp--custom--theme--light--primary)"
+				}
+			},
+			"core/post-title": {
+				"color": {
+					"text": "var(--wp--custom--theme--light--primary)"
+				}
 			}
 		}
 	},
