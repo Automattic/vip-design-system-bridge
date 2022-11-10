@@ -393,8 +393,7 @@
 			},
 			"core/group": {
 				"color": {
-					"background": false,
-					"text": false
+					"background": true
 				},
 				"layout": {
 					"contentSize": "null",
@@ -463,12 +462,6 @@
 			"core/separator": {
 				"color": {
 					"gradients": []
-				}
-			},
-			"core/cover": {},
-			"create-block/gutenpride": {
-				"color": {
-					"background": true
 				}
 			}
 		}
