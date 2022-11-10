@@ -47,14 +47,24 @@
 					"name": "Error"
 				},
 				{
-					"slug": "secondary",
-					"color": "var(--wp--custom--theme--light--secondary)",
-					"name": "Secondary"
-				},
-				{
 					"slug": "surface",
 					"color": "var(--wp--custom--theme--light--surface)",
 					"name": "Surface"
+				},
+				{
+					"slug": "on-surface",
+					"color": "var(--wp--custom--theme--light--on-surface)",
+					"name": "On Surface"
+				},
+				{
+					"slug": "surface-variant",
+					"color": "var(--wp--custom--theme--light--surface-variant)",
+					"name": "Surface Variant"
+				},
+				{
+					"slug": "on-surface-variant",
+					"color": "var(--wp--custom--theme--light--on-surface-variant)",
+					"name": "On Surface Variant"
 				}
 			],
 			"gradients": []
@@ -383,7 +393,8 @@
 			},
 			"core/group": {
 				"color": {
-					"background": true
+					"background": false,
+					"text": false
 				},
 				"layout": {
 					"contentSize": "null",
@@ -453,6 +464,12 @@
 				"color": {
 					"gradients": []
 				}
+			},
+			"core/cover": {},
+			"create-block/gutenpride": {
+				"color": {
+					"background": true
+				}
 			}
 		}
 	},
@@ -487,7 +504,7 @@
 			"core/paragraph": {},
 			"core/heading": {
 				"color": {
-					"text": "var(--wp--custom--theme--light--primary)"
+					"text": "var(--wp--custom--theme--light--on-background)"
 				},
 				"typography": {
 					"fontSize": "var(--wp--custom--headline--medium--font-size)",
@@ -499,12 +516,12 @@
 			},
 			"core/site-title": {
 				"color": {
-					"text": "var(--wp--custom--theme--light--primary)"
+					"text": "var(--wp--custom--theme--light--on-background)"
 				}
 			},
 			"core/post-title": {
 				"color": {
-					"text": "var(--wp--custom--theme--light--primary)"
+					"text": "var(--wp--custom--theme--light--on-background)"
 				}
 			}
 		}
