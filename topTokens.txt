@@ -13,6 +13,7 @@
 --wp--custom--button--background--default
 --wp--custom--button--background--hover
 --wp--custom--button--label--default
+--wp--custom--button--border--radius
 --wp--custom--heading--1--font-family
 --wp--custom--heading--1--font-size
 --wp--custom--heading--1--font-weight
