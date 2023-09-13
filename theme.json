@@ -125,9 +125,7 @@
         "label": {
           "default": "#fcfafa"
         },
-        "border": {
-          "radius": "999999px"
-        }
+        "rounded": "999999px"
       }
     },
     "layout": {
@@ -305,7 +303,7 @@
           }
         },
         "border": {
-          "radius": "var(--wp--custom--button--border--radius)"
+          "radius": "var(--wp--custom--button--rounded)"
         },
         ":hover": {
           "color": {
