@@ -12,11 +12,13 @@ async function getProcessedTokens( tokenPath ) {
 			'wordpress-theme-json': {
 				transformGroup: 'wpvip/transform-group/theme-json',
 				buildPath: 'src/build/',
-				files: [ {
-					filter: 'wpvip/filter/other',
-					format: 'wpvip/format/theme-json',
-					destination: 'tokens.json',
-				} ],
+				files: [
+					{
+						filter: 'wpvip/filter/other',
+						format: 'wpvip/format/theme-json',
+						destination: 'tokens.json',
+					},
+				],
 			},
 		},
 	} );
@@ -48,7 +50,7 @@ async function getProcessedTokens( tokenPath ) {
 	// If successful, buildAllPlatforms() creates a built tokens file at the configured location
 	const builtTokensPath = './src/build/tokens.json';
 
-	if ( ! await utility.fileExists( builtTokensPath ) ) {
+	if ( ! ( await utility.fileExists( builtTokensPath ) ) ) {
 		utility.throwError( 'Style dictionary failed to build tokens' );
 	}
 

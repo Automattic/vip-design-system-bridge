@@ -47,15 +47,13 @@ module.exports = {
 		name: 'wpvip/size/px',
 		type: 'value',
 		matcher: token => {
-			const isFontWeight = ( token.type === 'fontWeight' || token.type === 'fontWeights' );
+			const isFontWeight = token.type === 'fontWeight' || token.type === 'fontWeights';
 
 			// To avoid adding suffixes to dynamic values like `clamp(...)`,
 			// only add suffix to plain number values.
 			const isNumber = isPlainNumber( token.value );
 
-			return isNumber && ! (
-				isFontWeight
-			);
+			return isNumber && ! isFontWeight;
 		},
 		transformer: token => token.original.value.toString() + 'px',
 	},
@@ -67,7 +65,9 @@ module.exports = {
 		name: 'wpvip/type/weight',
 		type: 'value',
 		matcher: token => {
-			const isValidFontWeight = ( token.type === 'fontWeight' || token.type === 'fontWeights' ) && fontWeightMap.has( token.value.toString().toLowerCase() );
+			const isValidFontWeight =
+				( token.type === 'fontWeight' || token.type === 'fontWeights' ) &&
+				fontWeightMap.has( token.value.toString().toLowerCase() );
 			return isValidFontWeight;
 		},
 		transformer: token => fontWeightMap.get( token.value.toString().toLowerCase() ),
@@ -96,7 +96,9 @@ module.exports = {
 			token.value.forEach( shadowObject => {
 				const { x: positionX, y: positionY, blur, spread, color } = shadowObject;
 
-				shadowParts.push( `${ positionX }px ${ positionY }px ${ blur }px ${ spread }px ${ color }` );
+				shadowParts.push(
+					`${ positionX }px ${ positionY }px ${ blur }px ${ spread }px ${ color }`
+				);
 			} );
 
 			return shadowParts.join( ', ' );

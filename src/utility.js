@@ -19,7 +19,9 @@ async function getTokensFromPath( tokenJsonPath ) {
 		return getJsonFromPath( tokenJsonPath );
 	} else if ( pathStat.isDirectory() ) {
 		const filesInPath = await fs.readdir( tokenJsonPath, { withFileTypes: true } );
-		const jsonTokenFileEntries = filesInPath.filter( dirent => dirent.isFile() && dirent.name.endsWith( '.json' ) );
+		const jsonTokenFileEntries = filesInPath.filter(
+			dirent => dirent.isFile() && dirent.name.endsWith( '.json' )
+		);
 
 		if ( jsonTokenFileEntries.length === 0 ) {
 			throwError( `No .json files found in token directory ${ tokenJsonPath }` );
@@ -51,7 +53,7 @@ async function fileExists( filePath ) {
 function resolvePath( filePath ) {
 	let resolvedPath = filePath;
 
-	if ( typeof ( filePath ) === 'string' && ( filePath.startsWith( '~/' ) || filePath === '~' ) ) {
+	if ( typeof filePath === 'string' && ( filePath.startsWith( '~/' ) || filePath === '~' ) ) {
 		resolvedPath = filePath.replace( '~', os.homedir() );
 	}
 
@@ -66,7 +68,7 @@ function toKebabCase( string ) {
 }
 
 async function throwErrorForFileNotExisting( filePath, message ) {
-	if ( ! await fileExists( filePath ) ) {
+	if ( ! ( await fileExists( filePath ) ) ) {
 		throwError( `${ message } ${ filePath }` );
 	}
 }
@@ -77,11 +79,9 @@ function throwError( message ) {
 }
 
 function getSetNamesUsingType( tokenSet, typeToFilterOn ) {
-	return Object.entries( tokenSet ).filter(
-		( [ , tokenSetType ] ) => tokenSetType === typeToFilterOn
-	).map(
-		( [ tokenSetName, ] ) => tokenSetName
-	);
+	return Object.entries( tokenSet )
+		.filter( ( [ , tokenSetType ] ) => tokenSetType === typeToFilterOn )
+		.map( ( [ tokenSetName ] ) => tokenSetName );
 }
 
 function getThemeSets( tokenJson, tokenSourceSet, tokenLayerSets, themeName ) {
@@ -100,7 +100,11 @@ function getThemeSets( tokenJson, tokenSourceSet, tokenLayerSets, themeName ) {
 		if ( selectedThemes.length === 0 ) {
 			const allThemes = themes.map( theme => theme.name );
 
-			throwError( `Theme '${ themeName }' not found in tokens, theme must be one of ${ allThemes.join( ', ' ) }` );
+			throwError(
+				`Theme '${ themeName }' not found in tokens, theme must be one of ${ allThemes.join(
+					', '
+				) }`
+			);
 		}
 
 		const allTokenSets = selectedThemes[ 0 ].selectedTokenSets;
@@ -111,18 +115,24 @@ function getThemeSets( tokenJson, tokenSourceSet, tokenLayerSets, themeName ) {
 		// Get names of token sets with type 'enabled'
 		enabledSets = getSetNamesUsingType( allTokenSets, 'enabled' );
 
-		console.log( `Using theme ${ chalk.gray( themeName ) } for token sets (source: ${ chalk.gray( sourceSets.join( ', ' ) ) }, layers: ${ chalk.gray( enabledSets.join( ', ' ) ) })` );
+		console.log(
+			`Using theme ${ chalk.gray( themeName ) } for token sets (source: ${ chalk.gray(
+				sourceSets.join( ', ' )
+			) }, layers: ${ chalk.gray( enabledSets.join( ', ' ) ) })`
+		);
 	} else if ( tokenSourceSet && tokenLayerSets ) {
 		sourceSets = tokenSourceSet.split( ',' );
 		enabledSets = tokenLayerSets.split( ',' );
 
-		console.log( `Using source and layer sets for tokens (source: ${ chalk.gray( sourceSets.join( ', ' ) ) }, layers: ${ chalk.gray( enabledSets.join( ', ' ) ) })` );
-	} else {
-		sourceSets = Object.entries( tokenJson ).filter(
-			( [ setName, ] ) => setName !== '$themes' && setName !== '$metadata'
-		).map(
-			( [ setName, ] ) => setName
+		console.log(
+			`Using source and layer sets for tokens (source: ${ chalk.gray(
+				sourceSets.join( ', ' )
+			) }, layers: ${ chalk.gray( enabledSets.join( ', ' ) ) })`
 		);
+	} else {
+		sourceSets = Object.entries( tokenJson )
+			.filter( ( [ setName ] ) => setName !== '$themes' && setName !== '$metadata' )
+			.map( ( [ setName ] ) => setName );
 		enabledSets = [];
 
 		console.log( `Using all token sets (${ chalk.gray( sourceSets.join( ', ' ) ) })` );
