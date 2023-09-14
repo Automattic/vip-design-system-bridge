@@ -11,13 +11,10 @@
 	"devDependencies": {
 		"@automattic/eslint-plugin-wpvip": "0.6.0",
 		"eslint": "^8.47.0",
-		"husky": "8.0.3",
-		"lint-staged": "^13.0.0",
 		"prettier": "npm:wp-prettier@2.8.5"
 	},
 	"scripts": {
-		"lint": "eslint . --ext .js --fix",
-		"prepare": "husky install"
+		"lint": "eslint . --ext .js --fix"
 	},
 	"repository": {
 		"type": "git",
