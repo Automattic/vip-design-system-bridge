@@ -13,17 +13,17 @@ const generatedThemeFileName = 'theme.generated.json';
 const themeFileName = 'theme.json';
 
 commander
-	.version( '0.5.0', '-v, --version' )
-	.description( 'Inject the tokens from the provided Figma export into theme.json' )
+	.version( '1.0.0', '-v, --version' )
+	.description( 'Inject the tokens from the provided Design System export into theme.json. Providing a JSON file or directory automatically assumes Figma is the source for the Design System export.' )
 	.usage( '[OPTIONS]...' )
-	.requiredOption( '--tokenPath <path>', 'path to token JSON file or directory' )
+	.requiredOption( '--tokenPath <path>', 'path to token JSON/CSS file or directory' )
 	.requiredOption( '--themePath <path>', 'path to a WordPress theme' )
-	.option( '--sourceSet <theme-name>', 'NON-PRO PLUGIN OPTION: source set in the token JSON' )
+	.option( '--sourceSet <theme-name>', '(FIGMA ONLY) NON-PRO PLUGIN OPTION: source set in the token JSON' )
 	.option(
 		'--layerSets <theme-name>',
-		'NON-PRO PLUGIN OPTION: layers built using the source set in token JSON'
+		'(FIGMA ONLY) NON-PRO PLUGIN OPTION: layers built using the source set in token JSON'
 	)
-	.option( '--theme <theme-name>', 'PRO PLUGIN OPTION: selected $themes set in token JSON' )
+	.option( '--theme <theme-name>', '(FIGMA ONLY) PRO PLUGIN OPTION: selected $themes set in token JSON' )
 	.option(
 		'--themeJsonSection <prefix>',
 		'section to insert tokens into theme.json->settings->custom',
