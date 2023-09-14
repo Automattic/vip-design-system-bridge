@@ -1,10 +1,10 @@
-# vip-design-system-bridge
+# VIP Design System Bridge Tool
 
 This is a script designed to take an export of a design system, and insert the tokens into the `theme.json` of a WordPress site. At the moment it only supports exports from Figma, using [this](https://www.figma.com/community/plugin/843461159747178978) plugin.
 
 ## Exporting Data from your Design System
 
-See **[Figma Tokens Tutorial][docs-figma-tokens-tutorial]**.
+Refer to [this WPVIP post](https://wpvip.com/2022/12/09/figma-to-wordpress/) for a tutorial on how to connect a design system in Figma with WordPress, using the Figma Tokens plugin.
 
 ## Using the Script
 
@@ -74,4 +74,3 @@ THe following is a good summary of available command-line options within the scr
 
 [png-pro-plugin-usage]: https://github.com/Automattic/vip-design-system-bridge/blob/trunk/docs/assets/pro-plugin-usage.png
 [png-non-pro-plugin-usage]: https://github.com/Automattic/vip-design-system-bridge/blob/trunk/docs/assets/non-pro-plugin-usage.png
-[docs-figma-tokens-tutorial]: https://github.com/Automattic/vip-design-system-bridge/blob/trunk/docs/design-tokens-example/README.md

@@ -6,14 +6,15 @@
 		"chalk": "^4.1.2",
 		"commander": "^9.1.0",
 		"style-dictionary": "^3.7.1",
-		"token-transformer": "^0.0.25"
+		"token-transformer": "^0.0.33"
 	},
 	"devDependencies": {
-		"@automattic/eslint-plugin-wpvip": "0.5.2",
-		"eslint": "^8.22.0"
+		"@automattic/eslint-plugin-wpvip": "0.6.0",
+		"eslint": "^8.47.0",
+		"prettier": "npm:wp-prettier@2.8.5"
 	},
 	"scripts": {
-		"lint": "eslint --fix --ignore-path=.gitignore --ext js ."
+		"lint": "eslint . --ext .js --fix"
 	},
 	"repository": {
 		"type": "git",

@@ -19,9 +19,16 @@ commander
 	.requiredOption( '--tokenPath <path>', 'path to token JSON file or directory' )
 	.requiredOption( '--themePath <path>', 'path to a WordPress theme' )
 	.option( '--sourceSet <theme-name>', 'NON-PRO PLUGIN OPTION: source set in the token JSON' )
-	.option( '--layerSets <theme-name>', 'NON-PRO PLUGIN OPTION: layers built using the source set in token JSON' )
+	.option(
+		'--layerSets <theme-name>',
+		'NON-PRO PLUGIN OPTION: layers built using the source set in token JSON'
+	)
 	.option( '--theme <theme-name>', 'PRO PLUGIN OPTION: selected $themes set in token JSON' )
-	.option( '--themeJsonSection <prefix>', 'section to insert tokens into theme.json->settings->custom', '' )
+	.option(
+		'--themeJsonSection <prefix>',
+		'section to insert tokens into theme.json->settings->custom',
+		''
+	)
 	.option( '--overwrite', 'overwrite existing theme.json', false )
 	.parse( process.argv );
 
@@ -32,7 +39,12 @@ async function ingestTokens( options ) {
 	utility.throwErrorForFileNotExisting( tokenPath, 'No core tokens found for path:' );
 
 	const tokenJson = await utility.getTokensFromPath( tokenPath );
-	const { enabledSets, sourceSets } = utility.getThemeSets( tokenJson, options.sourceSet, options.layerSets, options.theme );
+	const { enabledSets, sourceSets } = utility.getThemeSets(
+		tokenJson,
+		options.sourceSet,
+		options.layerSets,
+		options.theme
+	);
 
 	const themeDirectory = utility.resolvePath( options.themePath );
 	const themeJsonPath = path.join( themeDirectory, themeFileName );
@@ -42,7 +54,13 @@ async function ingestTokens( options ) {
 	const themeJsonBuffer = await fs.readFile( themeJsonPath );
 	const themeJson = JSON.parse( themeJsonBuffer.toString() );
 
-	const tokenTransformerArgs = [ 'token-transformer', `${ tokenPath }`, `${ transformerFilePath }`, '--throwErrorWhenNotResolved', '--expandTypography=true' ];
+	const tokenTransformerArgs = [
+		'token-transformer',
+		`${ tokenPath }`,
+		`${ transformerFilePath }`,
+		'--throwErrorWhenNotResolved',
+		'--expandTypography=true',
+	];
 
 	// Just the source sets are present
 	if ( enabledSets && enabledSets.length === 0 ) {
@@ -67,7 +85,9 @@ async function ingestTokens( options ) {
 		// Assumption is that the massive minified code is dumped first, followed by the actual error
 		errorString = errorString.substring( errorString.indexOf( 'Error:' ) );
 		console.error( errorString );
-		utility.throwError( 'Unable to process the token file provided. Please review any errors logged above, verify that it is valid.' );
+		utility.throwError(
+			'Unable to process the token file provided. Please review any errors logged above, verify that it is valid.'
+		);
 	} else {
 		console.log( chalk.green( '✔︎ Processed with token-transformer' ) );
 	}
