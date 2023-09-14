@@ -14,14 +14,14 @@ function minifyDictionaryKeepNames( obj ) {
 
 	const toRet = {};
 
-	if ( Object.hasOwn( obj, 'value' ) ) {
+	if ( obj.hasOwnProperty( 'value' ) ) {
 		return obj.value;
 	}
 
 	for ( const key in obj ) {
-		if ( Object.hasOwn( obj, key ) ) {
+		if ( obj.hasOwnProperty( key ) ) {
 			const child = obj[ key ];
-			const keyName = Object.hasOwn( child, 'name' ) ? child.name : utility.toKebabCase( key );
+			const keyName = child.hasOwnProperty( 'name' ) ? child.name : utility.toKebabCase( key );
 
 			toRet[ keyName ] = minifyDictionaryKeepNames( obj[ key ] );
 		}

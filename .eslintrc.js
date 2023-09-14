@@ -7,6 +7,7 @@ module.exports = {
 		'security/detect-non-literal-fs-filename': 'off',
 		'security/detect-object-injection': 'off',
 
+		'no-prototype-builtins': 'off',
 		'no-await-in-loop': 'off',
 		'no-console': 'off',
 	},
