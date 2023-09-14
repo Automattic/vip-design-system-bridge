@@ -1,5 +1,5 @@
 {
-	"--primary-700": "--wp--custom--text--primary",
-	"--accent1-500": "--wp--custom--text--secondary",
-	"--accent2-300": "--wp--custom--text--helper"
+	"text.primary": "--primary-700",
+	"text.secondary": "--accent1-500",
+	"text.helper": "--accent2-300"
 }
