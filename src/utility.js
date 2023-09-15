@@ -2,10 +2,16 @@ const fs = require( 'fs' ).promises;
 const os = require( 'os' );
 const path = require( 'path' );
 const chalk = require( 'chalk' );
+const css = require('css');
 
 async function getJsonFromPath( filePath ) {
 	const tokenJson = await fs.readFile( filePath, 'utf8' );
 	return JSON.parse( tokenJson );
+}
+
+async function getCSSFromPath( filePath ) {
+	const tokenCSS = await fs.readFile( filePath, 'utf8' );
+	return css.parse( tokenCSS );
 }
 
 /*
@@ -15,8 +21,10 @@ async function getJsonFromPath( filePath ) {
 async function getTokensFromPath( tokenJsonPath ) {
 	const pathStat = await fs.lstat( tokenJsonPath );
 
-	if ( pathStat.isFile() ) {
+	if ( pathStat.isFile() && tokenJsonPath.endsWith( '.json' ) ) {
 		return getJsonFromPath( tokenJsonPath );
+	} else if ( pathStat.isFile() && tokenJsonPath.endsWith( '.css' ) ) {
+		return getCSSFromPath( tokenJsonPath );
 	} else if ( pathStat.isDirectory() ) {
 		const filesInPath = await fs.readdir( tokenJsonPath, { withFileTypes: true } );
 		const jsonTokenFileEntries = filesInPath.filter(
@@ -36,6 +44,8 @@ async function getTokensFromPath( tokenJsonPath ) {
 		}
 
 		return combinedTokens;
+	} else {
+		throwError( `Unsupported file provided at ${ tokenJsonPath }` );
 	}
 }
 

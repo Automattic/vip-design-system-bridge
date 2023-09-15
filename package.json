@@ -3,8 +3,10 @@
 	"description": "Tool to ingest tokens from a design system into the theme.json of a WP Site",
 	"version": "1.0.0",
 	"dependencies": {
+		"@irrelon/path": "^6.0.2",
 		"chalk": "^4.1.2",
 		"commander": "^9.1.0",
+		"css": "^3.0.0",
 		"style-dictionary": "^3.7.1",
 		"token-transformer": "^0.0.33"
 	},

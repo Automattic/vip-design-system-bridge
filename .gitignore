@@ -12,3 +12,5 @@ node_modules/
 build
 
 src/build
+
+theme.generated.json
