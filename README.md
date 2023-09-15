@@ -77,6 +77,8 @@ node ingest-tokens.js --tokenPath='<path to CSS file>' --tokenMapPath='<path to 
 # node ingest-tokens.js --tokenPath=~/valet.css --tokenMapPath=~/token-map.json --themePath=~/vip-go-skeleton/themes/valet/
 ```
 
+The keys in this JSON file map to keys located under `settings.custom` in the `theme.json`. So, if the key used was `text.primary` that would mean that it is referring to `settings.custom.text.primary` within the `theme.json`.
+
 Using the above, we have taken the [California Design Theme](https://designsystem.webstandards.ca.gov) and come up with an example token map that can be found [here](reference-files/CDT/CDT-token-map.json). The tokens have been selected from [cagov.css](https://github.com/cagov/design-system/blob/main/components/combined-css/dist/cagov.css), and mapped to tokens that can be found in a simplified version of the [VIP Valet theme.json](reference-files/Valet/valet-theme.json). Taken together, this can be used to import a design system like the CDT into a WordPress site.
 
 ### Limitations
