@@ -52,13 +52,17 @@ async function ingestTokens( options ) {
 		const rulesFromTokens = tokenJson.stylesheet.rules.filter( rule => rule.type === 'rule' && rule.declarations.length > 0 );
 
 		Object.keys(tokenMapJson).forEach(key => {
-			rulesFromTokens.forEach( rule => {
-				rule.declarations.forEach( declaration => {
-					if ( ( typeof declaration.property === 'string' || declaration.property instanceof String ) && declaration.property === tokenMapJson[ key ] ) {
-						pathLib.set( builtTokens, key, declaration.value);
-					}
+			if ( tokenMapJson[key].startsWith('--') ) {
+				rulesFromTokens.forEach( rule => {
+					rule.declarations.forEach( declaration => {
+						if ( ( typeof declaration.property === 'string' || declaration.property instanceof String ) && declaration.property === tokenMapJson[ key ] ) {
+							pathLib.set( builtTokens, key, declaration.value.replace(/["']/g, ""));
+						}
+					} );
 				} );
-			} );
+			} else {
+				pathLib.set( builtTokens, key, tokenMapJson[key]);
+			}
 		} );
 
 		console.log( '\n' + chalk.green( '✔︎ Processed CSS file' ) );
