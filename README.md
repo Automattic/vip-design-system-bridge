@@ -93,11 +93,12 @@ THe following is a good summary of available command-line options within the scr
 ```bash
   -v, --version                output the version number
   -h, --help                   display help for command
-  --tokenPath <path>           path to token JSON file or directory
-  --sourceSet <source-set(s)>  NON-PRO PLUGIN OPTION: source set in the token JSON
-  --layerSets <layer-set(s)>   NON-PRO PLUGIN OPTION: layers built using the source set in token JSON
-  --theme <theme-name>         PRO PLUGIN OPTION: selected $themes set in token JSON
+  --tokenPath <path>           path to token JSON/CSS file or directory of JSON files
+  --sourceSet <source-set(s)>  (FIGMA ONLY) NON-PRO PLUGIN OPTION: source set in the token JSON
+  --layerSets <layer-set(s)>   (FIGMA ONLY) NON-PRO PLUGIN OPTION: layers built using the source set in token JSON
+  --theme <theme-name>         (FIGMA ONLY) PRO PLUGIN OPTION: selected $themes set in token JSON
   --themePath <path>           path to a WordPress theme
+  --tokenMapPath <path>        path to the theme tokens to CSS map JSON file. This is required if the input is a CSS file, but not if the source is FIGMA
   --themeJsonSection <prefix>  section to insert tokens into theme.json->settings->custom (default: "")
   --overwrite                  overwrite existing theme.json (default: false)
 ```
