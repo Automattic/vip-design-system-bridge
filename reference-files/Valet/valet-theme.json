@@ -40,13 +40,13 @@
 		},
 		"custom": {
 			"body": {
-				"1": {
+				"i": {
 					"font-family": "Aktiv Grotesk VF",
 					"font-weight": 400,
 					"line-height": "140%",
 					"font-size": "1rem"
 				},
-				"2": {
+				"ii": {
 					"font-family": "Aktiv Grotesk VF",
 					"font-weight": 400,
 					"line-height": "140%",
@@ -54,35 +54,35 @@
 				}
 			},
 			"heading": {
-				"1": {
+				"i": {
 					"font-family": "Aktiv Grotesk VF",
 					"font-weight": 500,
 					"line-height": "clamp(1.1em, calc(1.25em + -0.4vw), 1.2em)",
 					"font-size": "clamp(1.07rem, calc(1.02rem + 0.25vw), 1.28rem)",
 					"letter-spacing": "-0.01em"
 				},
-				"2": {
+				"ii": {
 					"font-family": "Aktiv Grotesk VF",
 					"font-weight": 500,
 					"line-height": "clamp(1.1em, calc(1.25em + -0.4vw), 1.2em)",
 					"font-size": "clamp(1.14rem, calc(1.04rem + 0.47vw), 1.53rem)",
 					"letter-spacing": "-0.01em"
 				},
-				"3": {
+				"iii": {
 					"font-family": "Aktiv Grotesk VF",
 					"font-weight": 500,
 					"line-height": "clamp(1.1em, calc(1.25em + -0.4vw), 1.2em)",
 					"font-size": "clamp(1.30rem, calc(1.08rem + 1.09vw), 2.20rem)",
 					"letter-spacing": "-0.01em"
 				},
-				"4": {
+				"iv": {
 					"font-family": "Aktiv Grotesk VF",
 					"font-weight": 500,
 					"line-height": "clamp(1.1em, calc(1.25em + -0.4vw), 1.2em)",
 					"font-size": "clamp(1.38rem, calc(1.08rem + 1.52vw), 2.64rem)",
 					"letter-spacing": "-0.01em"
 				},
-				"5": {
+				"v": {
 					"font-family": "Aktiv Grotesk VF",
 					"font-weight": 500,
 					"line-height": "clamp(1.1em, calc(1.25em + -0.4vw), 1.2em)",
@@ -96,8 +96,8 @@
 					"button": "1.50rem"
 				},
 				"responsive": {
-					"1": "clamp(1.50rem, calc(1.38rem + 0.60vw), 2.00rem)",
-					"2": "clamp(0.50rem, calc(0.81rem + -0.30vw), 0.75rem)"
+					"i": "clamp(1.50rem, calc(1.38rem + 0.60vw), 2.00rem)",
+					"ii": "clamp(0.50rem, calc(0.81rem + -0.30vw), 0.75rem)"
 				}
 			},
 			"alignment": {

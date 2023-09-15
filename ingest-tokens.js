@@ -25,6 +25,7 @@ commander
 		'(FIGMA ONLY) NON-PRO PLUGIN OPTION: layers built using the source set in token JSON'
 	)
 	.option( '--theme <theme-name>', '(FIGMA ONLY) PRO PLUGIN OPTION: selected $themes set in token JSON' )
+	.option( '--tokenMapPath <path>', 'path to the theme tokens to CSS map JSON file. This is required if the input is a CSS file, but not if the source is FIGMA' )
 	.option(
 		'--themeJsonSection <prefix>',
 		'section to insert tokens into theme.json->settings->custom',
@@ -48,14 +49,25 @@ async function ingestTokens( options ) {
 
 	let builtTokens = {};
 	if ( tokenPath.endsWith( '.css' ) ) {
-		const tokenMapJson = await utility.getJsonFromPath( 'reference-files/token-map.json' );
+		if ( ! options.tokenMapPath ) {
+			utility.throwError( 'A token map path is required when the input is a CSS file.' );
+		}
+		
+		const tokenMapPath = utility.resolvePath( options.tokenMapPath );
+		utility.throwErrorForFileNotExisting( tokenMapPath, 'No theme tokens to CSS map found for path:' );
+
+		const tokenMapJson = await utility.getJsonFromPath( tokenMapPath );
 		const rulesFromTokens = tokenJson.stylesheet.rules.filter( rule => rule.type === 'rule' && rule.declarations.length > 0 );
 
+		// The logic here is that if the value of the key is in a CSS format, then go find that value.
+		// Otherwise, use the value is like if its normal or some other CSS standard.
+		// In addition, if the CSS value has quotes then they should be removed.
 		Object.keys(tokenMapJson).forEach(key => {
 			if ( tokenMapJson[key].startsWith('--') ) {
 				rulesFromTokens.forEach( rule => {
 					rule.declarations.forEach( declaration => {
 						if ( ( typeof declaration.property === 'string' || declaration.property instanceof String ) && declaration.property === tokenMapJson[ key ] ) {
+							// There is a bug here where if the key is 1 or has a hyphen in it then the json won't be valid.
 							pathLib.set( builtTokens, key, declaration.value.replace(/["']/g, ""));
 						}
 					} );
