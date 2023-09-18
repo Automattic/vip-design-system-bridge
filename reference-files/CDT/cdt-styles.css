@@ -1,0 +1,6439 @@
+/* Cagov color scheme root variables */
+:root {
+  /* Theme colors */
+  --primary-100: #e7eef9;
+  --primary-300: #a3bee7;
+  --primary-500: #5a8ad4;
+  --primary-700: #165ac2;
+  --primary-900: #003688;
+  --accent1-100: #ffead6;
+  --accent1-300: #ffa656;
+  --accent1-500: #de6516;
+  --accent1-700: #9c4510;
+  --accent1-900: #642a0a;
+  --accent2-100: #ffecc4;
+  --accent2-300: #ecb32d;
+  --accent2-500: #ac8227;
+  --accent2-700: #775a20;
+  --accent2-900: #4a3918;
+}
+
+/* theme colors */
+/* sitewide styles, these are mostly blank but will be wrapped up into components/base-css */
+:root {
+  --w-lg: 1176px;
+  --w-md: 960px;
+  --w-sm: 720px;
+  --w-xs: 540px;
+  --mobile-xs: 360px;
+  --mobile-xs-max: 359px;
+  --mobile-sm: 480px;
+  --mobile-sm-max: 479px;
+  --mobile: 768px;
+  --mobile-max: 767px;
+  --tablet: 992px;
+  --tablet-max: 991px;
+  --tablet-lg: 1024px;
+  --tablet-lg-max: 1023px;
+  --desktop: 1176px;
+  --desktop-max: 1175px;
+  --desktop-lg: 1440px;
+  --w-page-content: 876px;
+  --s0: 0px;
+  /* this needs to have px value or the calcs using it break */
+  --s-sm: 0.25rem;
+  --s-1: 0.5rem;
+  --s-2: 1rem;
+  --s-3: 1.5rem;
+  --s-4: 2rem;
+  --s-5: 3rem;
+  --s-6: 4rem;
+  --s-7: 6rem;
+  --s-8: 12rem;
+  --s-fluid-1: clamp(0.5rem, 1vw, 1rem);
+  --s-fluid-2: clamp(1rem, 2vw, 1.5rem);
+  --s-fluid-3: clamp(1.5rem, 3vw, 2rem);
+  --s-fluid-4: clamp(2rem, 4vw, 3rem);
+  --s-fluid-5: clamp(4rem, 6vw, 6rem);
+  --s-fluid-6: clamp(6rem, 8vw, 8rem);
+  --s-fluid-7: clamp(8rem, 10vw, 10rem);
+  --s-fluid-8: clamp(10rem, 16vw, 12rem);
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-3: 3px;
+  --border-4: 4px;
+  --border-5: 5px;
+  --border-6: 6px;
+  --radius-round: 50%;
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 0.5rem;
+  --radius-4: 1rem;
+  --radius-5: 2rem;
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+  --shadow-1: 0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --shadow-2: 0 3px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
+  --shadow-3: 0 -1px 3px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  --shadow-4: 0 -2px 5px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 1px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 2px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 9px 9px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 16px 16px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%));
+  --shadow-5: 0 -1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 2px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 10px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 20px 20px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 40px 40px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  --shadow-6: 0 -1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 3px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 7px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 12px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 22px 18px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 41px 33px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%)),
+    0 100px 80px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  --site-font: "Public Sans", sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-1: 1rem;
+  --font-size-2: 1.125rem;
+  --font-size-3: 1.25rem;
+  --font-size-4: 1.4375rem;
+  --font-size-5: 1.625rem;
+  --font-size-6: 1.8125rem;
+  --font-size-7: 2.0625rem;
+  --font-size-8: 2.3175rem;
+  --font-size-9: 2.625rem;
+  --font-size-10: 2.9375rem;
+  --font-size-11: 3.5rem;
+  --font-size-12: 5rem;
+  --ratio: 0.1vw;
+  --font-weight-1: 100;
+  --font-weight-2: 200;
+  --font-weight-3: 300;
+  --font-weight-4: 400;
+  --font-weight-5: 500;
+  --font-weight-6: 600;
+  --font-weight-7: 700;
+  --font-weight-8: 800;
+  --font-weight-9: 900;
+  --font-lineheight-xs: 0.95;
+  --font-lineheight-sm: 1.1;
+  --font-lineheight-1: 1.25;
+  --font-lineheight-2: 1.375;
+  --font-lineheight-3: 1.5;
+  --font-lineheight-4: 1.625;
+  --font-lineheight-5: 1.75;
+  --font-lineheight-6: 2;
+  --cagov-highlight-light: #ffecc4;
+  --cagov-highlight: #ecb32d;
+  --cagov-highlight-dark: #ac8227;
+  --cagov-primary: #165ac2;
+  --cagov-primary-dark: #003688;
+  --cagov-secondary: #de6516;
+  --white: #fff;
+  --gray-50: #fafafa;
+  --gray-100: #ededef;
+  --gray-200: #d4d4d7;
+  --gray-300: #bcbbc1;
+  --gray-400: #a4a3ab;
+  --gray-500: #898891;
+  --gray-600: #72717c;
+  --gray-700: #5e5e6a;
+  --gray-800: #4a4958;
+  --gray-900: #3b3a48;
+  --black: #000;
+  --success-100: #e5f1e7;
+  --success-300: #9ac7a4;
+  --success-500: #489b62;
+  --success-700: #0f6d38;
+  --success-900: #154425;
+  --danger-100: #fce9e8;
+  --danger-300: #eeaba9;
+  --danger-500: #d5676a;
+  --danger-700: #b91b37;
+  --danger-900: #721923;
+  --warning-100: #ffef97;
+  --warning-300: #dcba00;
+  --warning-500: #a38900;
+  --warning-700: #6f5e00;
+  --warning-900: #463b00;
+  --info-100: #ededf6;
+  --info-300: #b9b9dc;
+  --info-500: #8585c2;
+  --info-700: #5555aa;
+  --info-900: #2b2b95;
+  --animation-duration-1: 0.1s;
+  --animation-duration-2: 0.2s;
+  --animation-duration-3: 0.3s;
+  --animation-duration-4: 0.4s;
+  --animation-duration-5: 0.5s;
+  --animation-duration-6: 0.6s;
+  --animation-duration-7: 0.7s;
+  --animation-duration-8: 0.8s;
+  --animation-duration-9: 0.9s;
+  --animation-duration-10: 1s;
+  --transform-scale-1: scale3d(1.01, 1.01, 1.01);
+  --transform-scale-2: scale3d(1.02, 1.02, 1.02);
+  --transform-scale-3: scale3d(1.03, 1.03, 1.03);
+  --transform-scale-4: scale3d(1.04, 1.04, 1.04);
+  --transform-scale-5: scale3d(1.05, 1.05, 1.05);
+  --transform-scale-6: scale3d(1.06, 1.06, 1.06);
+  --transform-scale-7: scale3d(1.07, 1.07, 1.07);
+  --transform-scale-8: scale3d(1.08, 1.08, 1.08);
+  --transform-scale-9: scale3d(1.09, 1.09, 1.09);
+  --transform-scale-10: scale3d(1.1, 1.1, 1.1);
+  --ease-1: cubic-bezier(0.25, 0, 0.5, 1);
+  --ease-2: cubic-bezier(0.25, 0, 0.4, 1);
+  --ease-3: cubic-bezier(0.25, 0, 0.3, 1);
+  --ease-4: cubic-bezier(0.25, 0, 0.2, 1);
+  --ease-5: cubic-bezier(0.25, 0, 0.1, 1);
+}
+
+/* spasing, margin and padding values */
+/* Tablet and wider */
+/* Desktop and wider */
+/* mixins */
+/* Fonts (global) */
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("/fonts/publicsans-extralight-webfont.woff2") format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("/fonts/publicsans-extralight-webfont.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/publicsans-light-webfont.woff2") format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/publicsans-light-webfont.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/publicsans-regular-webfont.woff2") format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/publicsans-regular-webfont.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/publicsans-medium-webfont.woff2") format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/publicsans-medium-webfont.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/publicsans-semibold-webfont.woff2") format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/publicsans-semibold-webfont.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/publicsans-bold-webfont.woff2") format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/publicsans-bold-webfont.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/publicsans-extrabold-webfont.woff2") format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/publicsans-extrabold-webfont.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* website global fonts */
+/* -----------------------------------------
+   ICON FONTS - /source/scss/cagov/icon-font.scss
+----------------------------------------- */
+@font-face {
+  font-family: "CaGov";
+  src: url("/fonts/CaGov.woff2") format("woff2"), url("/fonts/CaGov.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+[class^=ca-gov-icon-],
+[class*=" ca-gov-icon-"] {
+  font-family: "CaGov" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ca-gov-icon-github:before {
+  content: "\ea21";
+}
+
+.ca-gov-icon-pdf-text:before {
+  content: "\ea20";
+}
+
+.ca-gov-icon-mask-light:before {
+  content: "\e9fb";
+}
+
+.ca-gov-icon-mask-dark:before {
+  content: "\e9fc";
+}
+
+.ca-gov-icon-vaccine-check:before {
+  content: "\e9fe";
+}
+
+.ca-gov-icon-teams:before {
+  content: "\ea0c";
+}
+
+.ca-gov-icon-pharmacy:before {
+  content: "\ea12";
+}
+
+.ca-gov-icon-cart-delivered:before {
+  content: "\ea15";
+}
+
+.ca-gov-icon-medical-shipped:before {
+  content: "\ea16";
+}
+
+.ca-gov-icon-vaccine:before {
+  content: "\ea17";
+}
+
+.ca-gov-icon-team:before {
+  content: "\ea18";
+}
+
+.ca-gov-icon-vaccine-patient:before {
+  content: "\ea19";
+}
+
+.ca-gov-icon-improvements:before {
+  content: "\ea1a";
+}
+
+.ca-gov-icon-cloud-network:before {
+  content: "\ea1b";
+}
+
+.ca-gov-icon-technology-reuse:before {
+  content: "\ea1c";
+}
+
+.ca-gov-icon-accessibility:before {
+  content: "\e992";
+}
+
+.ca-gov-icon-agriculture:before {
+  content: "\e973";
+}
+
+.ca-gov-icon-air:before {
+  content: "\e9de";
+}
+
+.ca-gov-icon-air-polution:before {
+  content: "\e9df";
+}
+
+.ca-gov-icon-air-quality:before {
+  content: "\e9e0";
+}
+
+.ca-gov-icon-albums:before {
+  content: "\e90e";
+}
+
+.ca-gov-icon-amexcard:before {
+  content: "\e979";
+}
+
+.ca-gov-icon-amusement:before {
+  content: "\e9ab";
+}
+
+.ca-gov-icon-anchor:before {
+  content: "\e9e1";
+}
+
+.ca-gov-icon-android:before {
+  content: "\e620";
+}
+
+.ca-gov-icon-angry:before {
+  content: "\e975";
+}
+
+.ca-gov-icon-apple:before {
+  content: "\e61f";
+}
+
+.ca-gov-icon-apple-pay:before {
+  content: "\e97a";
+}
+
+.ca-gov-icon-apps:before {
+  content: "\e603";
+}
+
+.ca-gov-icon-archive:before {
+  content: "\e088";
+}
+
+.ca-gov-icon-arrow-down:before {
+  content: "\e04c";
+}
+
+.ca-gov-icon-arrow-fill-down:before {
+  content: "\e03a";
+}
+
+.ca-gov-icon-arrow-fill-left:before {
+  content: "\e03b";
+}
+
+.ca-gov-icon-arrow-fill-left-down:before {
+  content: "\e040";
+}
+
+.ca-gov-icon-arrow-fill-left-up:before {
+  content: "\e03d";
+}
+
+.ca-gov-icon-arrow-fill-right:before {
+  content: "\e03c";
+}
+
+.ca-gov-icon-arrow-fill-right-down:before {
+  content: "\e03f";
+}
+
+.ca-gov-icon-arrow-fill-right-up:before {
+  content: "\e03e";
+}
+
+.ca-gov-icon-arrow-fill-up:before {
+  content: "\e039";
+}
+
+.ca-gov-icon-arrow-left:before {
+  content: "\e04d";
+}
+
+.ca-gov-icon-arrow-next:before {
+  content: "\e669";
+}
+
+.ca-gov-icon-arrow-prev:before {
+  content: "\e668";
+}
+
+.ca-gov-icon-arrow-right:before {
+  content: "\e04e";
+}
+
+.ca-gov-icon-arrow-up:before {
+  content: "\e04b";
+}
+
+.ca-gov-icon-at-sign:before {
+  content: "\e60e";
+}
+
+.ca-gov-icon-attachment:before {
+  content: "\e60f";
+}
+
+.ca-gov-icon-audience:before {
+  content: "\e9fa";
+}
+
+.ca-gov-icon-audio:before {
+  content: "\e63a";
+}
+
+.ca-gov-icon-baloons:before {
+  content: "\e9ac";
+}
+
+.ca-gov-icon-bambinton:before {
+  content: "\e9e2";
+}
+
+.ca-gov-icon-bar-chart:before {
+  content: "\e629";
+}
+
+.ca-gov-icon-barge-ship:before {
+  content: "\e9ad";
+}
+
+.ca-gov-icon-bars-up:before {
+  content: "\e9fd";
+}
+
+.ca-gov-icon-bars-upward:before {
+  content: "\ea1d";
+}
+
+.ca-gov-icon-baseballl:before {
+  content: "\e9e3";
+}
+
+.ca-gov-icon-basketball:before {
+  content: "\e9e4";
+}
+
+.ca-gov-icon-bath:before {
+  content: "\e9e5";
+}
+
+.ca-gov-icon-bear:before {
+  content: "\e60b";
+}
+
+.ca-gov-icon-bell:before {
+  content: "\e982";
+}
+
+.ca-gov-icon-bike:before {
+  content: "\e9ae";
+}
+
+.ca-gov-icon-billiards:before {
+  content: "\e9e6";
+}
+
+.ca-gov-icon-binoculars:before {
+  content: "\e632";
+}
+
+.ca-gov-icon-biohazard:before {
+  content: "\e918";
+}
+
+.ca-gov-icon-boat:before {
+  content: "\e9af";
+}
+
+.ca-gov-icon-book:before {
+  content: "\e086";
+}
+
+.ca-gov-icon-bookmark:before {
+  content: "\e983";
+}
+
+.ca-gov-icon-books:before {
+  content: "\e984";
+}
+
+.ca-gov-icon-bowling:before {
+  content: "\e9e7";
+}
+
+.ca-gov-icon-brain:before {
+  content: "\e90f";
+}
+
+.ca-gov-icon-bridge:before {
+  content: "\e9b0";
+}
+
+.ca-gov-icon-bridge-alt:before {
+  content: "\e9b1";
+}
+
+.ca-gov-icon-briefcase:before {
+  content: "\e901";
+}
+
+.ca-gov-icon-building:before {
+  content: "\e0fd";
+}
+
+.ca-gov-icon-bus:before {
+  content: "\e9b2";
+}
+
+.ca-gov-icon-bus-alt:before {
+  content: "\e9b3";
+}
+
+.ca-gov-icon-ca-capitol:before {
+  content: "\e657";
+}
+
+.ca-gov-icon-ca-state:before {
+  content: "\e658";
+}
+
+.ca-gov-icon-cal:before {
+  content: "\e650";
+}
+
+.ca-gov-icon-cal-bear:before {
+  content: "\e90b";
+}
+
+.ca-gov-icon-calculator:before {
+  content: "\e0e7";
+}
+
+.ca-gov-icon-calendar:before {
+  content: "\e60a";
+}
+
+.ca-gov-icon-call:before {
+  content: "\e641";
+}
+
+.ca-gov-icon-camera:before {
+  content: "\e637";
+}
+
+.ca-gov-icon-campfire:before {
+  content: "\e96a";
+}
+
+.ca-gov-icon-cannabis:before {
+  content: "\e974";
+}
+
+.ca-gov-icon-capitol:before {
+  content: "\e606";
+}
+
+.ca-gov-icon-car:before {
+  content: "\e9b4";
+}
+
+.ca-gov-icon-car-alt:before {
+  content: "\e9b5";
+}
+
+.ca-gov-icon-care-tweezers:before {
+  content: "\e9e8";
+}
+
+.ca-gov-icon-caret-down:before {
+  content: "3";
+}
+
+.ca-gov-icon-caret-fill-down:before {
+  content: "\e044";
+}
+
+.ca-gov-icon-caret-fill-left:before {
+  content: "\e045";
+}
+
+.ca-gov-icon-caret-fill-right:before {
+  content: "\e046";
+}
+
+.ca-gov-icon-caret-fill-two-down:before {
+  content: "\e048";
+}
+
+.ca-gov-icon-caret-fill-two-left:before {
+  content: "\e049";
+}
+
+.ca-gov-icon-caret-fill-two-right:before {
+  content: "\e04a";
+}
+
+.ca-gov-icon-caret-fill-two-up:before {
+  content: "\e047";
+}
+
+.ca-gov-icon-caret-fill-up:before {
+  content: "\e043";
+}
+
+.ca-gov-icon-caret-left:before {
+  content: "4";
+}
+
+.ca-gov-icon-caret-line-down:before {
+  content: ";";
+}
+
+.ca-gov-icon-caret-line-left:before {
+  content: "<";
+}
+
+.ca-gov-icon-caret-line-right:before {
+  content: "=";
+}
+
+.ca-gov-icon-caret-line-two-down:before {
+  content: "?";
+}
+
+.ca-gov-icon-caret-line-two-left:before {
+  content: "@";
+}
+
+.ca-gov-icon-caret-line-two-right:before {
+  content: "A";
+}
+
+.ca-gov-icon-caret-line-two-up:before {
+  content: ">";
+}
+
+.ca-gov-icon-caret-line-up:before {
+  content: ":";
+}
+
+.ca-gov-icon-caret-right:before {
+  content: "5";
+}
+
+.ca-gov-icon-caret-two-down:before {
+  content: "7";
+}
+
+.ca-gov-icon-caret-two-left:before {
+  content: "8";
+}
+
+.ca-gov-icon-caret-two-right:before {
+  content: "9";
+}
+
+.ca-gov-icon-caret-two-up:before {
+  content: "6";
+}
+
+.ca-gov-icon-caret-up:before {
+  content: "2";
+}
+
+.ca-gov-icon-carousel-next:before {
+  content: "\e667";
+}
+
+.ca-gov-icon-carousel-pause:before {
+  content: "\e66c";
+}
+
+.ca-gov-icon-carousel-play:before {
+  content: "\e907";
+}
+
+.ca-gov-icon-carousel-prev:before {
+  content: "\e666";
+}
+
+.ca-gov-icon-casino:before {
+  content: "\e9b6";
+}
+
+.ca-gov-icon-cc-copyright:before {
+  content: "\e656";
+}
+
+.ca-gov-icon-cellphone-touch:before {
+  content: "\ea08";
+}
+
+.ca-gov-icon-certificate:before {
+  content: "\e910";
+}
+
+.ca-gov-icon-certificate-check:before {
+  content: "\e911";
+}
+
+.ca-gov-icon-certificate-click:before {
+  content: "\ea03";
+}
+
+.ca-gov-icon-charge:before {
+  content: "\e912";
+}
+
+.ca-gov-icon-charge-cycle:before {
+  content: "\e913";
+}
+
+.ca-gov-icon-charge-units:before {
+  content: "\e914";
+}
+
+.ca-gov-icon-chat:before {
+  content: "\e605";
+}
+
+.ca-gov-icon-chat-bubble:before {
+  content: "\e66f";
+}
+
+.ca-gov-icon-chat-bubbles:before {
+  content: "\e640";
+}
+
+.ca-gov-icon-check-fill:before {
+  content: "\e052";
+}
+
+.ca-gov-icon-check-line:before {
+  content: "R";
+}
+
+.ca-gov-icon-check-list:before {
+  content: "\e651";
+}
+
+.ca-gov-icon-check-mark:before {
+  content: "N";
+}
+
+.ca-gov-icon-chemical-hazard:before {
+  content: "\e956";
+}
+
+.ca-gov-icon-chrome:before {
+  content: "\e97d";
+}
+
+.ca-gov-icon-church:before {
+  content: "\e9e9";
+}
+
+.ca-gov-icon-city:before {
+  content: "\e915";
+}
+
+.ca-gov-icon-clipboard:before {
+  content: "\e653";
+}
+
+.ca-gov-icon-clock:before {
+  content: "\e916";
+}
+
+.ca-gov-icon-close-fill:before {
+  content: "\e051";
+}
+
+.ca-gov-icon-close-line:before {
+  content: "Q";
+}
+
+.ca-gov-icon-close-mark:before {
+  content: "M";
+}
+
+.ca-gov-icon-cloud-download:before {
+  content: "\e62e";
+}
+
+.ca-gov-icon-cloud-gear:before {
+  content: "\e917";
+}
+
+.ca-gov-icon-cloud-services:before {
+  content: "\e91a";
+}
+
+.ca-gov-icon-cloud-sync:before {
+  content: "\e91b";
+}
+
+.ca-gov-icon-cloud-upload:before {
+  content: "\e62f";
+}
+
+.ca-gov-icon-code:before {
+  content: "\e91c";
+}
+
+.ca-gov-icon-cofee:before {
+  content: "\e9b7";
+}
+
+.ca-gov-icon-collapse-all:before {
+  content: "\e970";
+}
+
+.ca-gov-icon-collapse:before {
+  content: "X";
+}
+
+.ca-gov-icon-compass:before {
+  content: "\e633";
+}
+
+.ca-gov-icon-computer:before {
+  content: "\e621";
+}
+
+.ca-gov-icon-construction:before {
+  content: "\e628";
+}
+
+.ca-gov-icon-contact-us:before {
+  content: "\e66e";
+}
+
+.ca-gov-icon-contacts:before {
+  content: "\e087";
+}
+
+.ca-gov-icon-coronavirus:before {
+  content: "\e996";
+}
+
+.ca-gov-icon-coughing:before {
+  content: "\e997";
+}
+
+.ca-gov-icon-cover:before {
+  content: "\e998";
+}
+
+.ca-gov-icon-cruise-ship:before {
+  content: "\e9b8";
+}
+
+.ca-gov-icon-cubes:before {
+  content: "\e999";
+}
+
+.ca-gov-icon-currency:before {
+  content: "\e0f3";
+}
+
+.ca-gov-icon-dam:before {
+  content: "\e96b";
+}
+
+.ca-gov-icon-danger:before {
+  content: "\e957";
+}
+
+.ca-gov-icon-desktop-checklist:before {
+  content: "\ea05";
+}
+
+.ca-gov-icon-desktop-video-module:before {
+  content: "\ea10";
+}
+
+.ca-gov-icon-dices:before {
+  content: "\e9b9";
+}
+
+.ca-gov-icon-digging:before {
+  content: "\e989";
+}
+
+.ca-gov-icon-directions:before {
+  content: "\e9ba";
+}
+
+.ca-gov-icon-discovercard:before {
+  content: "\e97b";
+}
+
+.ca-gov-icon-distance:before {
+  content: "\e995";
+}
+
+.ca-gov-icon-do-not-sign:before {
+  content: "\e958";
+}
+
+.ca-gov-icon-document:before {
+  content: "\e652";
+}
+
+.ca-gov-icon-down:before {
+  content: "\e9ea";
+}
+
+.ca-gov-icon-down-left:before {
+  content: "\e9eb";
+}
+
+.ca-gov-icon-down-right:before {
+  content: "\e9ec";
+}
+
+.ca-gov-icon-download:before {
+  content: "\e62d";
+}
+
+.ca-gov-icon-download-cloud:before {
+  content: "\e96c";
+}
+
+.ca-gov-icon-drag:before {
+  content: "\e972";
+}
+
+.ca-gov-icon-drawer:before {
+  content: "\e084";
+}
+
+.ca-gov-icon-drive:before {
+  content: "\e0e5";
+}
+
+.ca-gov-icon-ear:before {
+  content: "\e91d";
+}
+
+.ca-gov-icon-ear-slash:before {
+  content: "\e91e";
+}
+
+.ca-gov-icon-earthquake:before {
+  content: "\e959";
+}
+
+.ca-gov-icon-electricity-hazard:before {
+  content: "\e95c";
+}
+
+.ca-gov-icon-email:before {
+  content: "\e609";
+}
+
+.ca-gov-icon-entertainment:before {
+  content: "\e9bb";
+}
+
+.ca-gov-icon-envelope-checklist:before {
+  content: "\ea13";
+}
+
+.ca-gov-icon-excel:before {
+  content: "\e612";
+}
+
+.ca-gov-icon-expand-all:before {
+  content: "\e991";
+}
+
+.ca-gov-icon-expand:before {
+  content: "Y";
+}
+
+.ca-gov-icon-external-link:before {
+  content: "\e9ed";
+}
+
+.ca-gov-icon-eye:before {
+  content: "\e91f";
+}
+
+.ca-gov-icon-eye-slash:before {
+  content: "\e920";
+}
+
+.ca-gov-icon-facebook:before {
+  content: "\e616";
+}
+
+.ca-gov-icon-family:before {
+  content: "\e9bc";
+}
+
+.ca-gov-icon-family-alt:before {
+  content: "\e9bd";
+}
+
+.ca-gov-icon-fastfood:before {
+  content: "\e9be";
+}
+
+.ca-gov-icon-favorite:before {
+  content: "\e659";
+}
+
+.ca-gov-icon-features:before {
+  content: "\e993";
+}
+
+.ca-gov-icon-ferry:before {
+  content: "\e9bf";
+}
+
+.ca-gov-icon-file:before {
+  content: "\e921";
+}
+
+.ca-gov-icon-file-audio:before {
+  content: "\e922";
+}
+
+.ca-gov-icon-file-certificate:before {
+  content: "\e923";
+}
+
+.ca-gov-icon-file-check:before {
+  content: "\e924";
+}
+
+.ca-gov-icon-file-code:before {
+  content: "\e925";
+}
+
+.ca-gov-icon-file-csv:before {
+  content: "\e926";
+}
+
+.ca-gov-icon-file-download:before {
+  content: "\e927";
+}
+
+.ca-gov-icon-file-excel:before {
+  content: "\e928";
+}
+
+.ca-gov-icon-file-export:before {
+  content: "\e929";
+}
+
+.ca-gov-icon-file-import:before {
+  content: "\e92a";
+}
+
+.ca-gov-icon-file-invoice:before {
+  content: "\e92b";
+}
+
+.ca-gov-icon-file-medical:before {
+  content: "\e92c";
+}
+
+.ca-gov-icon-file-medical-alt:before {
+  content: "\e92d";
+}
+
+.ca-gov-icon-file-pdf:before {
+  content: "\e92e";
+}
+
+.ca-gov-icon-file-powerpoint:before {
+  content: "\e92f";
+}
+
+.ca-gov-icon-file-prescription:before {
+  content: "\e930";
+}
+
+.ca-gov-icon-file-upload:before {
+  content: "\e931";
+}
+
+.ca-gov-icon-file-video:before {
+  content: "\e932";
+}
+
+.ca-gov-icon-file-word:before {
+  content: "\e933";
+}
+
+.ca-gov-icon-file-zip:before {
+  content: "\e934";
+}
+
+.ca-gov-icon-film:before {
+  content: "\e024";
+}
+
+.ca-gov-icon-filter:before {
+  content: "\e90a";
+}
+
+.ca-gov-icon-filter-solid:before {
+  content: "\e935";
+}
+
+.ca-gov-icon-fingerprint:before {
+  content: "\e936";
+}
+
+.ca-gov-icon-fingerprint-check:before {
+  content: "\e937";
+}
+
+.ca-gov-icon-fire:before {
+  content: "\e631";
+}
+
+.ca-gov-icon-firefox:before {
+  content: "\e97e";
+}
+
+.ca-gov-icon-fitness:before {
+  content: "\e9c0";
+}
+
+.ca-gov-icon-fitness-alt:before {
+  content: "\e9c1";
+}
+
+.ca-gov-icon-flickr:before {
+  content: "\e61d";
+}
+
+.ca-gov-icon-flood:before {
+  content: "\e95d";
+}
+
+.ca-gov-icon-flowchart:before {
+  content: "\e0df";
+}
+
+.ca-gov-icon-folder:before {
+  content: "\e05c";
+}
+
+.ca-gov-icon-football:before {
+  content: "\e9ee";
+}
+
+.ca-gov-icon-gas-pump:before {
+  content: "\e98a";
+}
+
+.ca-gov-icon-gear:before {
+  content: "\e64d";
+}
+
+.ca-gov-icon-gears:before {
+  content: "\e900";
+}
+
+.ca-gov-icon-glass:before {
+  content: "\e987";
+}
+
+.ca-gov-icon-globe:before {
+  content: "\e0e3";
+}
+
+.ca-gov-icon-golf:before {
+  content: "\e9ef";
+}
+
+.ca-gov-icon-google:before {
+  content: "\ea0e";
+}
+
+.ca-gov-icon-google-plus:before {
+  content: "\e66d";
+}
+
+.ca-gov-icon-graduate:before {
+  content: "\e903";
+}
+
+.ca-gov-icon-graduate-pointer:before {
+  content: "\ea0f";
+}
+
+.ca-gov-icon-graph:before {
+  content: "\e62b";
+}
+
+.ca-gov-icon-green:before {
+  content: "\e638";
+}
+
+.ca-gov-icon-grid:before {
+  content: "\e08c";
+}
+
+.ca-gov-icon-hair:before {
+  content: "\e9c2";
+}
+
+.ca-gov-icon-hair-salon:before {
+  content: "\e9c3";
+}
+
+.ca-gov-icon-hand:before {
+  content: "\e938";
+}
+
+.ca-gov-icon-hand-heart:before {
+  content: "\e99a";
+}
+
+.ca-gov-icon-hand-money:before {
+  content: "\e939";
+}
+
+.ca-gov-icon-hand-watter:before {
+  content: "\e99b";
+}
+
+.ca-gov-icon-handshake:before {
+  content: "\e93a";
+}
+
+.ca-gov-icon-happy:before {
+  content: "\e976";
+}
+
+.ca-gov-icon-hazard:before {
+  content: "\e95e";
+}
+
+.ca-gov-icon-heart:before {
+  content: "\e988";
+}
+
+.ca-gov-icon-highway:before {
+  content: "\e9c4";
+}
+
+.ca-gov-icon-home:before {
+  content: "\e601";
+}
+
+.ca-gov-icon-home-education:before {
+  content: "\ea07";
+}
+
+.ca-gov-icon-home-graduate:before {
+  content: "\ea09";
+}
+
+.ca-gov-icon-hourglass:before {
+  content: "\e0e1";
+}
+
+.ca-gov-icon-hours:before {
+  content: "\e90c";
+}
+
+.ca-gov-icon-hours-security:before {
+  content: "\e90d";
+}
+
+.ca-gov-icon-house:before {
+  content: "\e64c";
+}
+
+.ca-gov-icon-hurricane:before {
+  content: "\e95f";
+}
+
+.ca-gov-icon-idea:before {
+  content: "\e902";
+}
+
+.ca-gov-icon-idea-alt:before {
+  content: "\e98b";
+}
+
+.ca-gov-icon-ie:before {
+  content: "\e97f";
+}
+
+.ca-gov-icon-image:before {
+  content: "\e64b";
+}
+
+.ca-gov-icon-images:before {
+  content: "\e904";
+}
+
+.ca-gov-icon-important:before {
+  content: "\e63f";
+}
+
+.ca-gov-icon-important-line:before {
+  content: "\e906";
+}
+
+.ca-gov-icon-info:before {
+  content: "\e661";
+}
+
+.ca-gov-icon-info-bubble:before {
+  content: "\e670";
+}
+
+.ca-gov-icon-info-line:before {
+  content: "\e905";
+}
+
+.ca-gov-icon-instagram:before {
+  content: "\e9dd";
+}
+
+.ca-gov-icon-institute:before {
+  content: "\e93b";
+}
+
+.ca-gov-icon-justice-legal:before {
+  content: "\e60d";
+}
+
+.ca-gov-icon-key:before {
+  content: "\e65f";
+}
+
+.ca-gov-icon-lab-tests:before {
+  content: "\e99c";
+}
+
+.ca-gov-icon-law-enforcement:before {
+  content: "\e60c";
+}
+
+.ca-gov-icon-left:before {
+  content: "\e9f0";
+}
+
+.ca-gov-icon-lightbulb:before {
+  content: "\e072";
+}
+
+.ca-gov-icon-link:before {
+  content: "\e65d";
+}
+
+.ca-gov-icon-linkedin:before {
+  content: "\e617";
+}
+
+.ca-gov-icon-location:before {
+  content: "\e081";
+}
+
+.ca-gov-icon-lock:before {
+  content: "\e660";
+}
+
+.ca-gov-icon-logo:before {
+  content: "\e600";
+}
+
+.ca-gov-icon-loud-speaker:before {
+  content: "\e639";
+}
+
+.ca-gov-icon-magnify-glass:before {
+  content: "\e65e";
+}
+
+.ca-gov-icon-mail:before {
+  content: "\e64a";
+}
+
+.ca-gov-icon-malware:before {
+  content: "\e919";
+}
+
+.ca-gov-icon-map:before {
+  content: "\e083";
+}
+
+.ca-gov-icon-mask:before {
+  content: "\e99d";
+}
+
+.ca-gov-icon-mastercard:before {
+  content: "\e978";
+}
+
+.ca-gov-icon-medal:before {
+  content: "\e98c";
+}
+
+.ca-gov-icon-medical:before {
+  content: "\e63c";
+}
+
+.ca-gov-icon-medical-bubble:before {
+  content: "\e93c";
+}
+
+.ca-gov-icon-medical-care:before {
+  content: "\e93d";
+}
+
+.ca-gov-icon-medical-case:before {
+  content: "\e93e";
+}
+
+.ca-gov-icon-medical-clinic:before {
+  content: "\e93f";
+}
+
+.ca-gov-icon-medical-cross:before {
+  content: "\e940";
+}
+
+.ca-gov-icon-medical-doctor:before {
+  content: "\e941";
+}
+
+.ca-gov-icon-medical-heart:before {
+  content: "\e942";
+}
+
+.ca-gov-icon-medical-pills:before {
+  content: "\e943";
+}
+
+.ca-gov-icon-menu:before {
+  content: "\e602";
+}
+
+.ca-gov-icon-menu-toggle-closed:before {
+  content: "\e66a";
+}
+
+.ca-gov-icon-menu-toggle-open:before {
+  content: "\e66b";
+}
+
+.ca-gov-icon-mic:before {
+  content: "\e07f";
+}
+
+.ca-gov-icon-microsoft:before {
+  content: "\e61e";
+}
+
+.ca-gov-icon-minus-fill:before {
+  content: "\e04f";
+}
+
+.ca-gov-icon-minus-line:before {
+  content: "O";
+}
+
+.ca-gov-icon-minus-mark:before {
+  content: "K";
+}
+
+.ca-gov-icon-mobile:before {
+  content: "\e944";
+}
+
+.ca-gov-icon-mobile-graduate:before {
+  content: "\ea11";
+}
+
+.ca-gov-icon-mobile-textbook:before {
+  content: "\ea0a";
+}
+
+.ca-gov-icon-museum:before {
+  content: "\e9c5";
+}
+
+.ca-gov-icon-museum-alt:before {
+  content: "\e9c6";
+}
+
+.ca-gov-icon-music:before {
+  content: "\e08e";
+}
+
+.ca-gov-icon-nail-polish:before {
+  content: "\e9f1";
+}
+
+.ca-gov-icon-no-coughing:before {
+  content: "\e99e";
+}
+
+.ca-gov-icon-no-handshake:before {
+  content: "\e99f";
+}
+
+.ca-gov-icon-no-smoking:before {
+  content: "\e98e";
+}
+
+.ca-gov-icon-no-travel:before {
+  content: "\e9c7";
+}
+
+.ca-gov-icon-no-virus:before {
+  content: "\e9a0";
+}
+
+.ca-gov-icon-online-education:before {
+  content: "\ea01";
+}
+
+.ca-gov-icon-online-graduate:before {
+  content: "\e9ff";
+}
+
+.ca-gov-icon-online-help:before {
+  content: "\ea1e";
+}
+
+.ca-gov-icon-online-module:before {
+  content: "\ea0b";
+}
+
+.ca-gov-icon-online-services:before {
+  content: "\e65c";
+}
+
+.ca-gov-icon-opera:before {
+  content: "\e980";
+}
+
+.ca-gov-icon-paddle-boat:before {
+  content: "\e9c8";
+}
+
+.ca-gov-icon-page:before {
+  content: "\e654";
+}
+
+.ca-gov-icon-palette:before {
+  content: "\e986";
+}
+
+.ca-gov-icon-party:before {
+  content: "\e9c9";
+}
+
+.ca-gov-icon-pause:before {
+  content: "\e648";
+}
+
+.ca-gov-icon-payment-card:before {
+  content: "\e645";
+}
+
+.ca-gov-icon-paypal:before {
+  content: "\e97c";
+}
+
+.ca-gov-icon-pdf:before {
+  content: "\e614";
+}
+
+.ca-gov-icon-pencil:before {
+  content: "j";
+}
+
+.ca-gov-icon-pencil-edit:before {
+  content: "l";
+}
+
+.ca-gov-icon-people:before {
+  content: "\e642";
+}
+
+.ca-gov-icon-person:before {
+  content: "\e643";
+}
+
+.ca-gov-icon-personal-care:before {
+  content: "\e9f2";
+}
+
+.ca-gov-icon-phone:before {
+  content: "\e608";
+}
+
+.ca-gov-icon-pie-chart:before {
+  content: "\e62a";
+}
+
+.ca-gov-icon-pinterest:before {
+  content: "\e61a";
+}
+
+.ca-gov-icon-places:before {
+  content: "\e9ca";
+}
+
+.ca-gov-icon-play:before {
+  content: "\e647";
+}
+
+.ca-gov-icon-plus-fill:before {
+  content: "\e050";
+}
+
+.ca-gov-icon-plus-line:before {
+  content: "P";
+}
+
+.ca-gov-icon-plus-mark:before {
+  content: "L";
+}
+
+.ca-gov-icon-powerpoint:before {
+  content: "\e611";
+}
+
+.ca-gov-icon-print:before {
+  content: "\e63b";
+}
+
+.ca-gov-icon-pro-services:before {
+  content: "\e945";
+}
+
+.ca-gov-icon-procurement:before {
+  content: "\e9a1";
+}
+
+.ca-gov-icon-project:before {
+  content: "\e9a2";
+}
+
+.ca-gov-icon-pushpin:before {
+  content: "\e082";
+}
+
+.ca-gov-icon-puzzle:before {
+  content: "\e946";
+}
+
+.ca-gov-icon-puzzle-piece:before {
+  content: "\e947";
+}
+
+.ca-gov-icon-quake-hazard:before {
+  content: "\e95b";
+}
+
+.ca-gov-icon-quake-house:before {
+  content: "\e95a";
+}
+
+.ca-gov-icon-question:before {
+  content: "\e909";
+}
+
+.ca-gov-icon-question-fill:before {
+  content: "\e064";
+}
+
+.ca-gov-icon-question-line:before {
+  content: "\e908";
+}
+
+.ca-gov-icon-quote-fill:before {
+  content: "\e06a";
+}
+
+.ca-gov-icon-radiation:before {
+  content: "\e955";
+}
+
+.ca-gov-icon-rail:before {
+  content: "\e9cb";
+}
+
+.ca-gov-icon-read-book:before {
+  content: "\e655";
+}
+
+.ca-gov-icon-reader:before {
+  content: "\e985";
+}
+
+.ca-gov-icon-recycle:before {
+  content: "\e948";
+}
+
+.ca-gov-icon-responsive:before {
+  content: "\e949";
+}
+
+.ca-gov-icon-responsive-alt:before {
+  content: "\e94a";
+}
+
+.ca-gov-icon-restaurant:before {
+  content: "\e9cc";
+}
+
+.ca-gov-icon-right:before {
+  content: "\e9f3";
+}
+
+.ca-gov-icon-road:before {
+  content: "\e9cd";
+}
+
+.ca-gov-icon-road-pin:before {
+  content: "\e65b";
+}
+
+.ca-gov-icon-roadways:before {
+  content: "\e624";
+}
+
+.ca-gov-icon-rss:before {
+  content: "\e65a";
+}
+
+.ca-gov-icon-rv:before {
+  content: "\e9ce";
+}
+
+.ca-gov-icon-safari:before {
+  content: "\e981";
+}
+
+.ca-gov-icon-sail-ship:before {
+  content: "\e9cf";
+}
+
+.ca-gov-icon-science:before {
+  content: "\e00a";
+}
+
+.ca-gov-icon-scooter:before {
+  content: "\e9d0";
+}
+
+.ca-gov-icon-sea-level-rise:before {
+  content: "\e960";
+}
+
+.ca-gov-icon-sea-level-rise-alt:before {
+  content: "\e96e";
+}
+
+.ca-gov-icon-search:before {
+  content: "\e604";
+}
+
+.ca-gov-icon-search-right:before {
+  content: "U";
+}
+
+.ca-gov-icon-searching:before {
+  content: "\e0f7";
+}
+
+.ca-gov-icon-security-network:before {
+  content: "\e94b";
+}
+
+.ca-gov-icon-security-system:before {
+  content: "\e94c";
+}
+
+.ca-gov-icon-server:before {
+  content: "\e62c";
+}
+
+.ca-gov-icon-severe-weather:before {
+  content: "\e961";
+}
+
+.ca-gov-icon-share:before {
+  content: "\e615";
+}
+
+.ca-gov-icon-share-Instagram:before {
+  content: "\e9f9";
+}
+
+.ca-gov-icon-share-button:before {
+  content: "\e671";
+}
+
+.ca-gov-icon-share-email:before {
+  content: "\e673";
+}
+
+.ca-gov-icon-share-facebook:before {
+  content: "\e672";
+}
+
+.ca-gov-icon-share-flickr:before {
+  content: "\e674";
+}
+
+.ca-gov-icon-share-googleplus:before {
+  content: "\e677";
+}
+
+.ca-gov-icon-share-linkedin:before {
+  content: "\e676";
+}
+
+.ca-gov-icon-share-pinterest:before {
+  content: "\e679";
+}
+
+.ca-gov-icon-share-snapchat:before {
+  content: "\e98f";
+}
+
+.ca-gov-icon-share-twitter:before {
+  content: "\e675";
+}
+
+.ca-gov-icon-share-vimeo:before {
+  content: "\e67a";
+}
+
+.ca-gov-icon-share-youtube:before {
+  content: "\e67b";
+}
+
+.ca-gov-icon-shield:before {
+  content: "\e630";
+}
+
+.ca-gov-icon-shield-check:before {
+  content: "\e94d";
+}
+
+.ca-gov-icon-ship:before {
+  content: "\e9d1";
+}
+
+.ca-gov-icon-shopping-cart:before {
+  content: "\e635";
+}
+
+.ca-gov-icon-sign-language:before {
+  content: "\e971";
+}
+
+.ca-gov-icon-skip-backwards:before {
+  content: "\e646";
+}
+
+.ca-gov-icon-skip-forward:before {
+  content: "\e649";
+}
+
+.ca-gov-icon-smartphone:before {
+  content: "\e623";
+}
+
+.ca-gov-icon-smoking:before {
+  content: "\e98d";
+}
+
+.ca-gov-icon-snapchat:before {
+  content: "\e990";
+}
+
+.ca-gov-icon-soap:before {
+  content: "\e9a3";
+}
+
+.ca-gov-icon-soccer:before {
+  content: "\e9f4";
+}
+
+.ca-gov-icon-sos:before {
+  content: "\e634";
+}
+
+.ca-gov-icon-spartan-helmet:before {
+  content: "\ea14";
+}
+
+.ca-gov-icon-speech-dialog:before {
+  content: "\ea1f";
+}
+
+.ca-gov-icon-speedtrain:before {
+  content: "\e9d2";
+}
+
+.ca-gov-icon-state:before {
+  content: "\e607";
+}
+
+.ca-gov-icon-stay-home:before {
+  content: "\e9a4";
+}
+
+.ca-gov-icon-stop-fire:before {
+  content: "\e962";
+}
+
+.ca-gov-icon-stop-hand:before {
+  content: "\e963";
+}
+
+.ca-gov-icon-suv:before {
+  content: "\e9d3";
+}
+
+.ca-gov-icon-table:before {
+  content: "\e025";
+}
+
+.ca-gov-icon-tablet:before {
+  content: "\e622";
+}
+
+.ca-gov-icon-tags:before {
+  content: "\e07c";
+}
+
+.ca-gov-icon-teleworking:before {
+  content: "\e9a5";
+}
+
+.ca-gov-icon-temple:before {
+  content: "\e9d4";
+}
+
+.ca-gov-icon-tennis:before {
+  content: "\e9f5";
+}
+
+.ca-gov-icon-tent:before {
+  content: "\e969";
+}
+
+.ca-gov-icon-testing:before {
+  content: "\e9a6";
+}
+
+.ca-gov-icon-testing-alt:before {
+  content: "\e9a7";
+}
+
+.ca-gov-icon-textbook:before {
+  content: "\ea00";
+}
+
+.ca-gov-icon-thumb-up:before {
+  content: "\e94e";
+}
+
+.ca-gov-icon-time:before {
+  content: "\e64f";
+}
+
+.ca-gov-icon-tool:before {
+  content: "\e64e";
+}
+
+.ca-gov-icon-tools:before {
+  content: "\e035";
+}
+
+.ca-gov-icon-tornado:before {
+  content: "\e964";
+}
+
+.ca-gov-icon-train:before {
+  content: "\e9d5";
+}
+
+.ca-gov-icon-travel-air:before {
+  content: "\e626";
+}
+
+.ca-gov-icon-travel-car:before {
+  content: "\e625";
+}
+
+.ca-gov-icon-triangle-down:before {
+  content: "C";
+}
+
+.ca-gov-icon-triangle-left:before {
+  content: "D";
+}
+
+.ca-gov-icon-triangle-line-down:before {
+  content: "G";
+}
+
+.ca-gov-icon-triangle-line-left:before {
+  content: "H";
+}
+
+.ca-gov-icon-triangle-line-right:before {
+  content: "I";
+}
+
+.ca-gov-icon-triangle-line-up:before {
+  content: "F";
+}
+
+.ca-gov-icon-triangle-right:before {
+  content: "E";
+}
+
+.ca-gov-icon-triangle-up:before {
+  content: "B";
+}
+
+.ca-gov-icon-trolleybus:before {
+  content: "\e9d6";
+}
+
+.ca-gov-icon-trophy:before {
+  content: "\e94f";
+}
+
+.ca-gov-icon-truck:before {
+  content: "\e9d7";
+}
+
+.ca-gov-icon-truck-alt:before {
+  content: "\e9d8";
+}
+
+.ca-gov-icon-truck-delivery:before {
+  content: "\e627";
+}
+
+.ca-gov-icon-tsunami:before {
+  content: "\e965";
+}
+
+.ca-gov-icon-tsunami-alt:before {
+  content: "\e96f";
+}
+
+.ca-gov-icon-twitter:before {
+  content: "\e619";
+}
+
+.ca-gov-icon-up:before {
+  content: "\e9f6";
+}
+
+.ca-gov-icon-up-left:before {
+  content: "\e9f7";
+}
+
+.ca-gov-icon-up-right:before {
+  content: "\e9f8";
+}
+
+.ca-gov-icon-update:before {
+  content: "\e994";
+}
+
+.ca-gov-icon-upload-cloud:before {
+  content: "\e96d";
+}
+
+.ca-gov-icon-user-desk:before {
+  content: "\ea0d";
+}
+
+.ca-gov-icon-user-desktop-instructor:before {
+  content: "\ea02";
+}
+
+.ca-gov-icon-user-headphone:before {
+  content: "\ea06";
+}
+
+.ca-gov-icon-user-id:before {
+  content: "\e644";
+}
+
+.ca-gov-icon-user-laptop:before {
+  content: "\ea04";
+}
+
+.ca-gov-icon-users:before {
+  content: "\e950";
+}
+
+.ca-gov-icon-users-alt:before {
+  content: "\e951";
+}
+
+.ca-gov-icon-users-check-mark:before {
+  content: "\ea27";
+}
+
+.ca-gov-icon-users-dialog:before {
+  content: "\e952";
+}
+
+.ca-gov-icon-users-interaction:before {
+  content: "\e953";
+}
+
+.ca-gov-icon-users-huddle:before {
+  content: "\ea28";
+}
+
+.ca-gov-icon-van:before {
+  content: "\e9d9";
+}
+
+.ca-gov-icon-video:before {
+  content: "\e954";
+}
+
+.ca-gov-icon-video-camera:before {
+  content: "\e636";
+}
+
+.ca-gov-icon-vimeo:before {
+  content: "\e61b";
+}
+
+.ca-gov-icon-virus:before {
+  content: "\e9a8";
+}
+
+.ca-gov-icon-viruses:before {
+  content: "\e9a9";
+}
+
+.ca-gov-icon-visa:before {
+  content: "\e977";
+}
+
+.ca-gov-icon-volcano:before {
+  content: "\e966";
+}
+
+.ca-gov-icon-volume:before {
+  content: "\e069";
+}
+
+.ca-gov-icon-wallet:before {
+  content: "\e0d8";
+}
+
+.ca-gov-icon-warning-circle:before {
+  content: "\e967";
+}
+
+.ca-gov-icon-warning-fill:before {
+  content: "\e062";
+}
+
+.ca-gov-icon-warning-square:before {
+  content: "\e968";
+}
+
+.ca-gov-icon-warning-triangle:before {
+  content: "\e063";
+}
+
+.ca-gov-icon-wash:before {
+  content: "\e9aa";
+}
+
+.ca-gov-icon-word:before {
+  content: "\e613";
+}
+
+.ca-gov-icon-yacht:before {
+  content: "\e9da";
+}
+
+.ca-gov-icon-youtube:before {
+  content: "\e618";
+}
+
+.ca-gov-icon-zipped-file:before {
+  content: "\e610";
+}
+
+.ca-gov-icon-zoo:before {
+  content: "\e9db";
+}
+
+.ca-gov-icon-zoo-alt:before {
+  content: "\e9dc";
+}
+
+.ca-gov-icon-zoom-in:before {
+  content: "\e63e";
+}
+
+.ca-gov-icon-zoom-out:before {
+  content: "\e63d";
+}
+
+select[data-class-icon] {
+  font-size: 20px;
+  font-family: "CaGov";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* website global fonts */
+/* beginnings of normalize */
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  background-color: inherit;
+  font-family: inherit;
+  color: inherit;
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  border: 0 solid;
+}
+
+/* html, body, main and all the website level base styes */
+#main-content {
+  margin-top: 32px;
+  margin-bottom: 64px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+#main-content.single-column.landing {
+  margin-bottom: 0;
+}
+
+.page-container-ds {
+  max-width: var(--w-lg, 1176px);
+  margin: 2rem auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.main-content-ds {
+  margin-top: 32px;
+  max-width: 100%;
+}
+
+article {
+  display: block;
+}
+
+/* Single column layout */
+.single-column {
+  max-width: var(--w-page-content, 876px);
+  margin: 0 auto;
+}
+
+.single-column.landing {
+  max-width: var(--w-lg, 1176px);
+  margin: 0 auto;
+}
+
+.single-column.single-column-wide {
+  max-width: var(--w-lg, 1176px);
+  margin: 0 auto;
+}
+
+.has-sidebar-left .single-column {
+  max-width: var(--w-lg, 1176px);
+  margin: 0 auto;
+}
+
+@media (max-width: 1216px) {
+  .footer-container,
+.page-container-ds {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+/* Responsive title behavior */
+/* Hide Mobile title, lives outside flex aligned elements and before content navigation, desktop page title is inside main. */
+.narrow-page-title {
+  display: none;
+}
+
+.main-content-ds.single-column.landing .wide-page-title {
+  display: none;
+}
+.main-content-ds.single-column.landing .narrow-page-title {
+  display: none;
+}
+
+/* Responsive page title */
+.wide-page-title {
+  display: none;
+}
+
+.narrow-page-title {
+  display: block;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.main-content-ds.single-column .wide-page-title {
+  display: none;
+}
+
+.main-content-ds.single-column.landing .wide-page-title {
+  display: none;
+}
+.main-content-ds.single-column.landing .narrow-page-title {
+  display: none;
+}
+
+.sidebar-container {
+  display: block;
+  width: 276px;
+  max-width: 276px;
+  padding-right: 16px;
+}
+
+.with-sidebar .main-content-default,
+.with-sidebar .ds-content-layout {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--s0) / 2 * -1);
+}
+.with-sidebar.has-sidebar-left .main-content-default > *, .with-sidebar.has-sidebar-left .main-content-ds .ds-content-layout > .everylayout {
+  margin: calc(var(--s0) / 2);
+  flex-basis: 267px;
+  flex-grow: 1;
+}
+.with-sidebar.has-sidebar-left .main-content-default > :last-child, .with-sidebar.has-sidebar-left .main-content-ds .ds-content-layout > .everylayout:last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - var(--s0));
+}
+.with-sidebar.has-sidebar-right .main-content-default, .with-sidebar.has-sidebar-right .main-content-ds .ds-content-layout > .everylayout {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - var(--s0));
+}
+.with-sidebar.has-sidebar-right .main-content-default > * > :last-child, .with-sidebar.has-sidebar-right .main-content-ds .ds-content-layout > :last-child {
+  margin: calc(var(--s0) / 2);
+  flex-basis: 267px;
+  flex-grow: 1;
+}
+.with-sidebar.page-container-ds.has-sidebar-left main {
+  margin-left: 64px;
+  margin-right: 20px;
+}
+.with-sidebar .page-container-ds.has-sidebar-right main {
+  margin-right: 64px;
+  margin-left: 20px;
+}
+.with-sidebar .main-container-ds {
+  max-width: 877px;
+}
+
+/* footer */
+.content-footer-container {
+  border-bottom: 1px solid var(--gray-200, #ededef);
+  border-top: 1px solid var(--gray-200, #ededef);
+  padding-top: 23px;
+  padding-bottom: 23px;
+}
+
+.content-footer {
+  max-width: var(--w-lg, 1176px) !important;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (max-width: 767px) {
+  .with-sidebar .main-content-default,
+.with-sidebar .ds-content-layout {
+    display: block;
+  }
+  .with-sidebar.page-container-ds main {
+    margin-left: 0 !important;
+    margin-top: 32px;
+  }
+  .with-sidebar main {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  /* sidebar */
+  .sidebar-container {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding-right: 16px;
+  }
+
+  /* Content Menu */
+  .content-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+/* Scrolling default */
+:root {
+  --animation-duration: 1s;
+  --transiton-duration: 0.5s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --animation-duration: 0;
+    --transiton-duration: 0;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+/* html, body, main and all the website level base styes */
+/* Gutenberg Block alignment */
+/* Class applied to most external element of a gutenberg block component. Controls spacing between blocks. */
+.cagov-stack {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Apply same spacing mechanism as cagov-stack, but overriding default gutenberg block element classes */
+.wp-block-columns {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.wp-block-column {
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.wp-block-column:first-child {
+  margin-right: 32px;
+}
+
+/* border styles */
+.wp-block-table {
+  background: none !important;
+  border: none !important;
+}
+
+.wp-block-table table,
+.wp-block-table table th,
+.wp-block-table table td {
+  border: 1px solid var(--gray-200, #ededef) !important;
+}
+
+main .wp-block-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: bottom;
+  margin-bottom: 32px;
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .wp-block-columns {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .wp-block-column {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+/* a, a:hover, a:focus */
+/* Buttons global styles */
+.wp-block-button__link {
+  background-color: #33705b;
+  /* defined here for when css vars are not supported */
+  background-color: var(--primary-700, #165ac2);
+  color: white;
+  padding: 0.5556rem;
+  margin: 0 0 1rem 0;
+  border-radius: 0.2778rem;
+  font-weight: bold;
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+}
+
+.wp-block-button__link:hover {
+  /* defined here for when css vars are not supported */
+  background-color: var(--primary-900, #003688);
+  /* variable used with fallback in case it is not defined */
+  color: var(--white, #ffffff);
+  padding: 0.5556rem;
+  border-radius: 0.2778rem;
+  font-weight: bold;
+  display: inline-block;
+  border: none;
+}
+
+.btn-primary {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-6);
+  padding: var(--s-1) var(--s-2);
+  line-height: var(--font-lineheight-3);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--primary-700);
+  border-color: var(--primary-700);
+}
+.btn-primary:hover {
+  background-color: var(--primary-900);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  color: var(--white);
+}
+.btn-primary:focus {
+  background-color: var(--primary-900);
+  border-color: var(--primary-900);
+  outline: var(--border-2) solid var(--accent2-500);
+  outline-offset: 2px;
+}
+.btn-primary:active {
+  box-shadow: none;
+}
+
+.btn-primary-outline {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-6);
+  padding: var(--s-1) var(--s-2);
+  line-height: var(--font-lineheight-3);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  color: var(--primary-700);
+  background-color: transparent;
+  border-color: var(--primary-700);
+}
+.btn-primary-outline:hover {
+  color: var(--primary-900);
+  border-color: var(--primary-900);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+.btn-primary-outline:focus {
+  color: var(--primary-900);
+  border-color: var(--primary-900);
+  outline: var(--border-2) solid var(--accent2-500);
+  outline-offset: 2px;
+}
+.btn-primary-outline:active {
+  box-shadow: none;
+}
+
+.btn-accent1 {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-6);
+  padding: var(--s-1) var(--s-2);
+  line-height: var(--font-lineheight-3);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  color: var(--primary-900);
+  background-color: var(--accent1-300);
+  border-color: var(--accent1-300);
+}
+.btn-accent1:hover {
+  color: var(--primary-900);
+  background-color: var(--accent1-100);
+  border-color: var(--accent1-100);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+.btn-accent1:focus {
+  background-color: var(--accent1-100);
+  border-color: var(--accent1-100);
+  outline: var(--border-2) solid var(--accent2-500);
+  outline-offset: 2px;
+}
+.btn-accent1:active {
+  box-shadow: none;
+}
+
+.btn-accent1-outline {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-6);
+  padding: var(--s-1) var(--s-2);
+  line-height: var(--font-lineheight-3);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  color: var(--accent1-300);
+  background-color: transparent;
+  border-color: var(--accent1-300);
+}
+.btn-accent1-outline:hover {
+  color: var(--accent1-100);
+  border-color: var(--accent1-100);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+.btn-accent1-outline:focus {
+  color: var(--accent1-100);
+  border-color: var(--accent1-100);
+  outline: var(--border-2) solid var(--accent2-500);
+  outline-offset: 2px;
+}
+.btn-accent1-outline:active {
+  box-shadow: none;
+}
+
+.btn-accent2 {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-6);
+  padding: var(--s-1) var(--s-2);
+  line-height: var(--font-lineheight-3);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  color: var(--primary-900);
+  background-color: var(--accent2-300);
+  border-color: var(--accent2-300);
+}
+.btn-accent2:hover {
+  color: var(--primary-900);
+  background-color: var(--accent2-100);
+  border-color: var(--accent2-100);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+.btn-accent2:focus {
+  background-color: var(--accent2-100);
+  border-color: var(--accent2-100);
+  outline: var(--border-2) solid var(--accent2-500);
+  outline-offset: 2px;
+}
+.btn-accent2:active {
+  box-shadow: none;
+}
+
+.btn-accent2-outline {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-6);
+  padding: var(--s-1) var(--s-2);
+  line-height: var(--font-lineheight-3);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  color: var(--accent2-300);
+  background-color: transparent;
+  border-color: var(--accent2-300);
+}
+.btn-accent2-outline:hover {
+  color: var(--accent2-100);
+  border-color: var(--accent2-100);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+.btn-accent2-outline:focus {
+  color: var(--accent2-100);
+  border-color: var(--accent2-100);
+  outline: var(--border-2) solid var(--accent2-500);
+  outline-offset: 2px;
+}
+.btn-accent2-outline:active {
+  box-shadow: none;
+}
+
+.btn-light {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-6);
+  padding: var(--s-1) var(--s-2);
+  line-height: var(--font-lineheight-3);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  color: var(--primary-900);
+  background-color: var(--white);
+  border-color: var(--white);
+}
+.btn-light:hover {
+  color: var(--primary-900);
+  background-color: var(--gray-200);
+  border-color: var(--gray-200);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+.btn-light:focus {
+  background-color: var(--gray-200);
+  border-color: var(--gray-200);
+  outline: var(--border-2) solid var(--accent2-500);
+  outline-offset: 2px;
+}
+.btn-light:active {
+  box-shadow: none;
+}
+
+.btn-light-outline {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-6);
+  padding: var(--s-1) var(--s-2);
+  line-height: var(--font-lineheight-3);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  color: var(--white);
+  background-color: transparent;
+  border-color: var(--white);
+}
+.btn-light-outline:hover {
+  color: var(--gray-200);
+  border-color: var(--gray-200);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+.btn-light-outline:focus {
+  color: var(--gray-200);
+  border-color: var(--gray-200);
+  outline: var(--border-2) solid var(--accent2-500);
+  outline-offset: 2px;
+}
+.btn-light-outline:active {
+  box-shadow: none;
+}
+
+.btn-disabled {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-6);
+  padding: var(--s-1) var(--s-2);
+  line-height: var(--font-lineheight-3);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  pointer-events: none !important;
+  color: var(--white);
+  background-color: var(--gray-600);
+  border-color: var(--gray-600);
+}
+.btn-disabled:hover {
+  color: var(--white);
+  background-color: var(--gray-600);
+  border-color: var(--gray-600);
+}
+
+.btn-disabled-outline {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-6);
+  padding: var(--s-1) var(--s-2);
+  line-height: var(--font-lineheight-3);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  pointer-events: none !important;
+  color: var(--gray-600);
+  background-color: var(--white);
+  border-color: var(--gray-600);
+}
+.btn-disabled-outline:hover {
+  color: var(--gray-600);
+  background-color: var(--white);
+  border-color: var(--gray-600);
+}
+
+.btn-accent1-disabled,
+.btn-accent2-disabled,
+.btn-light-disabled {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-6);
+  padding: var(--s-1) var(--s-2);
+  line-height: var(--font-lineheight-3);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  pointer-events: none !important;
+  color: var(--primary-900);
+  background-color: var(--gray-300);
+  border-color: var(--gray-300);
+}
+.btn-accent1-disabled:hover,
+.btn-accent2-disabled:hover,
+.btn-light-disabled:hover {
+  color: var(--primary-900);
+  background-color: var(--gray-300);
+  border-color: var(--gray-300);
+}
+
+.btn-accent1-disabled-outline,
+.btn-accent2-disabled-outline,
+.btn-light-disabled-outline {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-6);
+  padding: var(--s-1) var(--s-2);
+  line-height: var(--font-lineheight-3);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  pointer-events: none !important;
+  color: var(--gray-300);
+  background-color: transparent;
+  border-color: var(--gray-300);
+}
+.btn-accent1-disabled-outline:hover,
+.btn-accent2-disabled-outline:hover,
+.btn-light-disabled-outline:hover {
+  color: var(--gray-300);
+  background-color: transparent;
+  border-color: var(--gray-300);
+}
+
+/* ACTION BUTTONS */
+.btn-action-primary {
+  display: inline-block;
+  padding: var(--s-2);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  border-bottom: var(--border-4) solid;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  border-color: var(--primary-700);
+  background-color: var(--white);
+  width: 100%;
+}
+.btn-action-primary .btn-action-title {
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-7);
+  color: var(--primary-700);
+  padding-right: var(--s-4);
+  position: relative;
+  display: block;
+}
+.btn-action-primary .btn-action-title::after {
+  font-family: "CaGov" !important;
+  content: "5";
+  position: absolute;
+  right: -0.5rem;
+  top: 1px;
+}
+.btn-action-primary .btn-action-text {
+  color: var(--black);
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-4);
+  display: block;
+}
+.btn-action-primary:hover {
+  border-color: var(--primary-900);
+  background-color: var(--gray-100);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.btn-action-primary:hover .btn-action-title {
+  color: var(--primary-900);
+}
+.btn-action-primary:hover .btn-action-text {
+  color: var(--black);
+}
+
+.btn-action-dark {
+  display: inline-block;
+  padding: var(--s-2);
+  border-radius: var(--radius-2);
+  border: var(--border-1) solid;
+  border-bottom: var(--border-4) solid;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  border-color: var(--black);
+  background-color: var(--white);
+  width: 100%;
+}
+.btn-action-dark .btn-action-title {
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-7);
+  color: var(--black);
+  padding-right: var(--s-4);
+  position: relative;
+  display: block;
+}
+.btn-action-dark .btn-action-title::after {
+  font-family: "CaGov" !important;
+  content: "5";
+  position: absolute;
+  right: -0.5rem;
+  top: 1px;
+}
+.btn-action-dark .btn-action-text {
+  color: var(--black);
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-4);
+  display: block;
+}
+.btn-action-dark:hover {
+  border-color: var(--black);
+  background-color: var(--gray-100);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.btn-action-dark:hover .btn-action-title {
+  color: var(--black);
+}
+.btn-action-dark:hover .btn-action-text {
+  color: var(--black);
+}
+
+.btn-hover-right,
+.btn-hover-left {
+  position: relative;
+}
+.btn-hover-right span.btn-text,
+.btn-hover-left span.btn-text {
+  cursor: pointer;
+  display: inline-block;
+  transition: var(--animation-duration-5);
+}
+
+.btn-hover-right span[class*=ca-gov-icon-] {
+  position: absolute;
+  opacity: 0;
+  top: var(--s-1);
+  right: -4px;
+  transition: var(--animation-duration-5);
+}
+
+.btn-hover-right:hover span.btn-text,
+.btn-hover-right:focus span.btn-text {
+  padding-right: var(--s-3);
+}
+.btn-hover-right:hover span[class*=ca-gov-icon-],
+.btn-hover-right:focus span[class*=ca-gov-icon-] {
+  opacity: 1;
+  right: var(--s-1);
+}
+
+.btn-hover-left span[class*=ca-gov-icon-] {
+  position: absolute;
+  opacity: 0;
+  top: var(--s-1);
+  left: -4px;
+  transition: var(--animation-duration-5);
+}
+
+.btn-hover-left:hover span.btn-text,
+.btn-hover-left:focus span.btn-text {
+  padding-left: var(--s-3);
+}
+.btn-hover-left:hover span[class*=ca-gov-icon-],
+.btn-hover-left:focus span[class*=ca-gov-icon-] {
+  opacity: 1;
+  left: var(--s-1);
+}
+
+/* buttons generic styles */
+/* Code generic styles */
+code,
+samp {
+  background: var(--gray-100, #f9f9fa);
+  color: var(--gray-900, #3f3e4d);
+  padding: 2.5px 5px;
+  border-radius: 6px;
+  font-size: var(--font-size-2, 1.125rem);
+  font-size: calc(var(--font-size-2) + var(--ratio));
+}
+
+pre > code {
+  padding: 10px;
+  display: block;
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+/* pre, code, var generic styles */
+/* Forms generic styles*/
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+textarea,
+input {
+  background-color: var(--white, #fff);
+  color: var(--black, #000) !important;
+  font-size: var(--font-size-2, 1.125rem);
+  font-size: calc(var(--font-size-2) + var(--ratio));
+  font-weight: var(--font-weight-4, 400);
+}
+textarea:focus,
+input:focus {
+  outline: 2px solid var(--accent2-500, #ac8226);
+}
+
+/* input, textarea, select generic styles */
+/* Links global styles */
+a {
+  color: var(--primary-700, #165ac2);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--primary-900, #003588);
+}
+a:focus {
+  outline: 2px solid var(--accent2-500, #ac8226);
+}
+
+a:focus,
+button:focus {
+  outline: solid 2px var(--accent2-500, #ac8226) !important;
+}
+
+/* a, a:hover, a:focus */
+.breadcrumb {
+  display: block;
+  margin-top: 0px;
+  margin-bottom: calc(4rem + var(--ratio));
+  font-size: calc(1rem + var(--ratio));
+}
+
+.breadcrumb a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  text-underline-position: under;
+}
+
+.breadcrumb span {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@media only screen and (max-width: 992px) {
+  /* BREADCRUMB */
+  .breadcrumb a.crumb,
+.breadcrumb span.crumb {
+    display: none;
+  }
+
+  .breadcrumb span.crumb:not(:last-child):not([class*=separator]) {
+    display: inline-block;
+    font-weight: 700;
+    font-size: calc(1rem + var(--ratio));
+    line-height: 1.125rem;
+    color: var(--primary-700, #165ac2);
+  }
+
+  .breadcrumb span.crumb:not(:last-child):not([class*=separator]) {
+    padding: 0;
+  }
+
+  .breadcrumb {
+    display: block;
+    margin-top: calc(3rem + var(--ratio));
+    margin-bottom: calc(1rem + var(--ratio));
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .with-sidebar.page-container-ds .breadcrumb {
+    margin-bottom: 0px;
+  }
+}
+/* copied from blocks */
+/* Typography global styles */
+body {
+  font-family: var(--site-font, "Public Sans", sans-serif);
+  font-size: var(--font-size-2, 1.125rem);
+  font-weight: var(--font-weight-4, 400);
+  line-height: var(--font-lineheight-3, 1.5);
+  color: var(--black, #000);
+  overflow-x: hidden;
+}
+@media (min-width: 768px) {
+  body {
+    font-size: calc(var(--font-size-2) + var(--ratio));
+  }
+}
+
+/* TYPOGRAPHY */
+h1.page-title {
+  margin: 0 0 0 0;
+  padding: 0 0 var(--s-3) 0;
+}
+
+main h2:first-child {
+  margin-top: 0px;
+}
+
+p {
+  margin-bottom: calc(var(--s-2) + var(--ratio));
+}
+
+/* New styles, need home */
+ul,
+ol {
+  margin-bottom: calc(var(--s-2) + var(--ratio));
+}
+
+ul li,
+ol li {
+  margin-bottom: calc(var(--s-1) + var(--ratio));
+}
+
+main ol li,
+main ul li {
+  margin-left: var(--s-4, 2rem);
+}
+
+main ol li {
+  padding: 0 16px;
+  margin-bottom: calc(var(--s-1) + var(--ratio));
+}
+
+/* Update position list element */
+main ul li,
+main ol li {
+  list-style-position: outside;
+}
+
+h1,
+.h1 {
+  font-size: calc(var(--font-size-10) + var(--ratio));
+  margin-top: calc(var(--s-5) + var(--ratio));
+  margin-bottom: calc(var(--s-4) + var(--ratio));
+  font-weight: var(--font-weight-7, 700);
+  line-height: var(--font-lineheight-1);
+}
+
+h2,
+.h2 {
+  font-size: calc(var(--font-size-8) + var(--ratio));
+  margin-top: calc(var(--s-4) + var(--ratio));
+  margin-bottom: calc(var(--s-3) + var(--ratio));
+  font-weight: var(--font-weight-7, 700);
+  line-height: var(--font-lineheight-2);
+}
+
+h3,
+.h3 {
+  font-size: calc(var(--font-size-6) + var(--ratio));
+  margin-top: calc(var(--s-3) + var(--ratio));
+  margin-bottom: calc(var(--s-2) + var(--ratio));
+  font-weight: var(--font-weight-7, 700);
+  line-height: var(--font-lineheight-3);
+}
+
+h4,
+.h4 {
+  font-size: calc(var(--font-size-4) + var(--ratio));
+  margin-top: calc(var(--s-3) + var(--ratio));
+  margin-bottom: calc(var(--s-2) + var(--ratio));
+  font-weight: var(--font-weight-7, 700);
+  line-height: var(--font-lineheight-4);
+}
+
+h5,
+.h5 {
+  font-size: calc(var(--font-size-2) + var(--ratio));
+  margin-top: calc(var(--s-3) + var(--ratio));
+  margin-bottom: calc(var(--s-2) + var(--ratio));
+  font-weight: var(--font-weight-7, 700);
+  line-height: var(--font-lineheight-5);
+}
+
+h6,
+.h6 {
+  font-size: calc(var(--font-size-sm) + var(--ratio));
+  margin-top: calc(var(--s-3) + var(--ratio));
+  margin-bottom: calc(var(--s-2) + var(--ratio));
+  font-weight: var(--font-weight-7, 700);
+  line-height: var(--font-lineheight-5);
+}
+
+.text-lead,
+.lead {
+  font-size: var(--font-size-4, 1.4375rem);
+  font-size: calc(var(--font-size-4) + var(--ratio));
+}
+
+.text-small,
+.text-sm {
+  font-size: var(--font-size-sm, 0.875rem);
+  font-size: calc(var(--font-size-sm) + var(--ratio));
+}
+
+@media (max-width: 767px) {
+  h1,
+.h1 {
+    font-size: var(--font-size-9, 2.625rem);
+  }
+
+  h2,
+.h2 {
+    font-size: var(--font-size-7, 2.0625rem);
+  }
+
+  h3,
+.h3 {
+    font-size: var(--font-size-5, 1.625rem);
+  }
+
+  h4,
+.h4 {
+    font-size: var(--font-size-3, 1.25rem);
+  }
+
+  h5,
+.h5 {
+    font-size: var(--font-size-1, 1rem);
+  }
+
+  h2:first-child,
+figure ~ h2:first-of-type {
+    margin-top: 0px;
+  }
+
+  .text-lead,
+.lead {
+    font-size: var(--font-size-3, 1.25rem);
+  }
+
+  .text-small,
+.text-sm {
+    font-size: var(--font-size-sm, 0.875rem);
+  }
+}
+/* lists */
+ul.list-highlight li {
+  list-style: none;
+  background-color: var(--gray-100, #f9f9fa);
+  padding: var(--s-3, 24px);
+  margin-bottom: calc(var(--s-2) + var(--ratio));
+  margin-left: 0;
+  font-size: calc(var(--font-size-5) + var(--ratio));
+  font-weight: var(--font-weight-7, 700);
+}
+ul.list-highlight li span.has-black-color {
+  margin-top: calc(1rem + var(--ratio));
+  font-size: var(--font-size-2, 1.125rem);
+  font-size: calc(var(--font-size-2) + var(--ratio));
+  font-weight: var(--font-weight-4, 400);
+  display: block;
+  line-height: var(--font-lineheight-3, 1.5);
+}
+
+/* Remove any margins from tags in Gutenberg blocks */
+.cagov-stack h1,
+.cagov-stack h2,
+.cagov-stack h3,
+.cagov-stack h4,
+.cagov-card h1,
+.cagov-card h2,
+.cagov-card h3,
+.cagov-card h4,
+.cagov-card ul {
+  margin: 0;
+}
+
+/* Image captions */
+figure {
+  background: none;
+  border: none;
+}
+figure figcaption {
+  padding-left: 0;
+  font-size: calc(var(--font-size-sm) + var(--ratio));
+}
+
+/* headings, p, blockqute, font styles */
+/* my utility classes */
+/* padding utility classes */
+.p-0,
+.p-a-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.p-a-1 {
+  padding-left: var(--s-1, 0.5rem) !important;
+  padding-right: var(--s-1, 0.5rem) !important;
+  padding-top: var(--s-1, 0.5rem) !important;
+  padding-bottom: var(--s-1, 0.5rem) !important;
+}
+
+.p-a-2 {
+  padding-left: var(--s-2, 1rem) !important;
+  padding-right: var(--s-2, 1rem) !important;
+  padding-top: var(--s-2, 1rem) !important;
+  padding-bottom: var(--s-2, 1rem) !important;
+}
+
+.p-a-3 {
+  padding-left: var(--s-3, 1.5rem) !important;
+  padding-right: var(--s-3, 1.5rem) !important;
+  padding-top: var(--s-3, 1.5rem) !important;
+  padding-bottom: var(--s-3, 1.5rem) !important;
+}
+
+.p-a-4 {
+  padding-left: var(--s-4, 2rem) !important;
+  padding-right: var(--s-4, 2rem) !important;
+  padding-top: var(--s-4, 2rem) !important;
+  padding-bottom: var(--s-4, 2rem) !important;
+}
+
+.p-a-5 {
+  padding-left: var(--s-5, 3rem) !important;
+  padding-right: var(--s-5, 3rem) !important;
+  padding-top: var(--s-5, 3rem) !important;
+  padding-bottom: var(--s-5, 3rem) !important;
+}
+
+.p-a-6 {
+  padding-left: var(--s-6, 4rem) !important;
+  padding-right: var(--s-6, 4rem) !important;
+  padding-top: var(--s-6, 4rem) !important;
+  padding-bottom: var(--s-6, 4rem) !important;
+}
+
+.p-a-7 {
+  padding-left: var(--s-7, 6rem) !important;
+  padding-right: var(--s-7, 6rem) !important;
+  padding-top: var(--s-7, 6rem) !important;
+  padding-bottom: var(--s-7, 6rem) !important;
+}
+
+.p-a-8 {
+  padding-left: var(--s-8, 12rem) !important;
+  padding-right: var(--s-8, 12rem) !important;
+  padding-top: var(--s-8, 12rem) !important;
+  padding-bottom: var(--s-8, 12rem) !important;
+}
+
+.p-t-0 {
+  padding-top: 0 !important;
+}
+
+.p-t-1 {
+  padding-top: var(--s-1, 0.5rem) !important;
+}
+
+.p-t-2 {
+  padding-top: var(--s-2, 1rem) !important;
+}
+
+.p-t-3 {
+  padding-top: var(--s-3, 1.5rem) !important;
+}
+
+.p-t-4 {
+  padding-top: var(--s-4, 2rem) !important;
+}
+
+.p-t-5 {
+  padding-top: var(--s-5, 3rem) !important;
+}
+
+.p-t-6 {
+  padding-top: var(--s-6, 4rem) !important;
+}
+
+.p-t-7 {
+  padding-top: var(--s-7, 6rem) !important;
+}
+
+.p-t-8 {
+  padding-top: var(--s-8, 12rem) !important;
+}
+
+.p-b-0 {
+  padding-bottom: 0 !important;
+}
+
+.p-b-1 {
+  padding-bottom: var(--s-1, 0.5rem) !important;
+}
+
+.p-b-2 {
+  padding-bottom: var(--s-2, 1rem) !important;
+}
+
+.p-b-3 {
+  padding-bottom: var(--s-3, 1.5rem) !important;
+}
+
+.p-b-4 {
+  padding-bottom: var(--s-4, 2rem) !important;
+}
+
+.p-b-5 {
+  padding-bottom: var(--s-5, 3rem) !important;
+}
+
+.p-b-6 {
+  padding-bottom: var(--s-6, 4rem) !important;
+}
+
+.p-b-7 {
+  padding-bottom: var(--s-7, 6rem) !important;
+}
+
+.p-b-8 {
+  padding-bottom: var(--s-8, 12rem) !important;
+}
+
+.p-l-0 {
+  padding-left: 0 !important;
+}
+
+.p-l-1 {
+  padding-left: var(--s-1, 0.5rem) !important;
+}
+
+.p-l-2 {
+  padding-left: var(--s-2, 1rem) !important;
+}
+
+.p-l-3 {
+  padding-left: var(--s-3, 1.5rem) !important;
+}
+
+.p-l-4 {
+  padding-left: var(--s-4, 2rem) !important;
+}
+
+.p-l-5 {
+  padding-left: var(--s-5, 3rem) !important;
+}
+
+.p-l-6 {
+  padding-left: var(--s-6, 4rem) !important;
+}
+
+.p-l-7 {
+  padding-left: var(--s-7, 6rem) !important;
+}
+
+.p-l-8 {
+  padding-left: var(--s-8, 12rem) !important;
+}
+
+.p-r-0 {
+  padding-right: 0 !important;
+}
+
+.p-r-1 {
+  padding-right: var(--s-1, 0.5rem) !important;
+}
+
+.p-r-2 {
+  padding-right: var(--s-2, 1rem) !important;
+}
+
+.p-r-3 {
+  padding-right: var(--s-3, 1.5rem) !important;
+}
+
+.p-r-4 {
+  padding-right: var(--s-4, 2rem) !important;
+}
+
+.p-r-5 {
+  padding-right: var(--s-5, 3rem) !important;
+}
+
+.p-r-6 {
+  padding-right: var(--s-6, 4rem) !important;
+}
+
+.p-r-7 {
+  padding-right: var(--s-7, 6rem) !important;
+}
+
+.p-r-8 {
+  padding-right: var(--s-8, 12rem) !important;
+}
+
+.p-y-0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.p-y-1 {
+  padding-top: var(--s-1, 0.5rem) !important;
+  padding-bottom: var(--s-1, 0.5rem) !important;
+}
+
+.p-y-2 {
+  padding-top: var(--s-2, 1rem) !important;
+  padding-bottom: var(--s-2, 1rem) !important;
+}
+
+.p-y-3 {
+  padding-top: var(--s-3, 1.5rem) !important;
+  padding-bottom: var(--s-3, 1.5rem) !important;
+}
+
+.p-y-4 {
+  padding-top: var(--s-4, 2rem) !important;
+  padding-bottom: var(--s-4, 2rem) !important;
+}
+
+.p-y-5 {
+  padding-top: var(--s-5, 3rem) !important;
+  padding-bottom: var(--s-5, 3rem) !important;
+}
+
+.p-y-6 {
+  padding-top: var(--s-6, 4rem) !important;
+  padding-bottom: var(--s-6, 4rem) !important;
+}
+
+.p-y-7 {
+  padding-top: var(--s-7, 6rem) !important;
+  padding-bottom: var(--s-7, 6rem) !important;
+}
+
+.p-y-8 {
+  padding-top: var(--s-8, 12rem) !important;
+  padding-bottom: var(--s-8, 12rem) !important;
+}
+
+.p-x-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.p-x-1 {
+  padding-left: var(--s-1, 0.5rem) !important;
+  padding-right: var(--s-1, 0.5rem) !important;
+}
+
+.p-x-2 {
+  padding-left: var(--s-2, 1rem) !important;
+  padding-right: var(--s-2, 1rem) !important;
+}
+
+.p-x-3 {
+  padding-left: var(--s-3, 1.5rem) !important;
+  padding-right: var(--s-3, 1.5rem) !important;
+}
+
+.p-x-4 {
+  padding-left: var(--s-4, 2rem) !important;
+  padding-right: var(--s-4, 2rem) !important;
+}
+
+.p-x-5 {
+  padding-left: var(--s-5, 3rem) !important;
+  padding-right: var(--s-5, 3rem) !important;
+}
+
+.p-x-6 {
+  padding-left: var(--s-6, 4rem) !important;
+  padding-right: var(--s-6, 4rem) !important;
+}
+
+.p-x-7 {
+  padding-left: var(--s-7, 6rem) !important;
+  padding-right: var(--s-7, 6rem) !important;
+}
+
+.p-x-8 {
+  padding-left: var(--s-8, 12rem) !important;
+  padding-right: var(--s-8, 12rem) !important;
+}
+
+/* margin utility classes */
+.m-0,
+.m-a-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.m-a-1 {
+  margin-left: var(--s-1, 0.5rem) !important;
+  margin-right: var(--s-1, 0.5rem) !important;
+  margin-top: var(--s-1, 0.5rem) !important;
+  margin-bottom: var(--s-1, 0.5rem) !important;
+}
+
+.m-a-2 {
+  margin-left: var(--s-2, 1rem) !important;
+  margin-right: var(--s-2, 1rem) !important;
+  margin-top: var(--s-2, 1rem) !important;
+  margin-bottom: var(--s-2, 1rem) !important;
+}
+
+.m-a-3 {
+  margin-left: var(--s-3, 1.5rem) !important;
+  margin-right: var(--s-3, 1.5rem) !important;
+  margin-top: var(--s-3, 1.5rem) !important;
+  margin-bottom: var(--s-3, 1.5rem) !important;
+}
+
+.m-a-4 {
+  margin-left: var(--s-4, 2rem) !important;
+  margin-right: var(--s-4, 2rem) !important;
+  margin-top: var(--s-4, 2rem) !important;
+  margin-bottom: var(--s-4, 2rem) !important;
+}
+
+.m-a-5 {
+  margin-left: var(--s-5, 3rem) !important;
+  margin-right: var(--s-5, 3rem) !important;
+  margin-top: var(--s-5, 3rem) !important;
+  margin-bottom: var(--s-5, 3rem) !important;
+}
+
+.m-a-6 {
+  margin-left: var(--s-6, 4rem) !important;
+  margin-right: var(--s-6, 4rem) !important;
+  margin-top: var(--s-6, 4rem) !important;
+  margin-bottom: var(--s-6, 4rem) !important;
+}
+
+.m-a-7 {
+  margin-left: var(--s-7, 6rem) !important;
+  margin-right: var(--s-7, 6rem) !important;
+  margin-top: var(--s-7, 6rem) !important;
+  margin-bottom: var(--s-7, 6rem) !important;
+}
+
+.m-a-8 {
+  margin-left: var(--s-8, 12rem) !important;
+  margin-right: var(--s-8, 12rem) !important;
+  margin-top: var(--s-8, 12rem) !important;
+  margin-bottom: var(--s-8, 12rem) !important;
+}
+
+.m-t-0 {
+  margin-top: 0 !important;
+}
+
+.m-t-1 {
+  margin-top: var(--s-1, 0.5rem) !important;
+}
+
+.m-t-2 {
+  margin-top: var(--s-2, 1rem) !important;
+}
+
+.m-t-3 {
+  margin-top: var(--s-3, 1.5rem) !important;
+}
+
+.m-t-4 {
+  margin-top: var(--s-4, 2rem) !important;
+}
+
+.m-t-5 {
+  margin-top: var(--s-5, 3rem) !important;
+}
+
+.m-t-6 {
+  margin-top: var(--s-6, 4rem) !important;
+}
+
+.m-t-7 {
+  margin-top: var(--s-7, 6rem) !important;
+}
+
+.m-t-8 {
+  margin-top: var(--s-8, 12rem) !important;
+}
+
+.m-b-0 {
+  margin-bottom: 0 !important;
+}
+
+.m-b-1 {
+  margin-bottom: var(--s-1, 0.5rem) !important;
+}
+
+.m-b-2 {
+  margin-bottom: var(--s-2, 1rem) !important;
+}
+
+.m-b-3 {
+  margin-bottom: var(--s-3, 1.5rem) !important;
+}
+
+.m-b-4 {
+  margin-bottom: var(--s-4, 2rem) !important;
+}
+
+.m-b-5 {
+  margin-bottom: var(--s-5, 3rem) !important;
+}
+
+.m-b-6 {
+  margin-bottom: var(--s-6, 4rem) !important;
+}
+
+.m-b-7 {
+  margin-bottom: var(--s-7, 6rem) !important;
+}
+
+.m-b-8 {
+  margin-bottom: var(--s-8, 12rem) !important;
+}
+
+.m-l-0 {
+  margin-left: 0 !important;
+}
+
+.m-l-1 {
+  margin-left: var(--s-1, 0.5rem) !important;
+}
+
+.m-l-2 {
+  margin-left: var(--s-2, 1rem) !important;
+}
+
+.m-l-3 {
+  margin-left: var(--s-3, 1.5rem) !important;
+}
+
+.m-l-4 {
+  margin-left: var(--s-4, 2rem) !important;
+}
+
+.m-l-5 {
+  margin-left: var(--s-5, 3rem) !important;
+}
+
+.m-l-6 {
+  margin-left: var(--s-6, 4rem) !important;
+}
+
+.m-l-7 {
+  margin-left: var(--s-7, 6rem) !important;
+}
+
+.m-l-8 {
+  margin-left: var(--s-8, 12rem) !important;
+}
+
+.m-r-0 {
+  margin-right: 0 !important;
+}
+
+.m-r-1 {
+  margin-right: var(--s-1, 0.5rem) !important;
+}
+
+.m-r-2 {
+  margin-right: var(--s-2, 1rem) !important;
+}
+
+.m-r-3 {
+  margin-right: var(--s-3, 1.5rem) !important;
+}
+
+.m-r-4 {
+  margin-right: var(--s-4, 2rem) !important;
+}
+
+.m-r-5 {
+  margin-right: var(--s-5, 3rem) !important;
+}
+
+.m-r-6 {
+  margin-right: var(--s-6, 4rem) !important;
+}
+
+.m-r-7 {
+  margin-right: var(--s-7, 6rem) !important;
+}
+
+.m-r-8 {
+  margin-right: var(--s-8, 12rem) !important;
+}
+
+.m-y-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.m-y-1 {
+  margin-top: var(--s-1, 0.5rem) !important;
+  margin-bottom: var(--s-1, 0.5rem) !important;
+}
+
+.m-y-2 {
+  margin-top: var(--s-2, 1rem) !important;
+  margin-bottom: var(--s-2, 1rem) !important;
+}
+
+.m-y-3 {
+  margin-top: var(--s-3, 1.5rem) !important;
+  margin-bottom: var(--s-3, 1.5rem) !important;
+}
+
+.m-y-4 {
+  margin-top: var(--s-4, 2rem) !important;
+  margin-bottom: var(--s-4, 2rem) !important;
+}
+
+.m-y-5 {
+  margin-top: var(--s-5, 3rem) !important;
+  margin-bottom: var(--s-5, 3rem) !important;
+}
+
+.m-y-6 {
+  margin-top: var(--s-6, 4rem) !important;
+  margin-bottom: var(--s-6, 4rem) !important;
+}
+
+.m-y-7 {
+  margin-top: var(--s-7, 6rem) !important;
+  margin-bottom: var(--s-7, 6rem) !important;
+}
+
+.m-y-8 {
+  margin-top: var(--s-8, 12rem) !important;
+  margin-bottom: var(--s-8, 12rem) !important;
+}
+
+.m-x-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.m-x-1 {
+  margin-left: var(--s-1, 0.5rem) !important;
+  margin-right: var(--s-1, 0.5rem) !important;
+}
+
+.m-x-2 {
+  margin-left: var(--s-2, 1rem) !important;
+  margin-right: var(--s-2, 1rem) !important;
+}
+
+.m-x-3 {
+  margin-left: var(--s-3, 1.5rem) !important;
+  margin-right: var(--s-3, 1.5rem) !important;
+}
+
+.m-x-4 {
+  margin-left: var(--s-4, 2rem) !important;
+  margin-right: var(--s-4, 2rem) !important;
+}
+
+.m-x-5 {
+  margin-left: var(--s-5, 3rem) !important;
+  margin-right: var(--s-5, 3rem) !important;
+}
+
+.m-x-6 {
+  margin-left: var(--s-6, 4rem) !important;
+  margin-right: var(--s-6, 4rem) !important;
+}
+
+.m-x-7 {
+  margin-left: var(--s-7, 6rem) !important;
+  margin-right: var(--s-7, 6rem) !important;
+}
+
+.m-x-8 {
+  margin-left: var(--s-8, 12rem) !important;
+  margin-right: var(--s-8, 12rem) !important;
+}
+
+.m-l-a {
+  margin-left: auto !important;
+}
+
+.m-r-a {
+  margin-right: auto !important;
+}
+
+.m-x-a {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.m-0-a {
+  margin: 0 auto !important;
+}
+
+.m-t-a {
+  margin-top: auto !important;
+}
+
+.m-b-a {
+  margin-bottom: auto !important;
+}
+
+.m-y-a {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+/* BORDERS */
+.border-0 {
+  border: none !important;
+}
+
+.border-1 {
+  border: solid var(--border-1) !important;
+}
+
+.border-2 {
+  border: solid var(--border-2) !important;
+}
+
+.border-3 {
+  border: solid var(--border-3) !important;
+}
+
+.border-4 {
+  border: solid var(--border-4) !important;
+}
+
+.border-5 {
+  border: solid var(--border-5) !important;
+}
+
+.border-6 {
+  border: solid var(--border-6) !important;
+}
+
+.border-l-0 {
+  border-left: none !important;
+}
+
+.border-l-1 {
+  border-left: solid var(--border-1) !important;
+}
+
+.border-l-2 {
+  border-left: solid var(--border-2) !important;
+}
+
+.border-l-3 {
+  border-left: solid var(--border-3) !important;
+}
+
+.border-l-4 {
+  border-left: solid var(--border-4) !important;
+}
+
+.border-l-5 {
+  border-left: solid var(--border-5) !important;
+}
+
+.border-l-6 {
+  border-left: solid var(--border-6) !important;
+}
+
+.border-r-0 {
+  border-right: none !important;
+}
+
+.border-r-1 {
+  border-right: solid var(--border-1) !important;
+}
+
+.border-r-2 {
+  border-right: solid var(--border-2) !important;
+}
+
+.border-r-3 {
+  border-right: solid var(--border-3) !important;
+}
+
+.border-r-4 {
+  border-right: solid var(--border-4) !important;
+}
+
+.border-r-5 {
+  border-right: solid var(--border-5) !important;
+}
+
+.border-r-6 {
+  border-right: solid var(--border-6) !important;
+}
+
+.border-t-0 {
+  border-top: none !important;
+}
+
+.border-t-1 {
+  border-top: solid var(--border-1) !important;
+}
+
+.border-t-2 {
+  border-top: solid var(--border-2) !important;
+}
+
+.border-t-3 {
+  border-top: solid var(--border-3) !important;
+}
+
+.border-t-4 {
+  border-top: solid var(--border-4) !important;
+}
+
+.border-t-5 {
+  border-top: solid var(--border-5) !important;
+}
+
+.border-t-6 {
+  border-top: solid var(--border-6) !important;
+}
+
+.border-b-0 {
+  border-bottom: none !important;
+}
+
+.border-b-1 {
+  border-bottom: solid var(--border-1) !important;
+}
+
+.border-b-2 {
+  border-bottom: solid var(--border-2) !important;
+}
+
+.border-b-3 {
+  border-bottom: solid var(--border-3) !important;
+}
+
+.border-b-4 {
+  border-bottom: solid var(--border-4) !important;
+}
+
+.border-b-5 {
+  border-bottom: solid var(--border-5) !important;
+}
+
+.border-b-6 {
+  border-bottom: solid var(--border-6) !important;
+}
+
+.border-primary-100 {
+  border-color: var(--primary-100) !important;
+}
+
+.border-primary-300 {
+  border-color: var(--primary-300) !important;
+}
+
+.border-primary-500 {
+  border-color: var(--primary-500) !important;
+}
+
+.border-primary-700 {
+  border-color: var(--primary-700) !important;
+}
+
+.border-primary-900 {
+  border-color: var(--primary-900) !important;
+}
+
+.border-accent1-100 {
+  border-color: var(--accent1-100) !important;
+}
+
+.border-accent1-300 {
+  border-color: var(--accent1-300) !important;
+}
+
+.border-accent1-500 {
+  border-color: var(--accent1-500) !important;
+}
+
+.border-accent1-700 {
+  border-color: var(--accent1-700) !important;
+}
+
+.border-accent1-900 {
+  border-color: var(--accent1-900) !important;
+}
+
+.border-accent2-100 {
+  border-color: var(--accent2-100) !important;
+}
+
+.border-accent2-300 {
+  border-color: var(--accent2-300) !important;
+}
+
+.border-accent2-500 {
+  border-color: var(--accent2-500) !important;
+}
+
+.border-accent2-700 {
+  border-color: var(--accent2-700) !important;
+}
+
+.border-accent2-900 {
+  border-color: var(--accent2-900) !important;
+}
+
+.border-white {
+  border-color: var(--white) !important;
+}
+
+.border-gray-50 {
+  border-color: var(--gray-50) !important;
+}
+
+.border-gray-100 {
+  border-color: var(--gray-100) !important;
+}
+
+.border-gray-200 {
+  border-color: var(--gray-200) !important;
+}
+
+.border-gray-300 {
+  border-color: var(--gray-300) !important;
+}
+
+.border-gray-400 {
+  border-color: var(--gray-400) !important;
+}
+
+.border-gray-500 {
+  border-color: var(--gray-500) !important;
+}
+
+.border-gray-600 {
+  border-color: var(--gray-600) !important;
+}
+
+.border-gray-700 {
+  border-color: var(--gray-800) !important;
+}
+
+.border-gray-800 {
+  border-color: var(--gray-800) !important;
+}
+
+.border-gray-900 {
+  border-color: var(--gray-900) !important;
+}
+
+.border-black {
+  border-color: var(--black) !important;
+}
+
+.radius-0 {
+  border-radius: 0px !important;
+}
+
+.radius-1 {
+  border-radius: var(--radius-1) !important;
+}
+
+.radius-2 {
+  border-radius: var(--radius-2) !important;
+}
+
+.radius-3 {
+  border-radius: var(--radius-3) !important;
+}
+
+.radius-4 {
+  border-radius: var(--radius-4) !important;
+}
+
+.radius-5 {
+  border-radius: var(--radius-5) !important;
+}
+
+.radius-round {
+  border-radius: var(--radius-round) !important;
+}
+
+/* COLORS AND BACKGROUNDS */
+.primary-100,
+.primary-100-hover:hover,
+.primary-100-hover:focus {
+  color: var(--primary-100) !important;
+}
+
+.primary-300,
+.primary-300-hover:hover,
+.primary-300-hover:focus {
+  color: var(--primary-300) !important;
+}
+
+.primary-500,
+.primary-500-hover:hover,
+.primary-500-hover:focus {
+  color: var(--primary-500) !important;
+}
+
+.primary-700,
+.primary-700-hover:hover,
+.primary-700-hover:focus {
+  color: var(--primary-700) !important;
+}
+
+.primary-900,
+.primary-900-hover:hover,
+.primary-900-hover:focus {
+  color: var(--primary-900) !important;
+}
+
+.accent1-100,
+.accent1-100-hover:hover,
+.accent1-100-hover:focus {
+  color: var(--accent1-100) !important;
+}
+
+.accent1-300,
+.accent1-300-hover:hover,
+.accent1-300-hover:focus {
+  color: var(--accent1-300) !important;
+}
+
+.accent1-500,
+.accent1-500-hover:hover,
+.accent1-500-hover:focus {
+  color: var(--accent1-500) !important;
+}
+
+.accent1-700,
+.accent1-700-hover:hover,
+.accent1-700-hover:focus {
+  color: var(--accent1-700) !important;
+}
+
+.accent1-900,
+.accent1-900-hover:hover,
+.accent1-900-hover:focus {
+  color: var(--accent1-900) !important;
+}
+
+.accent2-100,
+.accent2-100-hover:hover,
+.accent2-100-hover:focus {
+  color: var(--accent2-100) !important;
+}
+
+.accent2-300,
+.accent2-300-hover:hover,
+.accent2-300-hover:focus {
+  color: var(--accent2-300) !important;
+}
+
+.accent2-500,
+.accent2-500-hover:hover,
+.accent2-500-hover:focus {
+  color: var(--accent2-500) !important;
+}
+
+.accent2-700,
+.accent2-700-hover:hover,
+.accent2-700-hover:focus {
+  color: var(--accent2-700) !important;
+}
+
+.accent2-900,
+.accent2-900-hover:hover,
+.accent2-900-hover:focus {
+  color: var(--accent2-900) !important;
+}
+
+.gray-50,
+.gray-50-hover:hover,
+.gray-50-hover:focus {
+  color: var(--gray-50) !important;
+}
+
+.gray-100,
+.gray-100-hover:hover,
+.gray-100-hover:focus {
+  color: var(--gray-100) !important;
+}
+
+.gray-200,
+.gray-200-hover:hover,
+.gray-200-hover:focus {
+  color: var(--gray-200) !important;
+}
+
+.gray-300,
+.gray-300-hover:hover,
+.gray-300-hover:focus {
+  color: var(--gray-300) !important;
+}
+
+.gray-400,
+.gray-400-hover:hover,
+.gray-400-hover:focus {
+  color: var(--gray-400) !important;
+}
+
+.gray-500,
+.gray-500-hover:hover,
+.gray-500-hover:focus {
+  color: var(--gray-500) !important;
+}
+
+.gray-600,
+.gray-600-hover:hover,
+.gray-600-hover:focus {
+  color: var(--gray-600) !important;
+}
+
+.gray-700,
+.gray-700-hover:hover,
+.gray-700-hover:focus {
+  color: var(--gray-700) !important;
+}
+
+.gray-800,
+.gray-800-hover:hover,
+.gray-800-hover:focus {
+  color: var(--gray-800) !important;
+}
+
+.gray-900,
+.gray-900-hover:hover,
+.gray-900-hover:focus {
+  color: var(--gray-900) !important;
+}
+
+.black,
+.black-hover:hover,
+.black-hover:focus,
+.black-color,
+.black-color-hover:hover,
+.black-color-hover:focus {
+  color: var(--black) !important;
+}
+
+.white,
+.white-hover:hover,
+.white-hover:focus,
+.white-color,
+.white-color-hover:hover,
+.white-color-hover:focus {
+  color: var(--white) !important;
+}
+
+.success-color,
+.success-700 {
+  color: var(--success-700) !important;
+}
+
+.success-color-hover:hover,
+.success-700-hover:hover {
+  color: var(--success-700) !important;
+}
+
+.success-100,
+.success-100-hover:hover,
+.success-100-hover:focus {
+  color: var(--success-100) !important;
+}
+
+.success-300,
+.success-300-hover:hover,
+.success-300-hover:focus {
+  color: var(--success-300) !important;
+}
+
+.success-500,
+.success-500-hover:hover,
+.success-500-hover:focus {
+  color: var(--success-500) !important;
+}
+
+.success-700,
+.success-700-hover:hover,
+.success-700-hover:focus,
+.success-color,
+.success-color-hover:hover,
+.success-color-hover:focus {
+  color: var(--success-700) !important;
+}
+
+.success-900,
+.success-900-hover:hover,
+.success-900-hover:focus {
+  color: var(--success-900) !important;
+}
+
+.danger-100,
+.danger-100-hover:hover,
+.danger-100-hover:focus {
+  color: var(--danger-100) !important;
+}
+
+.danger-300,
+.danger-300-hover:hover,
+.danger-300-hover:focus {
+  color: var(--danger-300) !important;
+}
+
+.danger-500,
+.danger-500-hover:hover,
+.danger-500-hover:focus,
+.danger-color,
+.danger-color-hover:hover,
+.danger-color-hover:focus {
+  color: var(--danger-500) !important;
+}
+
+.danger-700,
+.danger-color,
+.danger-700-hover:hover,
+.danger-700-hover:focus {
+  color: var(--danger-700) !important;
+}
+
+.danger-900,
+.danger-900-hover:hover,
+.danger-900-hover:focus {
+  color: var(--danger-900) !important;
+}
+
+.warning-100,
+.warning-100-hover:hover,
+.warning-100-hover:focus {
+  color: var(--warning-100) !important;
+}
+
+.warning-300,
+.warning-300-hover:hover,
+.warning-300-hover:focus,
+.warning-color,
+.warning-color-hover:hover,
+.warning-color-hover:focus {
+  color: var(--warning-300) !important;
+}
+
+.warning-500,
+.warning-500-hover:hover,
+.warning-500-hover:focus {
+  color: var(--warning-500) !important;
+}
+
+.warning-700,
+.warning-color,
+.warning-700-hover:hover,
+.warning-700-hover:focus {
+  color: var(--warning-700) !important;
+}
+
+.warning-900,
+.warning-900-hover:hover,
+.warning-900-hover:focus {
+  color: var(--warning-900) !important;
+}
+
+.info-100,
+.info-100-hover:hover,
+.info-100-hover:focus {
+  color: var(--info-100) !important;
+}
+
+.info-300,
+.info-300-hover:hover,
+.info-300-hover:focus {
+  color: var(--info-300) !important;
+}
+
+.info-500,
+.info-500-hover:hover,
+.info-500-hover:focus {
+  color: var(--info-500) !important;
+}
+
+.info-700,
+.info-color,
+.info-700-hover:hover,
+.info-700-hover:focus {
+  color: var(--info-700) !important;
+}
+
+.info-900,
+.info-900-hover:hover,
+.info-900-hover:focus,
+.info-color,
+.info-color-hover:hover,
+.info-color-hover:focus {
+  color: var(--info-900) !important;
+}
+
+.cagov-highlight {
+  color: var(--cagov-highlight, #ecb32d);
+}
+
+.cagov-primary {
+  color: var(--cagov-primary, #165ac2);
+}
+
+.cagov-primary-dark,
+.cagov-primary-hover:hover,
+.cagov-primary-hover:focus {
+  color: var(--cagov-primary-dark, #003688);
+}
+
+.cagov-secondary {
+  color: var(--cagov-secondary, #de6516);
+}
+
+/* BACKGROUNDS */
+.bg-primary-100,
+.bg-primary-100-hover:hover,
+.bg-primary-100-hover:focus {
+  background-color: var(--primary-100) !important;
+}
+
+.bg-primary-300,
+.bg-primary-300-hover:hover,
+.bg-primary-300-hover:focus {
+  background-color: var(--primary-300) !important;
+}
+
+.bg-primary-500,
+.bg-primary-500-hover:hover,
+.bg-primary-500-hover:focus {
+  background-color: var(--primary-500) !important;
+}
+
+.bg-primary-700,
+.bg-primary-700-hover:hover,
+.bg-primary-700-hover:focus {
+  background-color: var(--primary-700) !important;
+}
+
+.bg-primary-900,
+.bg-primary-900-hover:hover,
+.bg-primary-900-hover:focus {
+  background-color: var(--primary-900) !important;
+}
+
+.bg-accent1-100,
+.bg-accent1-100-hover:hover,
+.bg-accent1-100-hover:focus {
+  background-color: var(--accent1-100) !important;
+}
+
+.bg-accent1-300,
+.bg-accent1-300-hover:hover,
+.bg-accent1-300-hover:focus {
+  background-color: var(--accent1-300) !important;
+}
+
+.bg-accent1-500,
+.bg-accent1-500-hover:hover,
+.bg-accent1-500-hover:focus {
+  background-color: var(--accent1-500) !important;
+}
+
+.bg-accent1-700,
+.bg-accent1-700-hover:hover,
+.bg-accent1-700-hover:focus {
+  background-color: var(--accent1-700) !important;
+}
+
+.bg-accent1-900,
+.bg-accent1-900-hover:hover,
+.accent1-900-hover:focus {
+  background-color: var(--accent1-900) !important;
+}
+
+.bg-accent2-100,
+.bg-accent2-100-hover:hover,
+.bg-accent2-100-hover:focus {
+  background-color: var(--accent2-100) !important;
+}
+
+.bg-accent2-300,
+.bg-accent2-300-hover:hover,
+.bg-accent2-300-hover:focus {
+  background-color: var(--accent2-300) !important;
+}
+
+.bg-accent2-500,
+.bg-accent2-500-hover:hover,
+.bg-accent2-500-hover:focus {
+  background-color: var(--accent2-500) !important;
+}
+
+.bg-accent2-700,
+.bg-accent2-700-hover:hover,
+.bg-accent2-700-hover:focus {
+  background-color: var(--accent2-700) !important;
+}
+
+.bg-accent2-900,
+.bg-accent2-900-hover:hover,
+.bg-accent2-900-hover:focus {
+  background-color: var(--accent2-900) !important;
+}
+
+.bg-gray-50,
+.bg-gray-50-hover:hover,
+.bg-gray-50-hover:focus {
+  background-color: var(--gray-50) !important;
+}
+
+.bg-gray-100,
+.bg-gray-100-hover:hover,
+.bg-gray-100-hover:focus {
+  background-color: var(--gray-100) !important;
+}
+
+.bg-gray-200,
+.bg-gray-200-hover:hover,
+.bg-gray-200-hover:focus {
+  background-color: var(--gray-200) !important;
+}
+
+.bg-gray-300,
+.bg-gray-300-hover:hover,
+.bg-gray-300-hover:focus {
+  background-color: var(--gray-300) !important;
+}
+
+.bg-gray-400,
+.bg-gray-400-hover:hover,
+.bg-gray-400-hover:focus {
+  background-color: var(--gray-400) !important;
+}
+
+.bg-gray-500,
+.bg-gray-500-hover:hover,
+.bg-gray-500-hover:focus {
+  background-color: var(--gray-500) !important;
+}
+
+.bg-gray-600,
+.bg-gray-600-hover:hover,
+.bg-gray-600-hover:focus {
+  background-color: var(--gray-600) !important;
+}
+
+.bg-gray-700,
+.bg-gray-700-hover:hover,
+.bg-gray-700-hover:focus {
+  background-color: var(--gray-700) !important;
+}
+
+.bg-gray-800,
+.bg-gray-800-hover:hover,
+.bg-gray-800-hover:focus {
+  background-color: var(--gray-800) !important;
+}
+
+.bg-gray-900,
+.bg-gray-900-hover:hover,
+.bg-gray-900-hover:focus {
+  background-color: var(--gray-900) !important;
+}
+
+.bg-black,
+.bg-black-hover:hover,
+.bg-black-hover:focus {
+  background-color: var(--black) !important;
+}
+
+.bg-white,
+.bg-white-hover:hover,
+.bg-white-hover:focus {
+  background-color: var(--white) !important;
+}
+
+.bg-success-100,
+.bg-success-100-hover:hover,
+.bg-success-100-hover:focus {
+  background-color: var(--success-100) !important;
+}
+
+.bg-success-300,
+.bg-success-300-hover:hover,
+.bg-success-300-hover:focus {
+  background-color: var(--success-300) !important;
+}
+
+.bg-success-500,
+.bg-success-500-hover:hover,
+.bg-success-500-hover:focus {
+  background-color: var(--success-500) !important;
+}
+
+.bg-success-700,
+.bg-success-700-hover:hover,
+.bg-success-700-hover:focus,
+.bg-success-color,
+.bg-success-color-hover:hover,
+.bg-success-color-hover:focus {
+  background-color: var(--success-700) !important;
+}
+
+.bg-success-900,
+.bg-success-900-hover:hover,
+.bg-success-900-hover:focus {
+  background-color: var(--success-900) !important;
+}
+
+.bg-danger-100,
+.bg-danger-100-hover:hover,
+.bg-danger-100-hover:focus {
+  background-color: var(--danger-100) !important;
+}
+
+.bg-danger-300,
+.bg-danger-300-hover:hover,
+.bg-danger-300-hover:focus {
+  background-color: var(--danger-300) !important;
+}
+
+.bg-danger-500,
+.bg-danger-500-hover:hover,
+.bg-danger-500-hover:focus,
+.bg-danger-color,
+.bg-danger-color-hover:hover,
+.bg-danger-color-hover:focus {
+  background-color: var(--danger-500) !important;
+}
+
+.bg-danger-700,
+.bg-danger-color,
+.bg-danger-700-hover:hover,
+.bg-danger-700-hover:focus {
+  background-color: var(--danger-700) !important;
+}
+
+.bg-danger-900,
+.bg-danger-900-hover:hover,
+.bg-danger-900-hover:focus {
+  background-color: var(--danger-900) !important;
+}
+
+.bg-warning-100,
+.bg-warning-100-hover:hover,
+.bg-warning-100-hover:focus {
+  background-color: var(--warning-100) !important;
+}
+
+.bg-warning-300,
+.bg-warning-300-hover:hover,
+.bg-warning-300-hover:focus,
+.bg-warning-color,
+.bg-warning-color-hover:hover,
+.bg-warning-color-hover:focus {
+  background-color: var(--warning-300) !important;
+}
+
+.bg-warning-500,
+.bg-warning-500-hover:hover,
+.bg-warning-500-hover:focus {
+  background-color: var(--warning-500) !important;
+}
+
+.bg-warning-700,
+.bg-warning-700-hover:hover,
+.bg-warning-700-hover:focus {
+  background-color: var(--warning-700) !important;
+}
+
+.bg-warning-900,
+.bg-warning-900-hover:hover,
+.bg-warning-900-hover:focus {
+  background-color: var(--warning-900) !important;
+}
+
+.bg-info-100,
+.bg-info-100-hover:hover,
+.bg-info-100-hover:focus {
+  background-color: var(--info-100) !important;
+}
+
+.bg-info-300,
+.bg-info-300-hover:hover,
+.bg-info-300-hover:focus {
+  background-color: var(--info-300) !important;
+}
+
+.bg-info-500,
+.bg-info-500-hover:hover,
+.bg-info-500-hover:focus {
+  background-color: var(--info-500) !important;
+}
+
+.bg-info-700,
+.bg-info-700-hover:hover,
+.bg-info-700-hover:focus {
+  background-color: var(--info-700) !important;
+}
+
+.bg-info-900,
+.bg-info-900-hover:hover,
+.bg-info-900-hover:focus,
+.bg-info-color,
+.bg-info-color-hover:hover,
+.bg-info-color-hover:focus {
+  background-color: var(--info-900) !important;
+}
+
+.bg-cagov-highlight {
+  background-color: var(--cagov-highlight, #ecb32d);
+}
+
+.bg-cagov-primary {
+  background-color: var(--cagov-primary, #165ac2);
+}
+
+.bg-cagov-primary-dark,
+.bg-cagov-hover:hover,
+.bg-cagov-hover:focus {
+  background-color: var(--cagov-primary-dark, #003688);
+}
+
+.bg-cagov-secondary {
+  background-color: var(--cagov-secondary, #de6516);
+}
+
+.bg-0 {
+  background: none !important;
+}
+
+.bg-alpha-0 {
+  background-color: transparent !important;
+}
+
+.bg-alpha-40 {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.bg-alpha-50 {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.bg-alpha-70 {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.bg-alpha-60 {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.bg-alpha-80 {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.bg-alpha-90 {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.bg-alpha-100 {
+  background-color: black !important;
+}
+
+.opacity-0 {
+  opacity: 0 !important;
+}
+
+.opacity-1 {
+  opacity: 0.1 !important;
+}
+
+.opacity-2 {
+  opacity: 0.2 !important;
+}
+
+.opacity-3 {
+  opacity: 0.3 !important;
+}
+
+.opacity-4 {
+  opacity: 0.4 !important;
+}
+
+.opacity-5 {
+  opacity: 0.5 !important;
+}
+
+.opacity-6 {
+  opacity: 0.6 !important;
+}
+
+.opacity-7 {
+  opacity: 0.7 !important;
+}
+
+.opacity-8 {
+  opacity: 0.8 !important;
+}
+
+.opacity-9 {
+  opacity: 0.9 !important;
+}
+
+.opacity-100 {
+  opacity: 1 !important;
+}
+
+/* MISC */
+.mb-2,
+.cagov-mb-2 {
+  margin-bottom: 2rem;
+}
+
+.border {
+  border: solid 1px;
+}
+
+.cluster .sp-bt {
+  justify-content: space-between;
+}
+
+.fb-500 {
+  flex-basis: 500px !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* positions */
+.position-sticky {
+  position: sticky !important;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.position-fixed {
+  position: fixed !important;
+}
+
+/* displays */
+.d-none {
+  display: none !important;
+}
+
+.d-inline {
+  display: inline !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.d-grid {
+  display: grid !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-inline-flex {
+  display: inline-flex !important;
+}
+
+/* width classes */
+.w-100 {
+  width: 100% !important;
+}
+
+.w-100-hover:hover {
+  width: 100% !important;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-1 {
+  width: var(--s-1) !important;
+}
+
+.w-2 {
+  width: var(--s-2) !important;
+}
+
+.w-3 {
+  width: var(--s-3) !important;
+}
+
+.w-4 {
+  width: var(--s-4) !important;
+}
+
+.w-5 {
+  width: var(--s-5) !important;
+}
+
+.w-6 {
+  width: var(--s-6) !important;
+}
+
+.w-7 {
+  width: var(--s-7) !important;
+}
+
+.w-8 {
+  width: var(--s-8) !important;
+}
+
+/* height classes */
+.h-100 {
+  height: 100% !important;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-1 {
+  height: var(--s-1) !important;
+}
+
+.h-2 {
+  height: var(--s-2) !important;
+}
+
+.h-3 {
+  height: var(--s-3) !important;
+}
+
+.h-4 {
+  height: var(--s-4) !important;
+}
+
+.h-5 {
+  height: var(--s-5) !important;
+}
+
+.h-6 {
+  height: var(--s-6) !important;
+}
+
+.h-7 {
+  height: var(--s-7) !important;
+}
+
+.h-8 {
+  height: var(--s-8) !important;
+}
+
+/* FLEX UTILITY CLASSES */
+.flex-column {
+  flex-direction: column !important;
+}
+
+.flex-column-reverse {
+  flex-direction: column-reverse !important;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.flex-grow-0 {
+  flex-grow: 0 !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0 !important;
+}
+
+.flex-shrink-1 {
+  flex-shrink: 1 !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.gap-0 {
+  gap: 0 !important;
+}
+
+.gap-1 {
+  gap: var(--s-sm) !important;
+}
+
+.gap-2 {
+  gap: var(--s-1) !important;
+}
+
+.gap-3 {
+  gap: var(--s-2) !important;
+}
+
+.gap-4 {
+  gap: var(--s-3) !important;
+}
+
+.gap-5 {
+  gap: var(--s-5) !important;
+}
+
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly !important;
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.align-items-baseline {
+  align-items: baseline !important;
+}
+
+.align-items-stretch {
+  align-items: stretch !important;
+}
+
+.align-content-start {
+  align-content: flex-start !important;
+}
+
+.align-content-end {
+  align-content: flex-end !important;
+}
+
+.align-content-center {
+  align-content: center !important;
+}
+
+.align-content-between {
+  align-content: space-between !important;
+}
+
+.align-content-around {
+  align-content: space-around !important;
+}
+
+.align-content-stretch {
+  align-content: stretch !important;
+}
+
+.align-self-auto {
+  align-self: auto !important;
+}
+
+.align-self-start {
+  align-self: flex-start !important;
+}
+
+.align-self-end {
+  align-self: flex-end !important;
+}
+
+.align-self-center {
+  align-self: center !important;
+}
+
+.align-self-baseline {
+  align-self: baseline !important;
+}
+
+.align-self-stretch {
+  align-self: stretch !important;
+}
+
+/* Flex for medium devices */
+@media (min-width: 768px) {
+  .float-md-start {
+    float: left !important;
+  }
+
+  .float-md-end {
+    float: right !important;
+  }
+
+  .float-md-none {
+    float: none !important;
+  }
+
+  .d-md-inline {
+    display: inline !important;
+  }
+
+  .d-md-inline-block {
+    display: inline-block !important;
+  }
+
+  .d-md-block {
+    display: block !important;
+  }
+
+  .d-md-grid {
+    display: grid !important;
+  }
+
+  .d-md-table {
+    display: table !important;
+  }
+
+  .d-md-table-row {
+    display: table-row !important;
+  }
+
+  .d-md-table-cell {
+    display: table-cell !important;
+  }
+
+  .d-md-flex {
+    display: flex !important;
+  }
+
+  .d-md-inline-flex {
+    display: inline-flex !important;
+  }
+
+  .d-md-none {
+    display: none !important;
+  }
+
+  .flex-md-fill {
+    flex: 1 1 auto !important;
+  }
+
+  .flex-md-row {
+    flex-direction: row !important;
+  }
+
+  .flex-md-column {
+    flex-direction: column !important;
+  }
+
+  .flex-md-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .flex-md-column-reverse {
+    flex-direction: column-reverse !important;
+  }
+
+  .flex-md-grow-0 {
+    flex-grow: 0 !important;
+  }
+
+  .flex-md-grow-1 {
+    flex-grow: 1 !important;
+  }
+
+  .flex-md-shrink-0 {
+    flex-shrink: 0 !important;
+  }
+
+  .flex-md-shrink-1 {
+    flex-shrink: 1 !important;
+  }
+
+  .flex-md-wrap {
+    flex-wrap: wrap !important;
+  }
+
+  .flex-md-nowrap {
+    flex-wrap: nowrap !important;
+  }
+
+  .flex-md-wrap-reverse {
+    flex-wrap: wrap-reverse !important;
+  }
+
+  .gap-md-0 {
+    gap: 0 !important;
+  }
+
+  .gap-md-1 {
+    gap: 0.25rem !important;
+  }
+
+  .gap-md-2 {
+    gap: 0.5rem !important;
+  }
+
+  .gap-md-3 {
+    gap: 1rem !important;
+  }
+
+  .gap-md-4 {
+    gap: 1.5rem !important;
+  }
+
+  .gap-md-5 {
+    gap: 3rem !important;
+  }
+
+  .justify-content-md-start {
+    justify-content: flex-start !important;
+  }
+
+  .justify-content-md-end {
+    justify-content: flex-end !important;
+  }
+
+  .justify-content-md-center {
+    justify-content: center !important;
+  }
+
+  .justify-content-md-between {
+    justify-content: space-between !important;
+  }
+
+  .justify-content-md-around {
+    justify-content: space-around !important;
+  }
+
+  .justify-content-md-evenly {
+    justify-content: space-evenly !important;
+  }
+
+  .align-items-md-start {
+    align-items: flex-start !important;
+  }
+
+  .align-items-md-end {
+    align-items: flex-end !important;
+  }
+
+  .align-items-md-center {
+    align-items: center !important;
+  }
+
+  .align-items-md-baseline {
+    align-items: baseline !important;
+  }
+
+  .align-items-md-stretch {
+    align-items: stretch !important;
+  }
+
+  .align-content-md-start {
+    align-content: flex-start !important;
+  }
+
+  .align-content-md-end {
+    align-content: flex-end !important;
+  }
+
+  .align-content-md-center {
+    align-content: center !important;
+  }
+
+  .align-content-md-between {
+    align-content: space-between !important;
+  }
+
+  .align-content-md-around {
+    align-content: space-around !important;
+  }
+
+  .align-content-md-stretch {
+    align-content: stretch !important;
+  }
+
+  .align-self-md-auto {
+    align-self: auto !important;
+  }
+
+  .align-self-md-start {
+    align-self: flex-start !important;
+  }
+
+  .align-self-md-end {
+    align-self: flex-end !important;
+  }
+
+  .align-self-md-center {
+    align-self: center !important;
+  }
+
+  .align-self-md-baseline {
+    align-self: baseline !important;
+  }
+
+  .align-self-md-stretch {
+    align-self: stretch !important;
+  }
+
+  .order-md-first {
+    order: -1 !important;
+  }
+
+  .order-md-0 {
+    order: 0 !important;
+  }
+
+  .order-md-1 {
+    order: 1 !important;
+  }
+
+  .order-md-2 {
+    order: 2 !important;
+  }
+
+  .order-md-3 {
+    order: 3 !important;
+  }
+
+  .order-md-4 {
+    order: 4 !important;
+  }
+
+  .order-md-5 {
+    order: 5 !important;
+  }
+
+  .order-md-last {
+    order: 6 !important;
+  }
+
+  .m-md-0 {
+    margin: 0 !important;
+  }
+
+  .m-md-l-a {
+    margin-left: auto !important;
+  }
+
+  .m-md-r-a {
+    margin-right: auto !important;
+  }
+
+  .m-md-x-a {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .m-md-0-a {
+    margin: 0 auto !important;
+  }
+
+  .m-md-t-a {
+    margin-top: auto !important;
+  }
+
+  .m-md-b-a {
+    margin-bottom: auto !important;
+  }
+
+  .m-md-y-a {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+  }
+
+  .p-md-0 {
+    padding: 0 !important;
+  }
+
+  .text-md-left {
+    text-align: left !important;
+  }
+
+  .text-md-right {
+    text-align: right !important;
+  }
+
+  .text-md-center {
+    text-align: center !important;
+  }
+}
+/* Flex for larger devices */
+@media (min-width: 992px) {
+  .float-lg-start {
+    float: left !important;
+  }
+
+  .float-lg-end {
+    float: right !important;
+  }
+
+  .float-lg-none {
+    float: none !important;
+  }
+
+  .d-lg-inline {
+    display: inline !important;
+  }
+
+  .d-lg-inline-block {
+    display: inline-block !important;
+  }
+
+  .d-lg-block {
+    display: block !important;
+  }
+
+  .d-lg-grid {
+    display: grid !important;
+  }
+
+  .d-lg-table {
+    display: table !important;
+  }
+
+  .d-lg-table-row {
+    display: table-row !important;
+  }
+
+  .d-lg-table-cell {
+    display: table-cell !important;
+  }
+
+  .d-lg-flex {
+    display: flex !important;
+  }
+
+  .d-lg-inline-flex {
+    display: inline-flex !important;
+  }
+
+  .d-lg-none {
+    display: none !important;
+  }
+
+  .flex-lg-fill {
+    flex: 1 1 auto !important;
+  }
+
+  .flex-lg-row {
+    flex-direction: row !important;
+  }
+
+  .flex-lg-column {
+    flex-direction: column !important;
+  }
+
+  .flex-lg-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .flex-lg-column-reverse {
+    flex-direction: column-reverse !important;
+  }
+
+  .flex-lg-grow-0 {
+    flex-grow: 0 !important;
+  }
+
+  .flex-lg-grow-1 {
+    flex-grow: 1 !important;
+  }
+
+  .flex-lg-shrink-0 {
+    flex-shrink: 0 !important;
+  }
+
+  .flex-lg-shrink-1 {
+    flex-shrink: 1 !important;
+  }
+
+  .flex-lg-wrap {
+    flex-wrap: wrap !important;
+  }
+
+  .flex-lg-nowrap {
+    flex-wrap: nowrap !important;
+  }
+
+  .flex-lg-wrap-reverse {
+    flex-wrap: wrap-reverse !important;
+  }
+
+  .gap-lg-0 {
+    gap: 0 !important;
+  }
+
+  .gap-lg-1 {
+    gap: 0.25rem !important;
+  }
+
+  .gap-lg-2 {
+    gap: 0.5rem !important;
+  }
+
+  .gap-lg-3 {
+    gap: 1rem !important;
+  }
+
+  .gap-lg-4 {
+    gap: 1.5rem !important;
+  }
+
+  .gap-lg-5 {
+    gap: 3rem !important;
+  }
+
+  .justify-content-lg-start {
+    justify-content: flex-start !important;
+  }
+
+  .justify-content-lg-end {
+    justify-content: flex-end !important;
+  }
+
+  .justify-content-lg-center {
+    justify-content: center !important;
+  }
+
+  .justify-content-lg-between {
+    justify-content: space-between !important;
+  }
+
+  .justify-content-lg-around {
+    justify-content: space-around !important;
+  }
+
+  .justify-content-lg-evenly {
+    justify-content: space-evenly !important;
+  }
+
+  .align-items-lg-start {
+    align-items: flex-start !important;
+  }
+
+  .align-items-lg-end {
+    align-items: flex-end !important;
+  }
+
+  .align-items-lg-center {
+    align-items: center !important;
+  }
+
+  .align-items-lg-baseline {
+    align-items: baseline !important;
+  }
+
+  .align-items-lg-stretch {
+    align-items: stretch !important;
+  }
+
+  .align-content-lg-start {
+    align-content: flex-start !important;
+  }
+
+  .align-content-lg-end {
+    align-content: flex-end !important;
+  }
+
+  .align-content-lg-center {
+    align-content: center !important;
+  }
+
+  .align-content-lg-between {
+    align-content: space-between !important;
+  }
+
+  .align-content-lg-around {
+    align-content: space-around !important;
+  }
+
+  .align-content-lg-stretch {
+    align-content: stretch !important;
+  }
+
+  .align-self-lg-auto {
+    align-self: auto !important;
+  }
+
+  .align-self-lg-start {
+    align-self: flex-start !important;
+  }
+
+  .align-self-lg-end {
+    align-self: flex-end !important;
+  }
+
+  .align-self-lg-center {
+    align-self: center !important;
+  }
+
+  .align-self-lg-baseline {
+    align-self: baseline !important;
+  }
+
+  .align-self-lg-stretch {
+    align-self: stretch !important;
+  }
+
+  .order-lg-first {
+    order: -1 !important;
+  }
+
+  .order-lg-0 {
+    order: 0 !important;
+  }
+
+  .order-lg-1 {
+    order: 1 !important;
+  }
+
+  .order-lg-2 {
+    order: 2 !important;
+  }
+
+  .order-lg-3 {
+    order: 3 !important;
+  }
+
+  .order-lg-4 {
+    order: 4 !important;
+  }
+
+  .order-lg-5 {
+    order: 5 !important;
+  }
+
+  .order-lg-last {
+    order: 6 !important;
+  }
+
+  .m-lg-0 {
+    margin: 0 !important;
+  }
+
+  .m-lg-l-a {
+    margin-left: auto !important;
+  }
+
+  .m-lg-r-a {
+    margin-right: auto !important;
+  }
+
+  .m-lg-x-a {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .m-lg-0-a {
+    margin: 0 auto !important;
+  }
+
+  .m-lg-t-a {
+    margin-top: auto !important;
+  }
+
+  .m-lg-b-a {
+    margin-bottom: auto !important;
+  }
+
+  .m-lg-y-a {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+  }
+
+  .p-lg-0 {
+    padding: 0 !important;
+  }
+
+  .text-lg-left {
+    text-align: left !important;
+  }
+
+  .text-lg-right {
+    text-align: right !important;
+  }
+
+  .text-lg-center {
+    text-align: center !important;
+  }
+}
+/* TEXT */
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-lovercase {
+  text-transform: lowercase !important;
+}
+
+.font-size-xs {
+  font-size: var(--font-size-xs) !important;
+}
+
+.font-size-sm {
+  font-size: var(--font-size-sm) !important;
+}
+
+.font-size-1 {
+  font-size: var(--font-size-1) !important;
+}
+
+.font-size-2 {
+  font-size: var(--font-size-2) !important;
+}
+
+.font-size-3 {
+  font-size: var(--font-size-3) !important;
+}
+
+.font-size-4 {
+  font-size: var(--font-size-4) !important;
+}
+
+.font-size-5 {
+  font-size: var(--font-size-5) !important;
+}
+
+.font-size-6 {
+  font-size: var(--font-size-6) !important;
+}
+
+.font-size-7 {
+  font-size: var(--font-size-7) !important;
+}
+
+.font-size-8 {
+  font-size: var(--font-size-8) !important;
+}
+
+.font-size-9 {
+  font-size: var(--font-size-9) !important;
+}
+
+.font-size-10 {
+  font-size: var(--font-size-10) !important;
+}
+
+.font-size-11 {
+  font-size: var(--font-size-11) !important;
+}
+
+.font-size-12 {
+  font-size: var(--font-size-12) !important;
+}
+
+.font-weight-1 {
+  font-weight: var(--font-weight-1) !important;
+}
+
+.font-weight-2 {
+  font-weight: var(--font-weight-2) !important;
+}
+
+.font-weight-3 {
+  font-weight: var(--font-weight-3) !important;
+}
+
+.font-weight-4 {
+  font-weight: var(--font-weight-4) !important;
+}
+
+.font-weight-5 {
+  font-weight: var(--font-weight-5) !important;
+}
+
+.font-weight-6 {
+  font-weight: var(--font-weight-6) !important;
+}
+
+.font-weight-7,
+.text-bold {
+  font-weight: var(--font-weight-7) !important;
+}
+
+.font-weight-8 {
+  font-weight: var(--font-weight-8) !important;
+}
+
+.font-weight-9 {
+  font-weight: var(--font-weight-9) !important;
+}
+
+.font-lineheight-xs {
+  line-height: var(--font-lineheight-xs) !important;
+}
+
+.font-lineheight-sm {
+  line-height: var(--font-lineheight-sm) !important;
+}
+
+.font-lineheight-1 {
+  line-height: var(--font-lineheight-1) !important;
+}
+
+.font-lineheight-2 {
+  line-height: var(--font-lineheight-2) !important;
+}
+
+.font-lineheight-3 {
+  line-height: var(--font-lineheight-3) !important;
+}
+
+.font-lineheight-4 {
+  line-height: var(--font-lineheight-4) !important;
+}
+
+.font-lineheight-5 {
+  line-height: var(--font-lineheight-5) !important;
+}
+
+.font-lineheight-6 {
+  line-height: var(--font-lineheight-6) !important;
+}
+
+.underline {
+  text-decoration: underline !important;
+}
+
+.no-underline {
+  text-decoration: none !important;
+}
+
+/* IMAGE */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+/* every-layout.dev layout classes */
+.stack * + * {
+  margin-top: 1.5rem;
+}
+
+/* Full bleed */
+.full-bleed {
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+}
+
+/* overflow */
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-visible {
+  overflow: visible !important;
+}
+
+.overflow-auto {
+  overflow: auto !important;
+}
+
+/* ease transform */
+.transition-1 {
+  transition: all var(--animation-duration-1) !important;
+}
+
+.transition-2 {
+  transition: all var(--animation-duration-2) !important;
+}
+
+.transition-3 {
+  transition: all var(--animation-duration-3) !important;
+}
+
+.transition-4 {
+  transition: all var(--animation-duration-4) !important;
+}
+
+.transition-5 {
+  transition: all var(--animation-duration-5) !important;
+}
+
+.transition-6 {
+  transition: all var(--animation-duration-6) !important;
+}
+
+.transition-7 {
+  transition: all var(--animation-duration-7) !important;
+}
+
+.transition-8 {
+  transition: all var(--animation-duration-8) !important;
+}
+
+.transition-9 {
+  transition: all var(--animation-duration-9) !important;
+}
+
+.transition-10 {
+  transition: all var(--animation-duration-10) !important;
+}
+
+/* ease */
+.ease-1 {
+  transition-timing-function: var(--ease-1) !important;
+}
+
+.ease-2 {
+  transition-timing-function: var(--ease-2) !important;
+}
+
+.ease-3 {
+  transition-timing-function: var(--ease-3) !important;
+}
+
+.ease-4 {
+  transition-timing-function: var(--ease-4) !important;
+}
+
+.ease-5 {
+  transition-timing-function: var(--ease-5) !important;
+}
+
+/* scale on hover */
+.transform-scale-1-hover:hover {
+  transform: var(--transform-scale-1) !important;
+}
+
+.transform-scale-2-hover:hover {
+  transform: var(--transform-scale-2) !important;
+}
+
+.transform-scale-3-hover:hover {
+  transform: var(--transform-scale-3) !important;
+}
+
+.transform-scale-4-hover:hover {
+  transform: var(--transform-scale-4) !important;
+}
+
+.transform-scale-5-hover:hover {
+  transform: var(--transform-scale-5) !important;
+}
+
+.transform-scale-6-hover:hover {
+  transform: var(--transform-scale-6) !important;
+}
+
+.transform-scale-7-hover:hover {
+  transform: var(--transform-scale-7) !important;
+}
+
+.transform-scale-8-hover:hover {
+  transform: var(--transform-scale-8) !important;
+}
+
+.transform-scale-9-hover:hover {
+  transform: var(--transform-scale-9) !important;
+}
+
+.transform-scale-10-hover:hover {
+  transform: var(--transform-scale-10) !important;
+}
+
+/* Sadows */
+.shadow-1 {
+  box-shadow: var(--shadow-1) !important;
+}
+
+.shadow-2 {
+  box-shadow: var(--shadow-2) !important;
+}
+
+.shadow-3 {
+  box-shadow: var(--shadow-3) !important;
+}
+
+.shadow-4 {
+  box-shadow: var(--shadow-4) !important;
+}
+
+.shadow-5 {
+  box-shadow: var(--shadow-5) !important;
+}
+
+.shadow-6 {
+  box-shadow: var(--shadow-6) !important;
+}
+
+/* all utility css classes that can be used (shortcodes) */
+/* Grid classes */
+@supports (width: min(376px, 100%)) {
+  .card-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(376px, 100%), 1fr));
+    grid-gap: var(--s-3, 1.5rem);
+  }
+}
+@supports (width: min(300px, 100%)) {
+  .card-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    grid-gap: var(--s-3, 1.5rem);
+  }
+}
+@supports (width: min(250px, 100%)) {
+  .card-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    grid-gap: var(--s-3, 1.5rem);
+  }
+}
+.grid-container {
+  display: grid;
+  gap: var(--s-3, 1.5rem);
+}
+@media (min-width: 576px) {
+  .grid-container {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.grid-md-container {
+  display: grid;
+  gap: var(--s-3, 1.5rem);
+}
+@media (min-width: 768px) {
+  .grid-md-container {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.grid-lg-container {
+  display: grid;
+  gap: var(--s-3, 1.5rem);
+}
+@media (min-width: 992px) {
+  .grid-lg-container {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+/* grid classes */
+/* all of the above will become part of base-css component */
+
+/*# sourceMappingURL=cagov.css.map */
