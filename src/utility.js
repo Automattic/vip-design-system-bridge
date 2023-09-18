@@ -2,7 +2,7 @@ const fs = require( 'fs' ).promises;
 const os = require( 'os' );
 const path = require( 'path' );
 const chalk = require( 'chalk' );
-const css = require('css');
+const css = require( 'css' );
 
 async function getJsonFromPath( filePath ) {
 	const tokenJson = await fs.readFile( filePath, 'utf8' );
@@ -44,9 +44,8 @@ async function getTokensFromPath( tokenJsonPath ) {
 		}
 
 		return combinedTokens;
-	} else {
-		throwError( `Unsupported file provided at ${ tokenJsonPath }` );
 	}
+	throwError( `Unsupported file provided at ${ tokenJsonPath }` );
 }
 
 async function outputThemeJson( themeJson, outputPath ) {
