@@ -1,3 +1,8 @@
+> [!WARNING]
+> **This repository is deprecated and no longer maintained.**
+>
+> It is retained for historical reference only. No further updates, bug fixes, or security patches are planned.
+
 # VIP Design System Bridge Tool
 
 This is a script designed to take an export of a design system, and insert the tokens into the `theme.json` of a WordPress site. At the moment it only supports exports from Figma, using [this](https://www.figma.com/community/plugin/843461159747178978) plugin.
